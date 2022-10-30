@@ -1,0 +1,33 @@
+                         
+           ▄▄                                  
+▀████▀     ██                                  
+  ██                                           
+  ██     ▀███ ▀████████▄ ▀███  ▀███ ▀██▀   ▀██▀
+  ██       ██   ██    ██   ██    ██   ▀██ ▄█▀  
+  ██     ▄ ██   ██    ██   ██    ██     ███    
+  ██    ▄█ ██   ██    ██   ██    ██   ▄█▀ ██▄  
+██████████████▄████  ████▄ ▀████▀███▄██▄   ▄██▄
+                                               
+
+///////////////////////////////////////////////////INTRO///////////////////////////////////////////////////////////////////////////////////////////
+
+Before moving on to the LINUX lets have a small talk ☕️
+An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+Lets take a look at 1969 its time when ken Thompson and Dennnis Ritchie created unix operating system its was all good but it had one problem the 
+source code was owned by AT and T company when some other created their own software distribution based on unix AT and T sues them this led to the 
+limitatiins to the development. 
+
+To encounter this problen in year 1983 Richard Stallman created GNU( it literally means not unix 😂) project intended to make free and open source 
+replacement to unix in 1992 it included linux under GNU project under general public license, linux was created in 1991 by linus Torwalds a 
+kernel which act as a mediater between hardware and applications, user interact with kernel with the help of shell through command line. in GNU's 
+upcomming years it created may tols and applications like tar, bash just the name of few which can be used by linux kernel that let to revolution 
+in software world.
+
+As it gave freedom to developers tonnes of developers made their contributions and created thousand of linux distro A distro is a complete operating
+system based on linux kernel which comes with linux kernel packages package-manager Graphic-user-interface. The family tree of linux is huge 
+but have one thing in common tyhe seed of linux with  tools, utilities and freedom provided by GNU 
+
+We will be understanding the basics of linux topics like core-concepts package-manager file-system networking storage secuerity-filepermissions
+and many more. 😀
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
