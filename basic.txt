@@ -78,6 +78,24 @@ The GUI uses the graphics while the CLI uses the commands aka instructions
 Now a questions may arise in your mind I have not encountered the command line user interface while using apps like file manager 
 The thing is the those apps are interacting with shell for you under the hood while you use the app. 
 
-To communicate and use the services we have to communicate with shell as shell is CLI we will be exploring commands and concepts. 
+To communicate and use the services we have to communicate with shell, as shell is CLI we will be exploring commands and concepts. 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Shell
+As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
+
+usage:To know which shell we are working with 
+type:echo $SHELL
+output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
+
+There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) these shells are different and may 
+serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
+
+usage:To change shell         note: they must be installed in your system 
+type:chsh -s /bin/[ name of the shell you wanna switch note: these square brackets are not needed these are just for message purpose]
+output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
+example:chsh -s /bin/bash
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
