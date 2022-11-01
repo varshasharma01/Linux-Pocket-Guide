@@ -85,17 +85,54 @@ To communicate and use the services we have to communicate with shell, as shell 
 Shell
 As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
 
-usage:To know which shell we are working with 
-type:echo $SHELL
-output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
+👨🏽‍💻usage:To know which shell we are working with 
+👨🏽‍💻type:echo $SHELL
+👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
 
-There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) these shells are different and may 
-serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
+There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
+different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
 
-usage:To change shell         note: they must be installed in your system 
-type:chsh -s /bin/[ name of the shell you wanna switch note: these square brackets are not needed these are just for message purpose]
-output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
-example:chsh -s /bin/bash
+👨🏽‍💻usage:To change shell         note: they must be installed in your system 
+👨🏽‍💻type:chsh -s /bin/[ code name of the shell you wanna switch note: these square brackets are not needed these are just for instructing purpose]
+👨🏽‍💻output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
+👨🏽‍💻example:chsh -s /bin/bash
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+File
+There's a commom phrase in linux that everything is a file so it is necessary to get really handy on em' 
+
+File in linux are divided into 3 types 
+1.Regular
+2.Directory
+3.Special
+
+1.Regular files are the most basic files in linux they are data files or media files or scripts 
+2.Directories are the files that store other files or directories 
+3.Special files are further divided into 5 types 
+3.1 Character files - these files represent devices under /dev that allows OS to communicate with IO devices   example - mouse
+3.2 Block files - These files represent block devices under /dev a block device read from and write in block/chunk of data  example - hard disk, ram 
+3.3 Links - these files are the way to associate two or more file name with same set of file data there are two types of links 
+3.3.1 Hard Link - two or more files name that share the same block of data on a physical disk although they behave as a independent files deleting one 
+link will delete the data 
+3.3.2 Soft link - They act as pointers to another files deleting a soft link will not delete the actual file 
+3.4 Socket - These file enable communication between two processes 
+3.5 named pipes - These files are allows one process as the input to another Data flow in pipe is unidirectional 
+
+File types and their identifiers 
+     |------------------------------------|
+     |  File               | identifiers  |
+     |  Directory          |    d         |
+     |  Regular            |    -         |
+     |  Link               |    l         |
+     |  Socket             |    s         |
+     |  Pipe               |    p         |
+     |  Character device   |    c         |
+     |------------------------------------|
+
+👨🏽‍💻usage:To check the file type 
+👨🏽‍💻type:file [file name note:these square brackets are not needed these are ment for instructing purpose]
+👨🏽‍💻output:the file type 
+👨🏽‍💻example:file ~
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
