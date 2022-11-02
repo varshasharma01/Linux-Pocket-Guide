@@ -83,19 +83,41 @@ To communicate and use the services we have to communicate with shell, as shell 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Shell
+
 As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
+
+There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
+different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
 
 👨🏽‍💻usage:To know which shell we are working with 
 👨🏽‍💻type:echo $SHELL
 👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
 
-There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
-different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
-
 👨🏽‍💻usage:To change shell         note: they must be installed in your system 
 👨🏽‍💻type:chsh -s /bin/[ code name of the shell you wanna switch note: these square brackets are not needed these are just for instructing purpose]
 👨🏽‍💻output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
 👨🏽‍💻example:chsh -s /bin/bash
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+Commands: syntax and type 
+
+Syntax:
+You may notice that the instructions have a multiple parts these pare can be divided into three parts 
+1.command
+2.options 
+3.arguments
+Syntax: command <option> <argument> note:these crocodile brackets are just for instructing purpose
+
+Type:
+Commands can be divided into two main type
+1.Builtin
+2.External
+
+👨🏽‍💻usage:To know type of command 
+👨🏽‍💻type:type [command name note:these square brackets are just for instructing purpose they are not needed]
+👨🏽‍💻output:It will output the type of command
+👨🏽‍💻example:type echo
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -137,17 +159,28 @@ File types and their identifiers
 👨🏽‍💻output:the file type 
 👨🏽‍💻example:file ~
 
+Lets talk about file hiearchy in directories 
 
-As we discussed above everything is a file in linux in linux there's a hiearchy of files in linux aka hiearchy directories 
+
+                                                            /(root)
+                                                                |
+                                                                |                                       
+       ----------------------------------------------------------------------------------------------------------------------------------    
+       |           |           |           |           |           |           |           |           |           |         |          |
+       |           |           |           |           |           |           |           |           |           |         |          |
+     /bin        /boot       /dev        /etc        /home       /lib       /media       /mnt        /opt        /tmp      /usr       /var
+
+As we discussed above everything is a file in linux in linux there's a hiearchy of files in linux aka hiearchy of directories 
 every directory has a parent directory except root directory from which all directories are being born off. When you open terminal you are found
-to be in your home directory 
+to be in your home directory. this '/' represent parent the of a directory have a syntax like /parent1/parent1.1/parent1.1.1/........
 
 👨🏽‍💻usage:To check the home directory 
 👨🏽‍💻type:echo $HOME
 👨🏽‍💻output:outputs the home directory
 👨🏽‍💻example:echo $HOME
+👨🏽‍💻note:home directory can be redirected simply by typing- cd or by typing- cd ~ or by typing- cd $HOME For single person there's only a only directory
+under /home directory but for multi user there can be many directories under /home directory 
 
-Lets get handy to travell through different directories 
 
 👨🏽‍💻usage:To check the current directory you are on 
 👨🏽‍💻type:pwd
@@ -164,25 +197,14 @@ Lets get handy to travell through different directories
 👨🏽‍💻output:switches to the directory you have typed 
 👨🏽‍💻example:cd Desktop
 👨🏽‍💻note:You cannot switch to any directory anywhere you wanted the directory you are switching to and the directory you are currently on must belong 
-to the same parent. Or you may provide absolute path of the intended directory 
+to the same parent, or you may provide absolute path of the intended directory 
 
 👨🏽‍💻usage:To switch to parent of the current working directory / to traverse back of the hiearchy
 👨🏽‍💻type:cd ..
 👨🏽‍💻output:switches to the parent directory
 👨🏽‍💻example:cd ..
-👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂
-
-Lets talk about file hiearchy of the linux system 
-
-
-                                                            /(root)
-                                                                |
-       ----------------------------------------------------------------------------------------------------------------------------------    
-       |           |           |           |           |           |           |           |           |           |         |          |
-       |           |           |           |           |           |           |           |           |           |         |          |
-     /bin        /boot       /dev        /etc        /home       /lib       /media       /mnt        /opt        /tmp      /usr       /var
-
-
+👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂 you can 
+also switch back by typing cd with the exact location of the parent directory 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
