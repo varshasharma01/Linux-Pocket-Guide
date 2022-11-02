@@ -174,4 +174,15 @@ to the same parent. Or you may provide absolute path of the intended directory
 
 Lets talk about file hiearchy of the linux system 
 
+
+                                                            /(root)
+                                                                |
+       ----------------------------------------------------------------------------------------------------------------------------------    
+       |           |           |           |           |           |           |           |           |           |         |          |
+       |           |           |           |           |           |           |           |           |           |         |          |
+     /bin        /boot       /dev        /etc        /home       /lib       /media       /mnt        /opt        /tmp      /usr       /var
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
