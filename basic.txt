@@ -206,5 +206,22 @@ to the same parent, or you may provide absolute path of the intended directory
 👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂 you can 
 also switch back by typing cd with the exact location of the parent directory 
 
+👨🏽‍💻usage:To create directory
+👨🏽‍💻type:mkdir [name of the directory you wanna create note:these square brackets are not needed these are just for instructing purpose]
+👨🏽‍💻output:directory of the provided name will be created under its parent directory
+👨🏽‍💻example:mkdir mydirectory
+
+👨🏽‍💻usage:To create files except directory
+👨🏽‍💻type:touch [filename.format  note:these square brackets are not needed these are just for instructing purpose ]
+👨🏽‍💻output:The file with given name and format will be created under the current working directory
+👨🏽‍💻example:touch myfile.txt
+
+👨🏽‍💻usage:To delete directory
+👨🏽‍💻type:rm -r [directory name note:thses square brackets are not needed ]
+👨🏽‍💻output:All content inside the directory and the directory itself will be deleated 
+👨🏽‍💻example:rmdir mydirectory
+👨🏽‍💻note: to delete files except directory there's no neeed of -r this -r is ment for recursive purpose 
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
