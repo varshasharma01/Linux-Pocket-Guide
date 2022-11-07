@@ -223,5 +223,18 @@ also switch back by typing cd with the exact location of the parent directory
 👨🏽‍💻note: to delete files except directory there's no neeed of -r this -r is ment for recursive purpose 
 
 
+👨🏽‍💻usage:To move a file or directory
+👨🏽‍💻type:mv [loation of the file which is to be transfered] [location of parent directory where it is to be transfered] 
+👨🏽‍💻output:The file or dictory will be moved at the same time 
+👨🏽‍💻example:rmdir mv a/b/c/4  /1/2/3/
+👨🏽‍💻note: If the both location are same but the file name is different in that case the moving file or directory will be renamed as per as second name
+
+
+👨🏽‍💻usage:To copy a file or directory
+👨🏽‍💻type:mv [loation of the file which is to be copied] [location of parent directory where it is to be copied] 
+👨🏽‍💻output:The file or dictory will be copied at the same time 
+👨🏽‍💻example:rmdir mv a/b/c/d  /a/b/c/
+👨🏽‍💻note: There might be a case when there are so much hiearchy of directory/file under the copying directory/file in that case -r can be used.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
