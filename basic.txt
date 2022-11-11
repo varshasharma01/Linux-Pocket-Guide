@@ -32,6 +32,49 @@ and many more. 😀
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+kernel ~
+
+Kernel is major component of an opreating system its sits between hardware and applications/processes it manages resources as efficient as possible 
+Kernel carries out four major tasks 
+1.Memory management 
+2.Process management 
+3.Device drivers 
+4.System calls and secuerity
+
+The linux kernel is monolithic it means it carries out multiple tasks all by itself 
+The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules 
+
+Lets check about kernel info 
+
+👨🏽‍💻usage:To know the kernel info
+👨🏽‍💻type:echo uname
+👨🏽‍💻output:Name of the kernel will be printed 
+
+👨🏽‍💻usage:To know the kernel info including the major version and minor version and patch release 
+👨🏽‍💻type:echo uname -a 
+👨🏽‍💻output:Info of the kernel will be printed
+👨🏽‍💻example: 4.15.0-72-generic 
+The first number tells about the current version
+The second number tells about the major version
+The third number tells about patch release 
+The fourth word tells about the type of the kernel this is distro specific 
+
+Kernel and user space ~
+
+The memory is divided into two parts 1.kernel space and user space 
+
+Kernel space is composed of device drivers and kernel they have unrestricted acecess to the hardware to kernel items like kernel code kernel 
+extensions which executes and provides it services
+
+User space is the second component of the main memory it have restricted acces to the hardware it comes with all kind of tools and programming 
+languages graphical tools and other things like java ruby c python and docker containers etc.
+
+All user programs function by manipulating data which comes from hardware like disk, user programs made special request to the kernel call system 
+calls example open or write a file etc, this system call make kernel to provide resourcs to program. 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 lets understand linux architecture ~
 
 
@@ -162,7 +205,7 @@ File types and their identifiers
 Lets talk about file hiearchy in directories 
 
 
-                                                            /(root)
+                                                             /(root)
                                                                 |
                                                                 |                                       
        ----------------------------------------------------------------------------------------------------------------------------------    
@@ -173,6 +216,7 @@ Lets talk about file hiearchy in directories
 As we discussed above everything is a file in linux in linux there's a hiearchy of files in linux aka hiearchy of directories 
 every directory has a parent directory except root directory from which all directories are being born off. When you open terminal you are found
 to be in your home directory. this '/' represent parent the of a directory have a syntax like /parent1/parent1.1/parent1.1.1/........
+
 
 👨🏽‍💻usage:To check the home directory 
 👨🏽‍💻type:echo $HOME
@@ -187,10 +231,12 @@ under /home directory but for multi user there can be many directories under /ho
 👨🏽‍💻output:outputs the current working directory
 👨🏽‍💻example:pwd
 
+
 👨🏽‍💻usage:To list the content of directories
 👨🏽‍💻type:ls
 👨🏽‍💻output:outputs the content of working directory
 👨🏽‍💻example:ls
+
 
 👨🏽‍💻usage:To switch directory 
 👨🏽‍💻type:cd [directory name note:these square brackets are not needed these are just for instructing purpuse]
@@ -199,6 +245,7 @@ under /home directory but for multi user there can be many directories under /ho
 👨🏽‍💻note:You cannot switch to any directory anywhere you wanted the directory you are switching to and the directory you are currently on must belong 
 to the same parent, or you may provide absolute path of the intended directory 
 
+
 👨🏽‍💻usage:To switch to parent of the current working directory / to traverse back of the hiearchy
 👨🏽‍💻type:cd ..
 👨🏽‍💻output:switches to the parent directory
@@ -206,15 +253,18 @@ to the same parent, or you may provide absolute path of the intended directory
 👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂 you can 
 also switch back by typing cd with the exact location of the parent directory 
 
+
 👨🏽‍💻usage:To create directory
 👨🏽‍💻type:mkdir [name of the directory you wanna create note:these square brackets are not needed these are just for instructing purpose]
 👨🏽‍💻output:directory of the provided name will be created under its parent directory
 👨🏽‍💻example:mkdir mydirectory
 
+
 👨🏽‍💻usage:To create files except directory
 👨🏽‍💻type:touch [filename.format  note:these square brackets are not needed these are just for instructing purpose ]
 👨🏽‍💻output:The file with given name and format will be created under the current working directory
 👨🏽‍💻example:touch myfile.txt
+
 
 👨🏽‍💻usage:To delete directory
 👨🏽‍💻type:rm -r [directory name note:thses square brackets are not needed ]
