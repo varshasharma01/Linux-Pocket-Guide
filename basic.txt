@@ -34,49 +34,6 @@ and many more. 😀
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-kernel ~
-
-Kernel is major component of an opreating system its sits between hardware and applications/processes it manages resources as efficient as possible 
-Kernel carries out four major tasks 
-1.Memory management 
-2.Process management 
-3.Device drivers 
-4.System calls and secuerity
-
-The linux kernel is monolithic it means it carries out multiple tasks all by itself 
-The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules 
-
-Lets check about kernel info 
-
-👨🏽‍💻usage:To know the kernel info
-👨🏽‍💻type:echo uname
-👨🏽‍💻output:Name of the kernel will be printed 
-
-👨🏽‍💻usage:To know the kernel info including the major version and minor version and patch release 
-👨🏽‍💻type:echo uname -a 
-👨🏽‍💻output:Info of the kernel will be printed
-👨🏽‍💻example: 4.15.0-72-generic 
-The first number tells about the current version
-The second number tells about the major version
-The third number tells about patch release 
-The fourth word tells about the type of the kernel this is distro specific 
-
-Kernel and user space ~
-
-The memory is divided into two parts 1.kernel space and user space 
-
-Kernel space is composed of device drivers and kernel they have unrestricted acecess to the hardware to kernel items like kernel code kernel 
-extensions which executes and provides it services
-
-User space is the second component of the main memory it have restricted acces to the hardware it comes with all kind of tools and programming 
-languages graphical tools and other things like java ruby c python and docker containers etc.
-
-All user programs function by manipulating data which comes from hardware like disk, user programs made special request to the kernel call system 
-calls example open or write a file etc, this system call make kernel to provide resourcs to program. 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 lets understand linux architecture ~
 
 
@@ -127,7 +84,89 @@ To communicate and use the services we have to communicate with shell, as shell 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Commands: syntax and type 
+
+Syntax:
+You may notice that the instructions have a multiple parts these pare can be divided into three parts 
+1.command
+2.options 
+3.arguments
+Syntax: command <option> <argument> note:these crocodile brackets are just for instructing purpose
+
+Type:
+Commands can be divided into two main type
+1.Builtin
+2.External
+
+👨🏽‍💻usage:To know type of command 
+👨🏽‍💻type:type [command name note:these square brackets are just for instructing purpose they are not needed]
+👨🏽‍💻output:It will output the type of command
+👨🏽‍💻example:type echo
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Shell
+
+As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
+
+There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
+different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
+
+👨🏽‍💻usage:To know which shell we are working with 
+👨🏽‍💻type:echo $SHELL
+👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
+
+👨🏽‍💻usage:To change shell         note: they must be installed in your system 
+👨🏽‍💻type:chsh -s /bin/[ code name of the shell you wanna switch note: these square brackets are not needed these are just for instructing purpose]
+👨🏽‍💻output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
+👨🏽‍💻example:chsh -s /bin/bash
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+kernel ~
+
+Kernel is major component of an opreating system its sits between hardware and applications/processes it manages resources as efficient as possible 
+Kernel carries out four major tasks 
+1.Memory management 
+2.Process management 
+3.Device drivers 
+4.System calls and secuerity
+
+The linux kernel is monolithic it means it carries out multiple tasks all by itself 
+The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules 
+
+Lets check about kernel info 
+
+👨🏽‍💻usage:To know the kernel info
+👨🏽‍💻type:echo uname
+👨🏽‍💻output:Name of the kernel will be printed 
+
+👨🏽‍💻usage:To know the kernel info including the major version and minor version and patch release 
+👨🏽‍💻type:echo uname -a 
+👨🏽‍💻output:Info of the kernel will be printed
+👨🏽‍💻example: 4.15.0-72-generic 
+The first number tells about the current version
+The second number tells about the major version
+The third number tells about patch release 
+The fourth word tells about the type of the kernel this is distro specific 
+
+Kernel and user space ~
+
+The memory is divided into two parts 1.kernel space and user space 
+
+Kernel space is composed of device drivers and kernel they have unrestricted acecess to the hardware to kernel items like kernel code kernel 
+extensions which executes and provides it services
+
+User space is the second component of the main memory it have restricted acces to the hardware it comes with all kind of tools and programming 
+languages graphical tools and other things like java ruby c python and docker containers etc.
+
+All user programs function by manipulating data which comes from hardware like disk, user programs made special request to the kernel call system 
+calls example open or write a file etc, this system call make kernel to provide resourcs to program. 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Linux boot sequence ~
+Although you have have booted your system and are working on it 🌚 lets discusss a steps involved in this task 
 
 Linux boot sequence can be divided into four major groups ~
 1. BIOS post
@@ -163,10 +202,10 @@ which are not necessary thus decreasing the startup time
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Runlevel ~
-Run level in a nutshell can be defined as user target implemented on the system i.e interface, during boot process it checks the run level and insures 
-that all services are working fine for that runlevel.
-There are various kind of run level implemented on the system list of them are ~
+Run level in a nutshell can be defined as user target implemented on the system i.e interface your system boots into , during boot process it checks
+the run level and insures that all services that are required for the runlevel are working fine.
 
+There are various kind of run level implemented on the system list of them are ~
 runlevel 0 -> poweroff.target
 
 runlevel 1 -> rescue.target
@@ -234,46 +273,8 @@ every time you use sudo password is required
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Shell
+File ~
 
-As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
-
-There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
-different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
-
-👨🏽‍💻usage:To know which shell we are working with 
-👨🏽‍💻type:echo $SHELL
-👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
-
-👨🏽‍💻usage:To change shell         note: they must be installed in your system 
-👨🏽‍💻type:chsh -s /bin/[ code name of the shell you wanna switch note: these square brackets are not needed these are just for instructing purpose]
-👨🏽‍💻output:No effect but the shell will be changed but it will came into effect after you close the current session and start a new one.
-👨🏽‍💻example:chsh -s /bin/bash
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
-Commands: syntax and type 
-
-Syntax:
-You may notice that the instructions have a multiple parts these pare can be divided into three parts 
-1.command
-2.options 
-3.arguments
-Syntax: command <option> <argument> note:these crocodile brackets are just for instructing purpose
-
-Type:
-Commands can be divided into two main type
-1.Builtin
-2.External
-
-👨🏽‍💻usage:To know type of command 
-👨🏽‍💻type:type [command name note:these square brackets are just for instructing purpose they are not needed]
-👨🏽‍💻output:It will output the type of command
-👨🏽‍💻example:type echo
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-File
 There's a commom phrase in linux that everything is a file so it is necessary to get really handy on em' 
 
 File in linux are divided into 3 types 
