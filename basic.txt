@@ -431,7 +431,12 @@ dependencies management.
 
 To install dependencies it works with dependencies packages they may stored on local or are available on remote server accessed via server protocalls.
 In your loacal system you can find those dependicies file on etc/yum.repos.d/dependencies-files you can adde any dependicies file here in case you wanna 
-install unofficial updates of any modifications 
+install unofficial updates of any modifications.
+
+👨🏽‍💻usage:To list all the installed repos
+👨🏽‍💻type:yum repolist
+👨🏽‍💻output:All the repos added to the system will be displayed 
+👨🏽‍💻example:yum repolist
 
 Steps involved in installing a package ~
 
