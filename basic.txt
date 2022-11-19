@@ -415,13 +415,13 @@ manager used by mac os is home brew.
 
 RPM(red hat package manager) ~
 
-                                   ----------------------------------------------
-                                   |  install   |   rpm -ivh packagename.rpm    |
-                                   |  unistall  |   rpm -e   packagename.rpm    |
-                                   |  upgrade   |   rpm -Uvh packagename.rpm    |
-                                   |  query     |   rpm -q   packagename.rpm    |
-                                   |  verify    |   rpm -Vf  path-to-file       |
-                                   ----------------------------------------------
+                                   --------------------------------------------
+                                   |  install   |   rpm -ivh packagename.rpm  |
+                                   |  unistall  |   rpm -e packagename.rpm    |
+                                   |  upgrade   |   rpm -Uvh packagename.rpm  |
+                                   |  query     |   rpm -q packagename.rpm    |
+                                   |  verify    |   rpm -Vf path-to-file      |
+                                   --------------------------------------------
 
 YUM(yellow dog updater modifier) ~
 
@@ -442,6 +442,12 @@ install unofficial updates of any modifications.
 👨🏽‍💻type:yum provides package-name 
 👨🏽‍💻output:All the dependencies provided to the application will be displayed 
 👨🏽‍💻example:yum provides scp 
+
+                                   ----------------------------------------------
+                                   |  install   |   yum install packagename     |
+                                   |  unistall  |   yum remove packagename      |
+                                   |  upgrade   |   yum update packagename      |
+                                   ----------------------------------------------
 
 Steps involved in installing a package ~
 
