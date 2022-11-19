@@ -438,6 +438,11 @@ install unofficial updates of any modifications.
 👨🏽‍💻output:All the repos added to the system will be displayed 
 👨🏽‍💻example:yum repolist
 
+👨🏽‍💻usage:To find what dependencies is provided to a application 
+👨🏽‍💻type:yum provides package-name 
+👨🏽‍💻output:All the dependencies provided to the application will be displayed 
+👨🏽‍💻example:yum provides scp 
+
 Steps involved in installing a package ~
 
 yum first checks the transaction check it check repositories of that package it also check if any of the dependincy package installed in system 
