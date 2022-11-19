@@ -398,3 +398,20 @@ also switch back by typing cd with the exact location of the parent directory
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Package Manager ~
+A package is a archive/files all the files that are required by a particular software. A package manager is a software that provides package + 
+dependencies along with tasks like ~
+
+checking authenticity and integrity
+Simplying the package management process 
+Grouping packages 
+Managing dependicies 
+
+Every distributions may have a seperate package manager because distributions may differ in basic structure thus every different structure require 
+different package manager Just like we talked earlier there are around a thousand of linux distributions but the big daddy of these distributions are 
+DPKG/APT and RPM DPKG is used by linux os like ubantu,debian,arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
+manager used by mac os is home brew. 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
