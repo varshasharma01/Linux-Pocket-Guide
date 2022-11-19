@@ -429,6 +429,13 @@ Despite all of these RPM does not manage dependencies by itself so we need a bet
 package manager works on RPM based distros It is a high level package manager but still works with RPM under the hood YUM deals with automatic 
 dependencies management. 
 
+To install dependencies it works with dependencies packages they may stored on local or are available on remote server accessed via server protocalls.
+In your loacal system you can find those dependicies file on etc/yum.repos.d/dependencies-files you can adde any dependicies file here in case you wanna 
+install unofficial updates of any modifications 
+
+Steps involved in installing a package ~
+
+
 
 
                                   
