@@ -435,7 +435,9 @@ install unofficial updates of any modifications
 
 Steps involved in installing a package ~
 
-
+yum first checks the transaction check it check repositories of that package it also check if any of the dependincy package installed in system 
+or it needs to be upgraded. After all that it displays transaction summary and asks the choice to further go on. After that choice yum downloads 
+the packages 
 
 
                                   
