@@ -413,5 +413,16 @@ different package manager Just like we talked earlier there are around a thousan
 DPKG/APT and RPM DPKG is used by linux os like ubantu,debian,arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
 manager used by mac os is home brew. 
 
+RPM AND YUM ~
 
+                                   ----------------------------------------------
+                                   |  install   |   rpm -ivh packagename.rpm    |
+                                   |  unistall  |   rpm -e   packagename.rpm    |
+                                   |  upgrade   |   rpm -Uvh packagename.rpm    |
+                                   |  query     |   rpm -q   packagename.rpm    |
+                                   |  verify    |   rpm -Vf  path-to-file       |
+                                   ----------------------------------------------
+
+
+                                  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
