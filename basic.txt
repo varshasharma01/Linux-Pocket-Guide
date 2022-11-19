@@ -413,7 +413,7 @@ different package manager Just like we talked earlier there are around a thousan
 DPKG/APT and RPM DPKG is used by linux os like ubantu,debian,arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
 manager used by mac os is home brew. 
 
-RPM AND YUM ~
+RPM(red hat package manager) ~
 
                                    ----------------------------------------------
                                    |  install   |   rpm -ivh packagename.rpm    |
@@ -422,6 +422,13 @@ RPM AND YUM ~
                                    |  query     |   rpm -q   packagename.rpm    |
                                    |  verify    |   rpm -Vf  path-to-file       |
                                    ----------------------------------------------
+
+YUM(yellow dog updater modifier) ~
+
+Despite all of these RPM does not manage dependencies by itself so we need a better package manager hopefully there a package manager called YUM this 
+package manager works on RPM based distros It is a high level package manager but still works with RPM under the hood YUM deals with automatic 
+dependencies management. 
+
 
 
                                   
