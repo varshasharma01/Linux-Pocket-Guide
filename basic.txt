@@ -455,6 +455,22 @@ yum first checks the transaction check it check repositories of that package it 
 or it needs to be upgraded. After all that it displays transaction summary and asks the choice to further go on. After that choice yum downloads 
 the packages 
 
+DPKG(debian package manager) ~
+
+                                   --------------------------------------------
+                                   |  install   |   dpkg -i packagename.deb   |
+                                   |  unistall  |   dpkg -r packagename.deb   |
+                                   |   list     |   dpkg -l packagename       |
+                                   |  status    |   dpkg -s packagename       |
+                                   |  verify    |   dpkg -p path to package   |
+                                   --------------------------------------------
+
+Just like RPM it does not handle dependencies on its own so a better package manager is required just like YUM, it also works with dpkg under the hood
+
+apt(advance package manager) ~
+
+
+
 
                                   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
