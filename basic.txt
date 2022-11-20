@@ -446,7 +446,7 @@ install unofficial updates of any modifications.
                                    ----------------------------------------------
                                    |  install   |   yum install packagename     |
                                    |  unistall  |   yum remove packagename      |
-                                   |  upgrade   |   yum update packagename      |
+                                   |  update    |   yum update packagename      |
                                    ----------------------------------------------
 
 Steps involved in installing a package ~
@@ -468,8 +468,17 @@ DPKG(debian package manager) ~
 Just like RPM it does not handle dependencies on its own so a better package manager is required just like YUM, it also works with dpkg under the hood
 
 apt(advance package manager) ~
+To install dependencies it can be done by packages stored on local or it may install from remote server by connection using server protocalls its 
+packages can be find at /etc/sources.list/ 
 
-
+                                   ---------------------------------------------------
+                                   |  install        |   apt install packagename     |
+                                   |  unistall       |   apt remove packagename      |
+                                   |  referesh repo  |   apt update                  |
+                                   | install upgrade |   apt upgrade                 |
+                                   |  search         |   apt search packagename      |
+                                   |  upgrade 2.0    |   apt edit-sources            |
+                                   ---------------------------------------------------
 
 
                                   
