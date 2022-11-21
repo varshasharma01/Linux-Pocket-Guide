@@ -189,7 +189,7 @@ The kernel loaded into the memory is usually decompressed then the kernel loads 
 out tasks such as initilizing hardware, cpu sheduling and memory management etc.
 
 INIT ~
-When the kernel gets compleated operational kernel goes for INIT process this process sets up user space and processes needed for user invironment
+When the kernel gets compleated operational kernel goes for INIT process this process sets up user space and processes needed for user environment
 
 In most of the linux distributions INIT process later calls the systemd, it is responsible for broinging linux host into the useable space, mounting
 filesystems starting and managing system services like systemd sys5 is used systemd has one advantage than sys5 is that it paralizes the services 
@@ -480,6 +480,14 @@ packages can be find at /etc/sources.list/
                                    |  upgrade 2.0    |   apt edit-sources            |
                                    ---------------------------------------------------
 
+APT vs APT-GET ~
 
+APT is more user friendly than apt-get as apt-ge3t prints more details that are not necessary and are useless  
                                   
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+File compression and archive ~
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
