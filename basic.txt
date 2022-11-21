@@ -488,10 +488,13 @@ APT is more user friendly than apt-get as apt-ge3t prints more details that are 
 
 File compression and archive ~
 
+Checking disk usage ~
+
 👨🏽‍💻usage:To check the size of file 
 👨🏽‍💻type:du -sh filename.fileformat
 👨🏽‍💻output:outputs the the size of the file in human readable format
 👨🏽‍💻example:98M shit.txt
 👨🏽‍💻note: Multiple options can be used like -g for getting file size in gigabytes -m getting file size in megabytes -k getting file size in kilobytes 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
