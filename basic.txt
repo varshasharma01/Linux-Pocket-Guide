@@ -496,5 +496,11 @@ Checking disk usage ~
 👨🏽‍💻example:98M shit.txt
 👨🏽‍💻note: Multiple options can be used like -g for getting file size in gigabytes -m getting file size in megabytes -k getting file size in kilobytes 
 
+TAR is used to group multiple directories and file into single file aka taped archive 
+
+👨🏽‍💻usage:To archive data 
+👨🏽‍💻type:tar -cf name_of_compressed_file_you_wanna_name.tar file1 file2 file3 
+👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
+👨🏽‍💻example:tar -cf  secrets.tar nukes.txt hitlernumber.txt 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
