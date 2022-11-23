@@ -525,12 +525,21 @@ Apart from archival there are various ways to compress a file based on different
 👨🏽‍💻usage:To compress a file 
 👨🏽‍💻type:bzip2 filename.fileformat
 👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of bz2
-👨🏽‍💻example:bzip.compressed.txt.bz2
+👨🏽‍💻example:bzip2 compressed.txt
 
 👨🏽‍💻usage:To decompress a file 
 👨🏽‍💻type:bunzip2 filename.fileformat.bz2
 👨🏽‍💻output:A copy of that extracted file will be saved 
 👨🏽‍💻example:bunzip2 compressed.txt.bz2
 
+👨🏽‍💻usage:To compress a file 
+👨🏽‍💻type:gzip filename.fileformat
+👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of gz
+👨🏽‍💻example:gzip compressed.txt
+
+👨🏽‍💻usage:To decompress a file 
+👨🏽‍💻type:gunzip filename.fileformat.gz
+👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻example:gunzip compressed.txt.gz
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
