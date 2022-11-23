@@ -542,4 +542,14 @@ Apart from archival there are various ways to compress a file based on different
 👨🏽‍💻output:A copy of that extracted file will be saved 
 👨🏽‍💻example:gunzip compressed.txt.gz
 
+👨🏽‍💻usage:To compress a file 
+👨🏽‍💻type:xz filename.fileformat
+👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of xz
+👨🏽‍💻example:xz compressed.txt
+
+👨🏽‍💻usage:To decompress a file 
+👨🏽‍💻type:unxz filename.fileformat.xz
+👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻example:unxz compressed.txt.xz
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
