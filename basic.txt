@@ -520,5 +520,17 @@ TAR is used to group multiple directories and file into single file aka taped ar
 👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
 👨🏽‍💻note: -c option is used for compressing files and -f for file name 
 
+Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands 
+
+👨🏽‍💻usage:To compress a file 
+👨🏽‍💻type:bzip2 filename.fileformat
+👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of bz2
+👨🏽‍💻example:bzip.compressed.txt.bz2
+
+👨🏽‍💻usage:To decompress a file 
+👨🏽‍💻type:bunzip2 filename.fileformat.bz2
+👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻example:bunzip2 compressed.txt.bz2
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
