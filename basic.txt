@@ -502,5 +502,12 @@ TAR is used to group multiple directories and file into single file aka taped ar
 👨🏽‍💻type:tar -cf name_of_compressed_file_you_wanna_name.tar file1 file2 file3 
 👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
 👨🏽‍💻example:tar -cf  secrets.tar nukes.txt hitlernumber.txt 
+👨🏽‍💻note: -c option is used for compressing files and -f is used for specifying the name of compressed file  
+
+👨🏽‍💻usage:To display the contents of the archive file 
+👨🏽‍💻type:tar -tf filename.tar
+👨🏽‍💻output:Files and folders that tar file composed of will be printed 
+👨🏽‍💻example:tar -tf  secrets.tar 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
