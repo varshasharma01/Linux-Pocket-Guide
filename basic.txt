@@ -509,5 +509,10 @@ TAR is used to group multiple directories and file into single file aka taped ar
 👨🏽‍💻output:Files and folders that tar file composed of will be printed 
 👨🏽‍💻example:tar -tf  secrets.tar 
 
+👨🏽‍💻usage:To extract the tar file 
+👨🏽‍💻type:tar -xf filename.tar
+👨🏽‍💻output:Files and folders that tar file composed will be extracted
+👨🏽‍💻example:tar -xf  secrets.tar
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
