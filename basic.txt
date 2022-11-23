@@ -524,32 +524,36 @@ Apart from archival there are various ways to compress a file based on different
 
 👨🏽‍💻usage:To compress a file 
 👨🏽‍💻type:bzip2 filename.fileformat
-👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of bz2
+👨🏽‍💻output:compressed file will be saved and with a extra extension of bz2
 👨🏽‍💻example:bzip2 compressed.txt
 
 👨🏽‍💻usage:To decompress a file 
 👨🏽‍💻type:bunzip2 filename.fileformat.bz2
-👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻output:file will be decompressed  
 👨🏽‍💻example:bunzip2 compressed.txt.bz2
 
 👨🏽‍💻usage:To compress a file 
 👨🏽‍💻type:gzip filename.fileformat
-👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of gz
+👨🏽‍💻output:compressed file will be saved and with a extra extension of gz
 👨🏽‍💻example:gzip compressed.txt
 
 👨🏽‍💻usage:To decompress a file 
 👨🏽‍💻type:gunzip filename.fileformat.gz
-👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻output:file will be decompressed 
 👨🏽‍💻example:gunzip compressed.txt.gz
 
 👨🏽‍💻usage:To compress a file 
 👨🏽‍💻type:xz filename.fileformat
-👨🏽‍💻output:A copy of the compressed file will be saved and with a extra extension of xz
+👨🏽‍💻output:compressed file will be saved and with a extra extension of xz
 👨🏽‍💻example:xz compressed.txt
 
 👨🏽‍💻usage:To decompress a file 
 👨🏽‍💻type:unxz filename.fileformat.xz
-👨🏽‍💻output:A copy of that extracted file will be saved 
+👨🏽‍💻output:file will be decompressed
 👨🏽‍💻example:unxz compressed.txt.xz
+
+There is no need of everytime decompressing a file to read its content it can be done using 
+
+zcat / bzcat / xzcat
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
