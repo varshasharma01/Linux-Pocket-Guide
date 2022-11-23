@@ -514,5 +514,11 @@ TAR is used to group multiple directories and file into single file aka taped ar
 👨🏽‍💻output:Files and folders that tar file composed will be extracted
 👨🏽‍💻example:tar -xf  secrets.tar
 
+👨🏽‍💻usage:To archive data with reduction in size of tar file 
+👨🏽‍💻type:tar -zcf name_of_compressed_file_you_wanna_name.tar file1 file2 file3 
+👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
+👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
+👨🏽‍💻note: -c option is used for compressing files and -f for file name 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
