@@ -556,4 +556,13 @@ There is no need of everytime decompressing a file to read its content it can be
 
 zcat / bzcat / xzcat
 
+locate file ~
+
+👨🏽‍💻usage:To locate a file  
+👨🏽‍💻type:locate filename.fileformat
+👨🏽‍💻output:All the files that share the same name heir paths will be printed 
+👨🏽‍💻example:locate 1.1.txt
+👨🏽‍💻note:It may notr work on systems because it works on data base to update the data base of the locations type updatedb command 
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
