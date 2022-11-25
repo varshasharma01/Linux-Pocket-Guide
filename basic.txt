@@ -564,5 +564,9 @@ locate file ~
 👨🏽‍💻example:locate 1.1.txt
 👨🏽‍💻note:It may notr work on systems because it works on data base to update the data base of the locations type updatedb command 
 
+👨🏽‍💻usage:To locate a file  
+👨🏽‍💻type:find directory-in-you-wanna-search -name filename.fileformat
+👨🏽‍💻output:All the files that share the same name heir paths will be printed 
+👨🏽‍💻example:find akashagarwal -name 1.1.txt
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
