@@ -576,9 +576,43 @@ locate file ~
 Search data in files ~
 
 👨🏽‍💻usage:To search data in a file  
-👨🏽‍💻type:grep data 1.1.txt
+👨🏽‍💻type:grep data filename.fileformat
 👨🏽‍💻output:All the lines that contains the provided data will print. 
 👨🏽‍💻example:gerp second 1.1.txt
 
+👨🏽‍💻usage:To search data in a file  regardless its case sesnitiveness
+👨🏽‍💻type:grep -i data filename.fileformat
+👨🏽‍💻output:All the lines that contains the provided data will print. 
+👨🏽‍💻example:gerp -i second 1.1.txt
+
+👨🏽‍💻usage:To search files that contains the data provided 
+👨🏽‍💻type:grep -r "data" directory-location
+👨🏽‍💻output:All the files that contains the provided data will print. 
+👨🏽‍💻example:gerp -r "second" /nuclearcodes/asia
+
+👨🏽‍💻usage:To search lines that do not contains the data provided  
+👨🏽‍💻type:grep -v "data" filename.fileformat
+👨🏽‍💻output:All the lines that do not contains the provided data will print. 
+👨🏽‍💻example:gerp -v "sixtynine" codes.txt
+
+All these above data searching command have one thing in common that they print the lines/files that conatins even a part of data provided 
+to make things more specific -w option is used 
+
+👨🏽‍💻usage:To search line that contains the data provided extact data 
+👨🏽‍💻type:grep -w data filename.fileformat
+👨🏽‍💻output:All the line contains the exact provided data will print. 
+👨🏽‍💻example:gerp -w zerozeroseven codes.txt
+
+There might be a case you wanna se what line lies above the answer or what lines below the answer to fulfil this wish -A and -B options was born 
+
+👨🏽‍💻usage:To print the n number of lines above the desired index being completely independent of the pattern searched 
+👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data filename.fileformat
+👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print above it. 
+👨🏽‍💻example:gerp -A1 zerozeroseven codes.txt
+
+👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched 
+👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data filename.fileformat
+👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print below it. 
+👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
