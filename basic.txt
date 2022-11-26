@@ -496,6 +496,8 @@ Checking disk usage ~
 👨🏽‍💻example:98M shit.txt
 👨🏽‍💻note: Multiple options can be used like -g for getting file size in gigabytes -m getting file size in megabytes -k getting file size in kilobytes 
 
+File archival ~
+
 TAR is used to group multiple directories and file into single file aka taped archive 
 
 👨🏽‍💻usage:To archive data 
@@ -519,6 +521,8 @@ TAR is used to group multiple directories and file into single file aka taped ar
 👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
 👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
 👨🏽‍💻note: -c option is used for compressing files and -f for file name 
+
+File compression ~
 
 Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands 
 
@@ -568,5 +572,13 @@ locate file ~
 👨🏽‍💻type:find directory-in-you-wanna-search -name filename.fileformat
 👨🏽‍💻output:All the files that share the same name heir paths will be printed 
 👨🏽‍💻example:find akashagarwal -name 1.1.txt
+
+Search data in files ~
+
+👨🏽‍💻usage:To search data in a file  
+👨🏽‍💻type:grep data 1.1.txt
+👨🏽‍💻output:All the lines that contains the provided data will print. 
+👨🏽‍💻example:gerp second 1.1.txt
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
