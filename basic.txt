@@ -625,6 +625,11 @@ Standard input - This stream accepts text as its input
 Standard output - The output generated is delived by this stream 
 Standard error - This stream delivers in case the given command is incorrect 
 
+👨🏽‍💻usage:To redirect the output and store in it a file 
+👨🏽‍💻type:echo "data" > filename.fileformat 
+👨🏽‍💻output:The data in the doubble quotes will overwrite the previous data and get store in the given file  
+👨🏽‍💻example:echo "420690071945" > nuclearcode.txt
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
