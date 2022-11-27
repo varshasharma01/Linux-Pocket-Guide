@@ -648,6 +648,11 @@ created
 👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
 created 
 
+We can make output of one command to the input for the second command 
 
+👨🏽‍💻usage:To execute merege two command  
+👨🏽‍💻type:command1 | command2
+👨🏽‍💻output:If the output of the first command is suitable for the second both will execute
+👨🏽‍💻example: grep -i no 1.1.txt | less
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
