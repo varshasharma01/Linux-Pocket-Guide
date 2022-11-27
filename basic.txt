@@ -656,3 +656,15 @@ We can make output of one command to the input for the second command
 👨🏽‍💻example: grep -i no 1.1.txt | less
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Console based text editors ~
+
+The real chads uses the console base text editors like vi editor 
+
+👨🏽‍💻usage:To see the contents of a file in vi editor 
+👨🏽‍💻type:vi filename.fileformat
+👨🏽‍💻output:All the data of the file will print in the vi editor 
+👨🏽‍💻example:vi nuclearcodes.txt
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
