@@ -666,5 +666,16 @@ The real chads uses the console base text editors like vi editor
 👨🏽‍💻output:All the data of the file will print in the vi editor 
 👨🏽‍💻example:vi nuclearcodes.txt
 
+The legendary vi editor have three modes 
+Command - the default mode in vi editor is command move we can type command such as cp mv etc 
+Insert - to switch command mode to insert mode   i    is used, this mode allows us to edit data aka add test delete text 
+Last line - After getting our work done press esc key and : to switch to last line ~~ the escape key makes user go into command mode and :
+takes user to last line. after reaching the last line we have options either to save/discard and exit vi editor 
+
+Command mode : 
+After getting into command mode you will discover a small block blinking this is a cursor of vi editor this cursor can travell to any line and any word 
+using the arrow keys of k for up h for left j for down l for right  
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
