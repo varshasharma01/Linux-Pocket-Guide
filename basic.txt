@@ -616,3 +616,15 @@ There might be a case you wanna se what line lies above the answer or what lines
 👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+IO direction ~
+
+There are three data streams created when a command is launched 
+
+Standard input - This stream accepts text as its input 
+Standard output - The output generated is delived by this stream 
+Standard error - This stream delivers in case the given command is incorrect 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
