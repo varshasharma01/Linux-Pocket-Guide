@@ -629,6 +629,18 @@ Standard error - This stream delivers in case the given command is incorrect
 👨🏽‍💻type:echo "data" > filename.fileformat 
 👨🏽‍💻output:The data in the doubble quotes will overwrite the previous data and get store in the given file  
 👨🏽‍💻example:echo "420690071945" > nuclearcode.txt
+👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
+created 
+
+If you wanna type and save content at the same time these command are used 
+
+👨🏽‍💻usage:To redirect the input to store in a file  
+👨🏽‍💻type:cat > filename.fileformat 
+👨🏽‍💻output:After this command given there will free typing to exit that free typing type control+c all the contents will be saved 
+👨🏽‍💻example:cat > nuclearcode.txt
+👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
+created 
+
 
 
 
