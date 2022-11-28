@@ -668,11 +668,12 @@ The real chads uses the console base text editors like vi editor
 
 The legendary vi editor have three modes 
 Command - the default mode in vi editor is command move we can type command such as cp mv etc 
-Insert - to switch command mode to insert mode   i    is used, this mode allows us to edit data aka add test delete text 
+Insert  - this mode allows us to edit data aka add test delete text 
 Last line - After getting our work done press esc key and : to switch to last line ~~ the escape key makes user go into command mode and :
 takes user to last line. after reaching the last line we have options either to save/discard and exit vi editor 
 
 Command mode : 
+Press escape key for entering into command mode 
 Lets gets handy with the comand mode ~
 arrow up/k     for cursor up 
 arrow down/j   for cursor down
@@ -686,6 +687,13 @@ To redo the task press ctrl+r
 To undo the task press u 
 To move cursor to the searched or desired part press /sequence-of-Character to search pattern above type ?sequence-of-Character
 To find the above pattern above he current line press N and for the below press n
+
+Insert mode :
+Press i to enter into insert mode or o or a 
+To make any changes first going into command mode is necessary 
+To save the changes after editing press ~ escape : w
+To save the changes and extit press ~ escape : wq 
+To exit without making changes press ~ escape : q !
 
 
 
