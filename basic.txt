@@ -673,8 +673,19 @@ Last line - After getting our work done press esc key and : to switch to last li
 takes user to last line. after reaching the last line we have options either to save/discard and exit vi editor 
 
 Command mode : 
-After getting into command mode you will discover a small block blinking this is a cursor of vi editor this cursor can travell to any line and any word 
-using the arrow keys of k for up h for left j for down l for right  
+Lets gets handy with the comand mode ~
+arrow up/k     for cursor up 
+arrow down/j   for cursor down
+arrow left/h   for cursor left 
+arrow right/l  for cursor right
+To copy and paste a line just press y two times on the first alphabet of the desired line and press p on desired place where you want to paste it.
+To delete a letter just press x on the highlighted cursor
+To delete the desired line just press d two times on the first alphabet of that line 
+To delete the number of lines including the current type d n d   (n is the number of lines)
+To redo the task press ctrl+r 
+To undo the task press u 
+To move cursor to the searched or desired part press /sequence-of-Character to search pattern above type ?sequence-of-Character
+To find the above pattern above he current line press N and for the below press n
 
 
 
