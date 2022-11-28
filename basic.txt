@@ -695,6 +695,7 @@ To save the changes after editing press ~ escape : w
 To save the changes and extit press ~ escape : wq 
 To exit without making changes press ~ escape : q !
 
+The real sigma males uses vim editor Vim is the dad of vi in terms of qualities it includes spell check, plugins, comparison, merging, gui etc. 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
