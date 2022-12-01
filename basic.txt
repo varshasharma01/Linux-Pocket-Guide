@@ -711,6 +711,19 @@ The users in the group have a unique GID If the user is not a part if any group 
 👨🏽‍💻output:The name ID GID and groups in which user a part of will be printed 
 👨🏽‍💻example:id
 
+Account types ~
+User account: used by user 
+Super user account: root UID=0
+System accounts: created and used by the system and not find under home directory UID<100 or 500-1000
+service accounts: accounts used by services 
 
+👨🏽‍💻usage:To get to know about account which is logged into the system 
+👨🏽‍💻type:who
+👨🏽‍💻output:The accounts loggged into the computer will print
+👨🏽‍💻example:who
 
+👨🏽‍💻usage:To get record of the all logged in users 
+👨🏽‍💻type:last
+👨🏽‍💻output:The accounts that previously loggged into the computer will print
+👨🏽‍💻example:last
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
