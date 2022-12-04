@@ -738,7 +738,26 @@ As we discussed earlier that every user have a uid gid passwd at the same time m
 👨🏽‍💻example:useradd myselfakashagarwal 
 👨🏽‍💻note:once logged in user can check itself by typing whoami 
 
+The adding a user to the system is done above is the simplest way there's the correct more advanced way to do it with custom UID and GID and 
+many more 
 
+👨🏽‍💻usage:To add another user to the system 
+👨🏽‍💻type:useradd -u custom-uid -g custom-gid -d /custom-directory -s /bin/custom-shell -c "custom-comments" name-of-the-user 
+👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
+👨🏽‍💻example:useradd myselfakashagarwal 
+👨🏽‍💻note:once logged in user can check itself by typing whoami 
+
+-u is used for giving custom UID to user example 69,420,1945,2002 aka user defined 
+-g is used for giving custom GID to user example 69,420,1945,2002 aka user defined
+-d is used for providing the custom home directory example /home/users/myselfakashagarwal
+-s is used for providing the default shell example /bin/bash, /bin/sh, /bin/zsh 
+-c is used for custom comments 
+others can also be used like 
+-e is used for expiration date 
+-G is used for creating a user with multiple secondary groups 
+at last there's  name of the user  
+
+If you wanna see the details of the user just grep -i user-name /etc/passwd
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
