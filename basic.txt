@@ -705,6 +705,7 @@ Secuerity and file permissions ~
 Every user in linux has an account associated with linux aka have an user name and a password apart from both of these user also have a uid 
 you can find these informaton in /etc/passwd A group of users that share the same system can be grouped together this group is found in /etc/group
 The users in the group have a unique GID If the user is not a part if any group the user is added to a group with same GID as UID.
+Sudo is used to get super user privilages the powers provided can be edited as the description of it lies in the /etc/sudoers 
 
 👨🏽‍💻usage:To get information about user 
 👨🏽‍💻type:id
@@ -726,4 +727,18 @@ service accounts: accounts used by services
 👨🏽‍💻type:last
 👨🏽‍💻output:The accounts that previously loggged into the computer will print
 👨🏽‍💻example:last
+
+User management ~
+
+As we discussed earlier that every user have a uid gid passwd at the same time may or maybe part of other groups there are commands to manage users 
+
+👨🏽‍💻usage:To add another user to the system 
+👨🏽‍💻type:useradd user-name 
+👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
+👨🏽‍💻example:useradd myselfakashagarwal 
+👨🏽‍💻note:once logged in user can check itself by typing whoami 
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
