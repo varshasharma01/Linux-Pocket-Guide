@@ -759,5 +759,20 @@ at last there's  name of the user
 
 If you wanna see the details of the user just grep -i user-name /etc/passwd
 
+👨🏽‍💻usage:To remove user from the system 
+👨🏽‍💻type:userdel user-name 
+👨🏽‍💻output:That user will be deleated 
+👨🏽‍💻example:userdel god
+
+👨🏽‍💻usage:To add a group to the system 
+👨🏽‍💻type:groupadd -g group-id group-name  
+👨🏽‍💻output:Group will be created with the given GID 
+👨🏽‍💻example:groupadd -g 1983 GNU
+
+👨🏽‍💻usage:To remove group from the system 
+👨🏽‍💻type:groupdel group-name 
+👨🏽‍💻output:That group will be deleated 
+👨🏽‍💻example:groupdel AT&T
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
