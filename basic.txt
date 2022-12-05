@@ -818,4 +818,20 @@ If there is - instead of r/w/x it means that that particular account does not ha
 are read =4 write =2 execute =1 none(-)=0 .  If the user is not the owner of the file the group permissions are allowed The permission are represented
 by the sum of the octal values 
 
+👨🏽‍💻usage:To modify permissions of the file  
+👨🏽‍💻type:chomd USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS
+👨🏽‍💻output:Permissions will be modified 
+👨🏽‍💻example:chomd u+rwx nuclearcodes.txt
+👨🏽‍💻note:Taking example of the above command this + represent that permissions are provided in case of removal of permissions - is used, similarly 
+in the above example u represent the user aka whose permissions are modified this can also be group represented by g or others represented by o or 
+can be together at the same time. example chomd go+rwx nuclearcode.txt these permissions cab be grouped by using a comma example ~
+chomd g+rwx,o-rwx,u+rwx nuclearcodes.txt 
+
+There if you wanna apply same permissions to all types of account 
+chomd 777 filename.fileformat       to provide read write and execute permissions to all kinds of account 
+chomd 555 filename.fileformat       to provide read and execute permissions to all kinds of account 
+chomd 660 filename.fileformat       to provide read and write access to owner and no access to others 
+chomd 750 filename.fileformat       to provide all permissions to user and read and write permissions to group and no permissions to other 
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
