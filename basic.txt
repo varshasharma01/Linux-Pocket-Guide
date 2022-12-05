@@ -774,5 +774,36 @@ If you wanna see the details of the user just grep -i user-name /etc/passwd
 👨🏽‍💻output:That group will be deleated 
 👨🏽‍💻example:groupdel AT&T
 
+Access control files ~
+
+Majority of access control files aree stored in /etc directory read:everyone write:root 
+
+/etc/passwd this file contains the information about the user and the system including UID GID HOME SHELL GROUPS but this file does not contain 
+passwords there are multiple feilds seperated by : 
+USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
+USERNAME~Name of the user using the system 
+PASSWORD~x aka this field resemble x as the password is stored in /etc/shadow 
+UID~User id of the user 
+GID~Group id of the user 
+GECOS~This is exceptional this may store user details like phone number etc 
+HOMEDIR~This field represent location of home directory of the user 
+SHELL~This field represent the default shell used by the user  
+
+/etc/shadow passwords are stored in this file they are not readable aka contents of this file are hashed feilds in /etc/shadow are 
+USERNAME:PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
+USERNAME~User name of the user 
+PASSWORD~Password of the user but in hashed format @empty field means the passwd was never set for the user 
+LASTCHANGE~The date since the user last changed its password (the date format is in epic )
+MINAGE~The minimum number of days user have to wait to reset the password 
+MAXAGE~The maximum number of days the current pasword will last 
+WARN:The number of days remaining till this password will last 
+INACTIVE~The number of days even after the expiray of the passwd that password will be accepted 
+EXPDATE~Date at which the user account will be expired 
+
+/etc/group this file stores all the information of the groups like GID MEMBERS fields of this file are ~
+NAME~Group name 
+PASSWORD~Password of the user indicating x 
+GID~Group id 
+MEMBERS~Members the group is part of 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
