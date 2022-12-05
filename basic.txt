@@ -806,4 +806,16 @@ PASSWORD~Password of the user indicating x
 GID~Group id 
 MEMBERS~Members the group is part of 
 
+File permissions and ownership ~
+
+You probbably have seen this drwxr-xr-x kinda things after you list a file aka ls -l this drwxr-xr-x have describes many things including file type 
+first letter of this line describes the type of file in this case it is a directory 
+The next three letters represent read(r) write(w) execute(e) permissions provided to the user 
+The next three letters after user's permissions represent read(r) write(w) execute(e) permissions provided to the Group
+The last letters determine permissions to the other sources 
+
+If there is - instead of r/w/x it means that that particular account does not have that particular r/w/x access the octal value of these permissions 
+are read =4 write =2 execute =1 none(-)=0 .  If the user is not the owner of the file the group permissions are allowed The permission are represented
+by the sum of the octal values 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
