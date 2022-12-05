@@ -560,6 +560,8 @@ There is no need of everytime decompressing a file to read its content it can be
 
 zcat / bzcat / xzcat
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 locate file ~
 
 👨🏽‍💻usage:To locate a file  
@@ -572,6 +574,8 @@ locate file ~
 👨🏽‍💻type:find directory-in-you-wanna-search -name filename.fileformat
 👨🏽‍💻output:All the files that share the same name heir paths will be printed 
 👨🏽‍💻example:find akashagarwal -name 1.1.txt
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Search data in files ~
 
@@ -728,6 +732,8 @@ service accounts: accounts used by services
 👨🏽‍💻output:The accounts that previously loggged into the computer will print
 👨🏽‍💻example:last
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 User management ~
 
 As we discussed earlier that every user have a uid gid passwd at the same time may or maybe part of other groups there are commands to manage users 
@@ -774,6 +780,8 @@ If you wanna see the details of the user just grep -i user-name /etc/passwd
 👨🏽‍💻output:That group will be deleated 
 👨🏽‍💻example:groupdel AT&T
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Access control files ~
 
 Majority of access control files aree stored in /etc directory read:everyone write:root 
@@ -806,7 +814,11 @@ PASSWORD~Password of the user indicating x
 GID~Group id 
 MEMBERS~Members the group is part of 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 File permissions and ownership ~
+
+File permissions ~
 
 You probbably have seen this drwxr-xr-x kinda things after you list a file aka ls -l this drwxr-xr-x have describes many things including file type 
 first letter of this line describes the type of file in this case it is a directory 
@@ -832,6 +844,25 @@ chomd 777 filename.fileformat       to provide read write and execute permission
 chomd 555 filename.fileformat       to provide read and execute permissions to all kinds of account 
 chomd 660 filename.fileformat       to provide read and write access to owner and no access to others 
 chomd 750 filename.fileformat       to provide all permissions to user and read and write permissions to group and no permissions to other 
+
+File ownership ~ 
+
+chown owner:group filename.fileformat
+
+👨🏽‍💻usage:To change the ownership to the user and the group of the file 
+👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  filename.fileformat
+👨🏽‍💻output:Ownership will be provided to the provided user and group 
+👨🏽‍💻example:chown India:asia nuclearcodes.txt
+
+👨🏽‍💻usage:To provide ownership only to user no changes provided to the group
+👨🏽‍💻type:chown india nuclearcodes.txt
+👨🏽‍💻output:User will also get the ownership of the file and the ownership of the group remain default
+👨🏽‍💻example:groupdel AT&T
+
+👨🏽‍💻usage:To change ownership of the group 
+👨🏽‍💻type:chgrp group-name filename.fileformat
+👨🏽‍💻output:Ownership of the group will change and the ownership of the user remain default
+👨🏽‍💻example:chgrp asia filename.fileformat 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
