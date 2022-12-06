@@ -880,5 +880,14 @@ SSH is used for login and executing commands on a local server
 👨🏽‍💻usage:To connect via remote server via ssh 
 👨🏽‍💻type:ssh -l USER HOST-NAME-OR-IP-ADDRESS
 
+The thing is these remote logins require id and password there is another way to login via no password aka password less ssh for this user generates
+key aka key pair consist of private key and public key when the public key is installled in the remote server it can connect it with a client 
+which has the private key 
+
+👨🏽‍💻usage:To generate private key and public key and store in the home directory 
+👨🏽‍💻type:ssh-keygen -t rsa -b 4096 -C "your mail including doubble quotes"
+👨🏽‍💻note:This above key generation is quite handy as it require mail you can also use this ssh-keygen -t rsa in order to generate both keys id_rsa is 
+the private key and must not be shared to anyone in any case the other id_rsa.pub can be shared as it the public id. 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
