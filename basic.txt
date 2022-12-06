@@ -889,5 +889,17 @@ which has the private key
 👨🏽‍💻note:This above key generation is quite handy as it require mail you can also use this ssh-keygen -t rsa in order to generate both keys id_rsa is 
 the private key and must not be shared to anyone in any case the other id_rsa.pub can be shared as it the public id. 
 
+Once the public key is generated it must be copied to the remote server 
+👨🏽‍💻usage:To copy public key to remote server
+👨🏽‍💻type:ssh-copy-id USER@SERVER 
+
+👨🏽‍💻usage:To login into remote server
+👨🏽‍💻type:ssh SERVER
+
+SCP ~
+
+Scp allows data to copy and transfer over ssh  
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
