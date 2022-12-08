@@ -930,11 +930,20 @@ This is called chain becuase it contails series of terms other things it can fil
 👨🏽‍💻usage:To add rule in iptable  
 👨🏽‍💻type:iptables -A INPUT -p PROTOCOL -s SOURCE-IP --dport PORT -j ACTION 
 👨🏽‍💻note:The following options are ~
+
 -A = add rule 
 -p = protocol
 -s = source ip like 420.69.19.45
 --dport = destination port
 -j = action to take 
+-I = used to insert a rule at the top of the ip table 
+
+👨🏽‍💻usage:To add rule in iptable to disable default input chain 
+👨🏽‍💻type:iptables -A INPUT -p tcp --dport 22 -j DROP
+👨🏽‍💻note:The sequence in which rules are applied are very important if the first one gets executed othe others are ignored 
+
+👨🏽‍💻usage:To delete rule 
+👨🏽‍💻type:iptables -D OUTPUT INDEX-OF-THE-RULE
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
