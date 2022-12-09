@@ -947,3 +947,24 @@ This is called chain becuase it contails series of terms other things it can fil
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+cronjob ~
+
+In a nutshell this command is used to automate task for example if wanna pull your git repo every day this task can be automted using cronjob 
+
+👨🏽‍💻usage:To view current automated task on the system by the user 
+👨🏽‍💻type:cronjob -e 
+👨🏽‍💻note:After this command is executed the cronjob file will be opened in the vi editor here user can delete or modify tasks.
+
+The format of the shedule of the task ~
+minute hour day month command-to-be-executed 
+
+for example if want to execute above task this would be like this 
+00 21 * * git pull
+
+In the above field * represent that the task is executed every time as per as above example every day every month if you want the task to be automate
+every n time /interval-time-in-that-format can be added with * . In case you wanna automate the task relate to specific weekday one more field can 
+be added to do so, 1 for monday 2 for tue .. and so on.
+The time used here is 24 hour format 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
