@@ -968,3 +968,26 @@ be added to do so, 1 for monday 2 for tue .. and so on.
 The time used here is 24 hour format 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+networking skills required for basic linux 
+
+DNS 
+
+Supporse there are multiple system sharing a common network but a different ip, in that case rembering and entering ip of each system can be a 
+nightmare to encouter this dns(domain name system) is used.
+For example www.github.com 
+www = sub domain
+gitbhub = domain
+com = top level domain 
+
+After typing the name in the browser the browser will create a query , first it will check in the local cachae if not found it will check on the 
+recursive server which will check other servers for example server containing registered name with top level domains after the ip if found it is 
+stored in cachae for future use. The local domains can be found under /etc/hosts you can write the ip and the domain name. Run hostname command 
+to find the hostname of the device. Setting a DNS server is very beneficial in case there are large number of user and one they usually made changes 
+in their domain name. Every system is connected to dns server it can be seen at /etc/resolv.conf  
+
+👨🏽‍💻usage:To add custom domain name limited to local 
+👨🏽‍💻type:cat >> /etc/hosts 
+👨🏽‍💻note:After this command gets run type your ip and then yor domain name of your choice 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
