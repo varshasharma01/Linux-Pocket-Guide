@@ -973,7 +973,7 @@ networking skills required for basic linux
 
 DNS 
 
-Supporse there are multiple system sharing a common network but a different ip, in that case rembering and entering ip of each system can be a 
+Suppose there are multiple system sharing a common network but a different ip, in that case remembering and entering ip of each system can be a 
 nightmare to encouter this dns(domain name system) is used.
 For example www.github.com 
 www = sub domain
@@ -989,5 +989,34 @@ in their domain name. Every system is connected to dns server it can be seen at 
 👨🏽‍💻usage:To add custom domain name limited to local 
 👨🏽‍💻type:cat >> /etc/hosts 
 👨🏽‍💻note:After this command gets run type your ip and then yor domain name of your choice 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Service management with systemd ~
+
+To make our own service we have to create a service file aka file ending with a extension of .service this service file has to be created under 
+/etc/systemd/system/YOUR-SERVICE-FILE 
+
+There are sections in a systemd service file ~
+[Unit] - description of service and the service needed to start before this service  
+[Service] - Commands and the command options you can also define environmental variabeles it may also conatain a service to shutdown a service 
+[Install] - Which target requires this service 
+Other example includes [Socket]
+
+Unit section ~
+
+[Unit] - this section usually have 2 major parts others are not much needed in regular case 
+Description - name of the service
+After - The service will only start if the services mentioned in this are currently running 
+ConditionPathExists = The service will only start if the item provided in this field does not exists 
+Documentation
+Requires 
+
+example to set the service in unit ~
+[Unit]
+Description=Launch nukes
+After=network.target 
+ConditionPathExists=!/myselfakashagarwal/antiBallesticMissile
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
