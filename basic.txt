@@ -1003,20 +1003,41 @@ There are sections in a systemd service file ~
 [Install] - Which target requires this service 
 Other example includes [Socket]
 
-Unit section ~
 
-[Unit] - this section usually have 2 major parts others are not much needed in regular case 
+Unit section ~
 Description - name of the service
 After - The service will only start if the services mentioned in this are currently running 
-ConditionPathExists = The service will only start if the item provided in this field does not exists 
-Documentation
-Requires 
+ConditionPathExists = The service will only start if the item provided in this field does not exists another example of fields are Documentation 
 
-example to set the service in unit ~
+example  ~
 [Unit]
 Description=Launch nukes
 After=network.target 
-ConditionPathExists=!/myselfakashagarwal/antiBallesticMissile
+ConditionPathExists=!~/usr/bin/antiBallesticMissile
+After creating the service user have to start this service using systemctl : systemctl start NAME-OF-SERVICE-FILE.SERVICE
+
+
+Service section ~
+ExecStart ExecStartPre ExecStartPost ExecStop ExecStopPre ExecStopPost ExecReload ExecReloadPre ExecReloadPost - these all manage service worktime 
+and contain the paths for example ExecStart=/SERVICE-LOCATION 
+Type - service are of multiple types simple,forking,oneshot,dbus,notify  the type field defines the type of service  
+User - this field specifies the user whow want to run this service 
+Restart- this filed will amke the service to restart according to user circumstances usually its value is ~ on-failure
+RestartSec - this field will make the service to restart after a given interval of time its in second 
+There are multiple feilds but for now we are limited to the intro only 
+
+example ~
+[Service]
+ExecStart=~/usr/bin/nuclearmissiles.service
+User=serviceProvideFormyselfakashagarwal
+Restart=on-failure
+
+Install section ~ 
+Wantedby - The service is reques by which target mainly graphical.target or multiuser.target
+
+example ~
+[Install]
+Wantedby multiuser.target
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
