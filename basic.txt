@@ -1040,4 +1040,36 @@ example ~
 Wantedby multiuser.target
 
 
+Systemd tools to manage service ~
+
+Systemctl was explored earlier to change target of the system this systemctl has multiple usecases including ~
+Manage system state 
+Start stop restart reload 
+Enable disable units 
+List and update targets 
+
+👨🏽‍💻usage:To manage service using systemctl
+👨🏽‍💻type:systemctl TASK SERVICE-NAME
+👨🏽‍💻example:systemctl start launchmissile
+👨🏽‍💻note:There are variety of tasks that can be done using systemctl example stop start enable disable reload restart status 
+
+👨🏽‍💻usage:To apply changes to system after making changes in the service file 
+👨🏽‍💻type:systemctl deamon-reload
+
+👨🏽‍💻usage:To apply and edit changes at the same time 
+👨🏽‍💻type:systemctl edit SERVICE-FILE-NAME.service --full
+👨🏽‍💻example:systemctl edit launchmissile.service --full
+👨🏽‍💻note:This command will update and apply changes at the same time earlier if we edit the service file we have to use deamon-reload using this 
+command will automaticially open the service file into the text editor 
+
+👨🏽‍💻usage:To seee the current status of all the running system services  
+👨🏽‍💻type:system list-units --all
+👨🏽‍💻note:This command will list all the current runnning units with status description active etc 
+
+👨🏽‍💻usage:To the logs of the services  
+👨🏽‍💻type:journalctl -u SERVICE-NAME.service 
+👨🏽‍💻note:-b command can be used to view all logs 
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
