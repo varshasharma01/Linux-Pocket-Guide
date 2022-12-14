@@ -615,7 +615,7 @@ There might be a case you wanna se what line lies above the answer or what lines
 👨🏽‍💻example:gerp -A1 zerozeroseven codes.txt
 
 👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched 
-👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data filename.fileformat
+👨🏽‍💻type:grep -B(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data filename.fileformat
 👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print below it. 
 👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt
 
@@ -1070,6 +1070,17 @@ command will automaticially open the service file into the text editor
 👨🏽‍💻type:journalctl -u SERVICE-NAME.service 
 👨🏽‍💻note:-b command can be used to view all logs 
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Storage management ~
+
+Types of partitions ~
+Primary partitions: These are the most common type of partition and are typically used to hold the operating system.
+Extended partitions: These partitions are used to create logical partitions.
+Logical partitions: These partitions are created within an extended partition and are used to hold data.
+Swap partitions: These partitions are used to increase the amount of memory available to the operating system.
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
