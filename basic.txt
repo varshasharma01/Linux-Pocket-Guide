@@ -1,13 +1,13 @@
-                         
-           ▄▄                                  
-▀████▀     ██                                  
-  ██                                           
-  ██     ▀███ ▀████████▄ ▀███  ▀███ ▀██▀   ▀██▀
-  ██       ██   ██    ██   ██    ██   ▀██ ▄█▀  
-  ██     ▄ ██   ██    ██   ██    ██     ███    
-  ██    ▄█ ██   ██    ██   ██    ██   ▄█▀ ██▄  
-██████████████▄████  ████▄ ▀████▀███▄██▄   ▄██▄
-                                               
+               ▄▄                                              
+▀████▀         ██                                              
+  ██                                                           
+  ██         ▀███     ▀████████▄     ▀███  ▀███     ▀██▀   ▀██▀
+  ██           ██       ██    ██       ██    ██       ▀██ ▄█▀  
+  ██     ▄     ██       ██    ██       ██    ██         ███    
+  ██    ▄█     ██       ██    ██       ██    ██       ▄█▀ ██▄  
+██████████   ▄████▄   ▄████  ████▄     ▀████▀███▄   ▄██▄   ▄██▄
+                                                               
+                                                               
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,12 +25,12 @@ kernel which act as a mediater between hardware and applications, user interact 
 upcomming years it created may tols and applications like tar, bash just the name of few which can be used by linux kernel that let to revolution 
 in software world.
 
-As it gave freedom to developers tonnes of developers made their contributions and created thousand of linux distro A distro is a complete operating
+As it gave freedom to developers tonnes of developers made their contributions and created thousand of linux distro. A distro is a complete operating
 system based on linux kernel which comes with linux kernel packages package-manager Graphic-user-interface. The family tree of linux is huge 
-but have one thing in common tyhe seed of linux with  tools, utilities and freedom provided by GNU 
+but have one thing in common the seed of linux with tools, utilities and freedom provided by GNU. 
 
 We will be understanding the basics of linux topics like core-concepts package-manager file-system networking storage secuerity-filepermissions
-and many more. 😀
+and many more so keep it till end. 😀
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,7 +75,7 @@ yeah ! I made the above digram myself 😎
 We use shell to communicate with kernel, which communicates with hardware so, we indirectly communicate with the hardware using shell
 The user cannot communicate with shell using magical spells 😂 hence the user interact with UI(user Interface) to communicate and interact.
 There are mainly two types of User interface -  1.command line user interface 2.Graphic user interface 
-The GUI uses the graphics while the CLI uses the commands aka instructions 
+The GUI uses the graphics while the CLI uses the commands aka instructions. 
 
 Now a questions may arise in your mind I have not encountered the command line user interface while using apps like file manager 
 The thing is the those apps are interacting with shell for you under the hood while you use the app. 
@@ -91,30 +91,31 @@ You may notice that the instructions have a multiple parts these pare can be div
 1.command
 2.options 
 3.arguments
-Syntax: command <option> <argument> note:these crocodile brackets are just for instructing purpose
+Syntax: command option argument 
 
 Type:
 Commands can be divided into two main type
-1.Builtin
+1.Builtin 
 2.External
 
 👨🏽‍💻usage:To know type of command 
-👨🏽‍💻type:type [command name note:these square brackets are just for instructing purpose they are not needed]
-👨🏽‍💻output:It will output the type of command
+👨🏽‍💻type:type command 
+👨🏽‍💻output:It will output the type of command 
 👨🏽‍💻example:type echo
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Shell
 
-As we discussed earlier we need to interact to with shell wit commands so, lets start the shell topic 😉
+As we discussed earlier we need to interact to with shell via commands so, lets start the shell topic 😉
 
 There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
-different and may serve special purpose in specific fields but all of them have one thing in common that they all act as a medium to interact with kernel 
+different and may serve special purpose in specific fields, but all of them have one thing in common that they all act as a medium to interact with 
+kernel. 
 
 👨🏽‍💻usage:To know which shell we are working with 
 👨🏽‍💻type:echo $SHELL
-👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh or any other based on the shell that have been installed 
+👨🏽‍💻output:/bin/bash OR /bin/zsh OR /bin/ksh OR any other shell that have been installed onto your system.  
 
 👨🏽‍💻usage:To change shell         note: they must be installed in your system 
 👨🏽‍💻type:chsh -s /bin/[ code name of the shell you wanna switch note: these square brackets are not needed these are just for instructing purpose]
@@ -127,13 +128,14 @@ kernel ~
 
 Kernel is major component of an opreating system its sits between hardware and applications/processes it manages resources as efficient as possible 
 Kernel carries out four major tasks 
+
 1.Memory management 
 2.Process management 
 3.Device drivers 
 4.System calls and secuerity
 
-The linux kernel is monolithic it means it carries out multiple tasks all by itself 
-The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules 
+The linux kernel is monolithic it means it carries out multiple tasks all by itself.
+The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules.
 
 Lets check about kernel info 
 
@@ -153,13 +155,10 @@ The fourth word tells about the type of the kernel this is distro specific
 Kernel and user space ~
 
 The memory is divided into two parts 1.kernel space and user space 
-
 Kernel space is composed of device drivers and kernel they have unrestricted acecess to the hardware to kernel items like kernel code kernel 
 extensions which executes and provides it services
-
 User space is the second component of the main memory it have restricted acces to the hardware it comes with all kind of tools and programming 
 languages graphical tools and other things like java ruby c python and docker containers etc.
-
 All user programs function by manipulating data which comes from hardware like disk, user programs made special request to the kernel call system 
 calls example open or write a file etc, this system call make kernel to provide resourcs to program. 
 
@@ -189,10 +188,10 @@ The kernel loaded into the memory is usually decompressed then the kernel loads 
 out tasks such as initilizing hardware, cpu sheduling and memory management etc.
 
 INIT ~
-When the kernel gets compleated operational kernel goes for INIT process this process sets up user space and processes needed for user environment
+When the kernel gets compleateately operational kernel goes for INIT process, this process sets up user space and processes needed for user environment.
 
-In most of the linux distributions INIT process later calls the systemd, it is responsible for broinging linux host into the useable space, mounting
-filesystems starting and managing system services like systemd sys5 is used systemd has one advantage than sys5 is that it paralizes the services 
+In most of the linux distributions INIT process later calls the systemd, it is responsible for bringing linux host into the useable space, mounting
+filesystems starting and managing system services like systemd and sys5. Systemd has one advantage than sys5 is that it paralizes the services 
 which are not necessary thus decreasing the startup time 
 
 👨🏽‍💻usage:To know the the INIT process used 
@@ -225,8 +224,8 @@ runlevel 6 -> reboot.target
 👨🏽‍💻output:The target of the system will be printed 
 
 👨🏽‍💻usage:To know the the current runlevel
-👨🏽‍💻type:systemctl set-default [name].target
-👨🏽‍💻output:The target of the system will changed according to the name provided 
+👨🏽‍💻type:systemctl set-default DESIRED-TARGET-NAME.target
+👨🏽‍💻output:The target of the system will changed according to the target provided. 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -236,30 +235,30 @@ Working with hardware ~
 👨🏽‍💻usage:To get messages generated by the kernel 
 👨🏽‍💻type:dmesg
 👨🏽‍💻output:When an operatin g system boots ucp there are tonnes of messages generated by the kernel that appear on the screen these messages contains 
-logs and other informational stuff this command is used to print all those messages 
+logs and other informational stuff this command will make print all those messages.
 
-👨🏽‍💻usage:Prints about the messages od uevents generated by the kernel 
+👨🏽‍💻usage:Prints about the messages of uevents generated by the kernel 
 👨🏽‍💻type:udevadm monitor 
 👨🏽‍💻output:This listens to the kernel uevents and upon decting an event it prints the details onto the screen. 
 
 👨🏽‍💻usage:List all pci devices that are configured to the system along with their information
 👨🏽‍💻type:lspci
 👨🏽‍💻output:This command will print information of the all pci(Peripheral Component Interconnects primary purpose is to facilitate communication of 
-hardware devices of all types such as audio, video, network or graphics with the microprocessor) devices that are configured  in the system.
+hardware devices of all types such as audio, video, network or graphics with the microprocessor) devices that are configured in the system.
 
 👨🏽‍💻usage:List all the block devices along with their information  
 👨🏽‍💻type:lsblk
-👨🏽‍💻output: List all the block devicecs along with their information 
+👨🏽‍💻output: List all the block devicecs along with their information.
 
 👨🏽‍💻usage:To get information about cpu architecture 
 👨🏽‍💻type:lscpu
-👨🏽‍💻output:information including no of core,threads,sockets and generation etc will be printed on the  screen 
+👨🏽‍💻output:information including no of core,threads,sockets and generation etc will be printed on the screen. 
 
 👨🏽‍💻usage:List the information about memory
 👨🏽‍💻type:lsmem --summary
 👨🏽‍💻output:Print the summary of the memory i.e how much ram is occuied and how much ram is free there and another command that do the same thing ~
 free -m 
-In the above command -m is used to get information in megabytes -g can be used to get information in gigabytes and -k is used to get information 
+👨🏽‍💻note:In the above command -m is used to get information in megabytes -g can be used to get information in gigabytes and -k is used to get information 
 in kili bytes can be used along with size options to get small summary. 
 
 👨🏽‍💻usage:To get information about hardware
@@ -267,7 +266,7 @@ in kili bytes can be used along with size options to get small summary.
 👨🏽‍💻output:This command will print all the  information about hardware configure on to the system.
 
 👨🏽‍💻usage:To get the root user privilages  
-👨🏽‍💻type:sudo <command> 
+👨🏽‍💻type:sudo COMMAND 
 👨🏽‍💻output: There are so many command that require root user privilages to run gosh there a easy methos use sudo before command to get root privilages
 every time you use sudo password is required  
 
@@ -308,7 +307,7 @@ File types and their identifiers
 
 
 👨🏽‍💻usage:To check the file type 
-👨🏽‍💻type:file [file name note:these square brackets are not needed these are ment for instructing purpose]
+👨🏽‍💻type:file FILENAME-INCLUDING-FILE-FORMAT-IF-PRESENT
 👨🏽‍💻output:the file type 
 👨🏽‍💻example:file ~
 
@@ -327,7 +326,6 @@ As we discussed above everything is a file in linux in linux there's a hiearchy 
 every directory has a parent directory except root directory from which all directories are being born off. When you open terminal you are found
 to be in your home directory. this '/' represent parent the of a directory have a syntax like /parent1/parent1.1/parent1.1.1/........
 
-
 👨🏽‍💻usage:To check the home directory 
 👨🏽‍💻type:echo $HOME
 👨🏽‍💻output:outputs the home directory
@@ -335,82 +333,71 @@ to be in your home directory. this '/' represent parent the of a directory have 
 👨🏽‍💻note:home directory can be redirected simply by typing- cd or by typing- cd ~ or by typing- cd $HOME For single person there's only a only directory
 under /home directory but for multi user there can be many directories under /home directory 
 
-
 👨🏽‍💻usage:To check the current directory you are on 
 👨🏽‍💻type:pwd
 👨🏽‍💻output:outputs the current working directory
 👨🏽‍💻example:pwd
 
-
 👨🏽‍💻usage:To list the content of directories
 👨🏽‍💻type:ls
 👨🏽‍💻output:outputs the content of working directory
 👨🏽‍💻example:ls
-
+👨🏽‍💻note:Multiple options can be used with this command like l for long list a for mentioning hidden files r for reverse order example ls -la
 
 👨🏽‍💻usage:To switch directory 
-👨🏽‍💻type:cd [directory name note:these square brackets are not needed these are just for instructing purpuse]
+👨🏽‍💻type:cd DIRECTORY-NAME
 👨🏽‍💻output:switches to the directory you have typed 
 👨🏽‍💻example:cd Desktop
 👨🏽‍💻note:You cannot switch to any directory anywhere you wanted the directory you are switching to and the directory you are currently on must belong 
 to the same parent, or you may provide absolute path of the intended directory 
 
-
-👨🏽‍💻usage:To switch to parent of the current working directory / to traverse back of the hiearchy
+👨🏽‍💻usage:To switch to parent of the current working directory  to traverse back of the hiearchy
 👨🏽‍💻type:cd ..
 👨🏽‍💻output:switches to the parent directory
 👨🏽‍💻example:cd ..
 👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂 you can 
 also switch back by typing cd with the exact location of the parent directory 
 
-
 👨🏽‍💻usage:To create directory
-👨🏽‍💻type:mkdir [name of the directory you wanna create note:these square brackets are not needed these are just for instructing purpose]
+👨🏽‍💻type:mkdir DIRECTORY-NAME-AS-PER-AS-YOUR-CHOICE
 👨🏽‍💻output:directory of the provided name will be created under its parent directory
 👨🏽‍💻example:mkdir mydirectory
-
+👨🏽‍💻note:it is adviced to not to use space inbetween the name of the directory.
 
 👨🏽‍💻usage:To create files except directory
-👨🏽‍💻type:touch [filename.format  note:these square brackets are not needed these are just for instructing purpose ]
+👨🏽‍💻type:touch DESIIRED-FILENAME.DESIRED-FILE-FORMAT
 👨🏽‍💻output:The file with given name and format will be created under the current working directory
 👨🏽‍💻example:touch myfile.txt
 
-
 👨🏽‍💻usage:To delete directory
-👨🏽‍💻type:rm -r [directory name note:thses square brackets are not needed ]
+👨🏽‍💻type:rm -r DIRECTORY-NAME-YOU-WANNA-DELETE
 👨🏽‍💻output:All content inside the directory and the directory itself will be deleated 
 👨🏽‍💻example:rmdir mydirectory
-👨🏽‍💻note: to delete files except directory there's no neeed of -r this -r is ment for recursive purpose 
-
+👨🏽‍💻note:to delete files except directory there's no neeed of -r this -r is ment for recursive purpose 
 
 👨🏽‍💻usage:To move a file or directory
-👨🏽‍💻type:mv [loation of the file which is to be transfered] [location of parent directory where it is to be transfered] 
+👨🏽‍💻type:mv loation of the file which is to be transfered location of parent directory where it is to be transfered
 👨🏽‍💻output:The file or dictory will be moved at the same time 
 👨🏽‍💻example:rmdir mv a/b/c/4  /1/2/3/
 👨🏽‍💻note: If the both location are same but the file name is different in that case the moving file or directory will be renamed as per as second name
 
-
 👨🏽‍💻usage:To copy a file or directory
-👨🏽‍💻type:mv [loation of the file which is to be copied] [location of parent directory where it is to be copied] 
+👨🏽‍💻type:cp loation of the file which is to be copied location of parent directory where it is to be copied 
 👨🏽‍💻output:The file or dictory will be copied at the same time 
-👨🏽‍💻example:rmdir mv a/b/c/d  /a/b/c/
-👨🏽‍💻note: There might be a case when there are so much hiearchy of directory/file under the copying directory/file in that case -r can be used.
-
+👨🏽‍💻example:cp a/b/c/d  /a/b/c/
+👨🏽‍💻note: There might be a case when there are so much directory/file under the copying directory/file in that case -r can be used.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Package Manager ~
-A package is a archive/files all the files that are required by a particular software. A package manager is a software that provides package + 
-dependencies along with tasks like ~
 
-checking authenticity and integrity
-Simplying the package management process 
-Grouping packages 
-Managing dependicies 
+Package:
+A package is a archive/files all the files that are required by a particular software. A package manager is a software that provides package + 
+dependencies along with tasks like ~ Checking authenticity and integrity, Simplying the package management process, Grouping packages, Managing dependicies 
 
 Every distributions may have a seperate package manager because distributions may differ in basic structure thus every different structure require 
 different package manager Just like we talked earlier there are around a thousand of linux distributions but the big daddy of these distributions are 
-DPKG/APT and RPM DPKG is used by linux os like ubantu,debian,arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
+DPKG/APT and RPM/YUM. DPKG is used by linux os like ubantu, debian, arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
 manager used by mac os is home brew. 
 
 RPM(red hat package manager) ~
@@ -426,7 +413,7 @@ RPM(red hat package manager) ~
 YUM(yellow dog updater modifier) ~
 
 Despite all of these RPM does not manage dependencies by itself so we need a better package manager hopefully there a package manager called YUM this 
-package manager works on RPM based distros It is a high level package manager but still works with RPM under the hood YUM deals with automatic 
+package manager works on RPM based distros It is a high level package manager but still works with RPM under the hood. YUM deals with automatic 
 dependencies management. 
 
 To install dependencies it works with dependencies packages they may stored on local or are available on remote server accessed via server protocalls.
@@ -439,8 +426,8 @@ install unofficial updates of any modifications.
 👨🏽‍💻example:yum repolist
 
 👨🏽‍💻usage:To find what dependencies is provided to a application 
-👨🏽‍💻type:yum provides package-name 
-👨🏽‍💻output:All the dependencies provided to the application will be displayed 
+👨🏽‍💻type:yum provides DESIRED-SERVICE-OR-UTILITY 
+👨🏽‍💻output:All the dependencies or packages provided to the application will be displayed.
 👨🏽‍💻example:yum provides scp 
 
                                    ----------------------------------------------
@@ -450,10 +437,9 @@ install unofficial updates of any modifications.
                                    ----------------------------------------------
 
 Steps involved in installing a package ~
-
 yum first checks the transaction check it check repositories of that package it also check if any of the dependincy package installed in system 
 or it needs to be upgraded. After all that it displays transaction summary and asks the choice to further go on. After that choice yum downloads 
-the packages 
+the packages.
 
 DPKG(debian package manager) ~
 
@@ -465,7 +451,7 @@ DPKG(debian package manager) ~
                                    |  verify    |   dpkg -p path to package   |
                                    --------------------------------------------
 
-Just like RPM it does not handle dependencies on its own so a better package manager is required just like YUM, it also works with dpkg under the hood
+Just like RPM it does not handle dependencies on its own so a better package manager is required just like YUM which works with dpkg under the hood.
 
 apt(advance package manager) ~
 To install dependencies it can be done by packages stored on local or it may install from remote server by connection using server protocalls its 
@@ -482,7 +468,7 @@ packages can be find at /etc/sources.list/
 
 APT vs APT-GET ~
 
-APT is more user friendly than apt-get as apt-ge3t prints more details that are not necessary and are useless  
+APT is more user friendly than apt-get as apt-ge3t prints more details that are not necessary and are useless.  
                                   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -491,87 +477,87 @@ File compression and archive ~
 Checking disk usage ~
 
 👨🏽‍💻usage:To check the size of file 
-👨🏽‍💻type:du -sh filename.fileformat
+👨🏽‍💻type:du -sh FILENAME-FILEFORMAT
 👨🏽‍💻output:outputs the the size of the file in human readable format
 👨🏽‍💻example:98M shit.txt
 👨🏽‍💻note: Multiple options can be used like -g for getting file size in gigabytes -m getting file size in megabytes -k getting file size in kilobytes 
 
 File archival ~
 
-TAR is used to group multiple directories and file into single file aka taped archive 
+TAR is used to group multiple directories and file into single tar file aka taped archive. 
 
 👨🏽‍💻usage:To archive data 
-👨🏽‍💻type:tar -cf name_of_compressed_file_you_wanna_name.tar file1 file2 file3 
+👨🏽‍💻type:tar -cf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
 👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
 👨🏽‍💻example:tar -cf  secrets.tar nukes.txt hitlernumber.txt 
 👨🏽‍💻note: -c option is used for compressing files and -f is used for specifying the name of compressed file  
 
 👨🏽‍💻usage:To display the contents of the archive file 
-👨🏽‍💻type:tar -tf filename.tar
+👨🏽‍💻type:tar -tf FILENAME.tar
 👨🏽‍💻output:Files and folders that tar file composed of will be printed 
-👨🏽‍💻example:tar -tf  secrets.tar 
+👨🏽‍💻example:tar -tf secrets.tar 
 
 👨🏽‍💻usage:To extract the tar file 
-👨🏽‍💻type:tar -xf filename.tar
+👨🏽‍💻type:tar -xf FILENAME.tar
 👨🏽‍💻output:Files and folders that tar file composed will be extracted
 👨🏽‍💻example:tar -xf  secrets.tar
 
 👨🏽‍💻usage:To archive data with reduction in size of tar file 
-👨🏽‍💻type:tar -zcf name_of_compressed_file_you_wanna_name.tar file1 file2 file3 
+👨🏽‍💻type:tar -zcf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
 👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
 👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
-👨🏽‍💻note: -c option is used for compressing files and -f for file name 
+👨🏽‍💻note: -c option is used for compressing files and -f for file name -z for compression.
 
 File compression ~
 
-Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands 
+Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands they do not work on directory.
 
-👨🏽‍💻usage:To compress a file 
-👨🏽‍💻type:bzip2 filename.fileformat
+👨🏽‍💻usage:To compress a file using bzip
+👨🏽‍💻type:bzip2 FILENAME.FILEFORMAT
 👨🏽‍💻output:compressed file will be saved and with a extra extension of bz2
 👨🏽‍💻example:bzip2 compressed.txt
 
-👨🏽‍💻usage:To decompress a file 
-👨🏽‍💻type:bunzip2 filename.fileformat.bz2
+👨🏽‍💻usage:To decompress a bzip2 file 
+👨🏽‍💻type:bunzip2 FILENAME.FILEFORMAT.bz2
 👨🏽‍💻output:file will be decompressed  
 👨🏽‍💻example:bunzip2 compressed.txt.bz2
 
-👨🏽‍💻usage:To compress a file 
-👨🏽‍💻type:gzip filename.fileformat
+👨🏽‍💻usage:To compress a file using gzip
+👨🏽‍💻type:gzip FILENAME.FILEFORMAT
 👨🏽‍💻output:compressed file will be saved and with a extra extension of gz
 👨🏽‍💻example:gzip compressed.txt
 
-👨🏽‍💻usage:To decompress a file 
-👨🏽‍💻type:gunzip filename.fileformat.gz
+👨🏽‍💻usage:To decompress a file using gzip
+👨🏽‍💻type:gunzip FILENAME.FILEFORMAT.gz
 👨🏽‍💻output:file will be decompressed 
 👨🏽‍💻example:gunzip compressed.txt.gz
 
-👨🏽‍💻usage:To compress a file 
-👨🏽‍💻type:xz filename.fileformat
+👨🏽‍💻usage:To compress a file using xz
+👨🏽‍💻type:xz FILENAME.FILEFORMAT
 👨🏽‍💻output:compressed file will be saved and with a extra extension of xz
 👨🏽‍💻example:xz compressed.txt
 
-👨🏽‍💻usage:To decompress a file 
-👨🏽‍💻type:unxz filename.fileformat.xz
+👨🏽‍💻usage:To decompress a xz file 
+👨🏽‍💻type:unxz FILENAME.FILEFORMAT.xz
 👨🏽‍💻output:file will be decompressed
 👨🏽‍💻example:unxz compressed.txt.xz
 
-There is no need of everytime decompressing a file to read its content it can be done using 
+There is no need of everytime decompressing a file to read its content it can be done using command like zcat / bzcat / xzcat with file as an argument
 
-zcat / bzcat / xzcat
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 locate file ~
 
 👨🏽‍💻usage:To locate a file  
-👨🏽‍💻type:locate filename.fileformat
+👨🏽‍💻type:locate FILENAME.FILEFORMAT
 👨🏽‍💻output:All the files that share the same name heir paths will be printed 
 👨🏽‍💻example:locate 1.1.txt
-👨🏽‍💻note:It may notr work on systems because it works on data base to update the data base of the locations type updatedb command 
+👨🏽‍💻note:It may not work on systems files because it is base on database to update the data base of the locations type updatedb command which command 
+can also be used in pace of locate in case you wanna search system files.
 
 👨🏽‍💻usage:To locate a file  
-👨🏽‍💻type:find directory-in-you-wanna-search -name filename.fileformat
+👨🏽‍💻type:find DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH -name FILENAME.FILEFORMAT
 👨🏽‍💻output:All the files that share the same name heir paths will be printed 
 👨🏽‍💻example:find akashagarwal -name 1.1.txt
 
@@ -580,42 +566,42 @@ locate file ~
 Search data in files ~
 
 👨🏽‍💻usage:To search data in a file  
-👨🏽‍💻type:grep data filename.fileformat
+👨🏽‍💻type:grep data FILENAME.FILEFORMAT
 👨🏽‍💻output:All the lines that contains the provided data will print. 
 👨🏽‍💻example:gerp second 1.1.txt
 
-👨🏽‍💻usage:To search data in a file  regardless its case sesnitiveness
-👨🏽‍💻type:grep -i data filename.fileformat
+👨🏽‍💻usage:To search data in a file  regardless its case sesnitivity
+👨🏽‍💻type:grep -i DATA FILENAME.FILEFORMAT
 👨🏽‍💻output:All the lines that contains the provided data will print. 
 👨🏽‍💻example:gerp -i second 1.1.txt
 
-👨🏽‍💻usage:To search files that contains the data provided 
-👨🏽‍💻type:grep -r "data" directory-location
+👨🏽‍💻usage:To search files that contains the data recursively in all the files in the parent directory. 
+👨🏽‍💻type:grep -r "DATA" DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH
 👨🏽‍💻output:All the files that contains the provided data will print. 
 👨🏽‍💻example:gerp -r "second" /nuclearcodes/asia
 
 👨🏽‍💻usage:To search lines that do not contains the data provided  
-👨🏽‍💻type:grep -v "data" filename.fileformat
+👨🏽‍💻type:grep -v "DATA" FILENAME.FILEFORMAT
 👨🏽‍💻output:All the lines that do not contains the provided data will print. 
 👨🏽‍💻example:gerp -v "sixtynine" codes.txt
 
 All these above data searching command have one thing in common that they print the lines/files that conatins even a part of data provided 
 to make things more specific -w option is used 
 
-👨🏽‍💻usage:To search line that contains the data provided extact data 
-👨🏽‍💻type:grep -w data filename.fileformat
+👨🏽‍💻usage:To search line that contains the exact provided data.
+👨🏽‍💻type:grep -w DATA FILENAME.FILEFORMAT
 👨🏽‍💻output:All the line contains the exact provided data will print. 
 👨🏽‍💻example:gerp -w zerozeroseven codes.txt
 
 There might be a case you wanna se what line lies above the answer or what lines below the answer to fulfil this wish -A and -B options was born 
 
 👨🏽‍💻usage:To print the n number of lines above the desired index being completely independent of the pattern searched 
-👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data filename.fileformat
+👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data FILENAME.FILEFORMAT
 👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print above it. 
 👨🏽‍💻example:gerp -A1 zerozeroseven codes.txt
 
 👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched 
-👨🏽‍💻type:grep -B(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data filename.fileformat
+👨🏽‍💻type:grep -B(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data FILENAME.FILEFORMAT
 👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print below it. 
 👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt
 
@@ -630,29 +616,27 @@ Standard output - The output generated is delived by this stream
 Standard error - This stream delivers in case the given command is incorrect 
 
 👨🏽‍💻usage:To redirect the output and store in it a file 
-👨🏽‍💻type:echo "data" > filename.fileformat 
+👨🏽‍💻type:echo "data" > FILENAME.FILEFORMAT 
 👨🏽‍💻output:The data in the doubble quotes will overwrite the previous data and get store in the given file  
 👨🏽‍💻example:echo "420690071945" > nuclearcode.txt
 👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
 created 
 
-If you wanna type and save content at the same time these command are used 
-
 👨🏽‍💻usage:To redirect the input to store in a file  
-👨🏽‍💻type:cat > filename.fileformat 
+👨🏽‍💻type:cat > FILENAME.FILEFORMAT 
 👨🏽‍💻output:After this command given there will free typing to exit that free typing type control+c all the contents will be saved 
 👨🏽‍💻example:cat > nuclearcode.txt
 👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
 created 
 
 👨🏽‍💻usage:To redirect the output of the wrong command in a file
-👨🏽‍💻type:cat command-that-casued-error 2> filename.fileformat 
+👨🏽‍💻type:cat ERROR-CAUSING-COMMAND 2> FILENAME.FILEFORMAT
 👨🏽‍💻output:The error generated by the given command will be saved to the file 
 👨🏽‍💻example:cat launch 2> nuclearcode.txt
 👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
 created 
 
-We can make output of one command to the input for the second command 
+We can make output of one command to the input for the second in a nutshell piplining
 
 👨🏽‍💻usage:To execute merege two command  
 👨🏽‍💻type:command1 | command2
@@ -666,7 +650,7 @@ Console based text editors ~
 The real chads uses the console base text editors like vi editor 
 
 👨🏽‍💻usage:To see the contents of a file in vi editor 
-👨🏽‍💻type:vi filename.fileformat
+👨🏽‍💻type:vi FILENAME.FILEFORMAT
 👨🏽‍💻output:All the data of the file will print in the vi editor 
 👨🏽‍💻example:vi nuclearcodes.txt
 
@@ -707,7 +691,7 @@ The real sigma males uses vim editor Vim is the dad of vi in terms of qualities 
 Secuerity and file permissions ~
 
 Every user in linux has an account associated with linux aka have an user name and a password apart from both of these user also have a uid 
-you can find these informaton in /etc/passwd A group of users that share the same system can be grouped together this group is found in /etc/group
+you can find these informaton in /etc/passwd , A group of users that share the same system can be grouped together this group is found in /etc/group
 The users in the group have a unique GID If the user is not a part if any group the user is added to a group with same GID as UID.
 Sudo is used to get super user privilages the powers provided can be edited as the description of it lies in the /etc/sudoers 
 
@@ -723,23 +707,21 @@ System accounts: created and used by the system and not find under home director
 service accounts: accounts used by services 
 
 👨🏽‍💻usage:To get to know about account which is logged into the system 
-👨🏽‍💻type:who
+👨🏽‍💻type:whoami
 👨🏽‍💻output:The accounts loggged into the computer will print
-👨🏽‍💻example:who
+👨🏽‍💻example:whoami
 
 👨🏽‍💻usage:To get record of the all logged in users 
 👨🏽‍💻type:last
 👨🏽‍💻output:The accounts that previously loggged into the computer will print
 👨🏽‍💻example:last
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-User management ~
+Account management ~
 
 As we discussed earlier that every user have a uid gid passwd at the same time may or maybe part of other groups there are commands to manage users 
 
 👨🏽‍💻usage:To add another user to the system 
-👨🏽‍💻type:useradd user-name 
+👨🏽‍💻type:useradd DESIRED-USER-NAME
 👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
 👨🏽‍💻example:useradd myselfakashagarwal 
 👨🏽‍💻note:once logged in user can check itself by typing whoami 
@@ -748,7 +730,7 @@ The adding a user to the system is done above is the simplest way there's the co
 many more 
 
 👨🏽‍💻usage:To add another user to the system 
-👨🏽‍💻type:useradd -u custom-uid -g custom-gid -d /custom-directory -s /bin/custom-shell -c "custom-comments" name-of-the-user 
+👨🏽‍💻type:useradd -u CUSTOM-UID -g CUSTOM-GID -d /CUSTOM-DIRECTORY -s /bin/CUSTOM-SHELL -c "CUSTOM-COMMNETS" DESIRED-USER-NAME 
 👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
 👨🏽‍💻example:useradd myselfakashagarwal 
 👨🏽‍💻note:once logged in user can check itself by typing whoami 
@@ -761,22 +743,22 @@ many more
 others can also be used like 
 -e is used for expiration date 
 -G is used for creating a user with multiple secondary groups 
-at last there's  name of the user  
+at last there's name of the user  
 
-If you wanna see the details of the user just grep -i user-name /etc/passwd
+If you wanna see the details of the user just grep -i DESIRED-USER-NAME /etc/passwd
 
 👨🏽‍💻usage:To remove user from the system 
-👨🏽‍💻type:userdel user-name 
+👨🏽‍💻type:userdel DESIRED-USER-NAME 
 👨🏽‍💻output:That user will be deleated 
 👨🏽‍💻example:userdel god
 
 👨🏽‍💻usage:To add a group to the system 
-👨🏽‍💻type:groupadd -g group-id group-name  
-👨🏽‍💻output:Group will be created with the given GID 
+👨🏽‍💻type:groupadd -g CUSTOM-GID GROUP-NAME  
+👨🏽‍💻output:Group will be created with the given GID and name.
 👨🏽‍💻example:groupadd -g 1983 GNU
 
 👨🏽‍💻usage:To remove group from the system 
-👨🏽‍💻type:groupdel group-name 
+👨🏽‍💻type:groupdel DESIRED-GROUP-NAME 
 👨🏽‍💻output:That group will be deleated 
 👨🏽‍💻example:groupdel AT&T
 
@@ -786,8 +768,10 @@ Access control files ~
 
 Majority of access control files aree stored in /etc directory read:everyone write:root 
 
-/etc/passwd this file contains the information about the user and the system including UID GID HOME SHELL GROUPS but this file does not contain 
-passwords there are multiple feilds seperated by : 
+/etc/passwd 
+This file contains the information about the user and the system including UID GID HOME SHELL GROUPS but this file does not contain passwords there 
+are multiple feilds seperated by ' : ' 
+
 USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
 USERNAME~Name of the user using the system 
 PASSWORD~x aka this field resemble x as the password is stored in /etc/shadow 
@@ -797,7 +781,9 @@ GECOS~This is exceptional this may store user details like phone number etc
 HOMEDIR~This field represent location of home directory of the user 
 SHELL~This field represent the default shell used by the user  
 
-/etc/shadow passwords are stored in this file they are not readable aka contents of this file are hashed feilds in /etc/shadow are 
+/etc/shadow 
+Passwords are stored in this file they are not readable aka contents of this file are hashed feilds in /etc/shadow the fields are seperated by ' : '
+
 USERNAME:PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
 USERNAME~User name of the user 
 PASSWORD~Password of the user but in hashed format @empty field means the passwd was never set for the user 
@@ -808,7 +794,8 @@ WARN:The number of days remaining till this password will last
 INACTIVE~The number of days even after the expiray of the passwd that password will be accepted 
 EXPDATE~Date at which the user account will be expired 
 
-/etc/group this file stores all the information of the groups like GID MEMBERS fields of this file are ~
+/etc/group 
+This file stores all the information of the groups like GID MEMBERS fields of this file are ~
 NAME~Group name 
 PASSWORD~Password of the user indicating x 
 GID~Group id 
@@ -831,7 +818,7 @@ are read =4 write =2 execute =1 none(-)=0 .  If the user is not the owner of the
 by the sum of the octal values 
 
 👨🏽‍💻usage:To modify permissions of the file  
-👨🏽‍💻type:chmod USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS
+👨🏽‍💻type:chmod USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS FILENAME.FILEFORMAT
 👨🏽‍💻output:Permissions will be modified 
 👨🏽‍💻example:chmod u+rwx nuclearcodes.txt
 👨🏽‍💻note:Taking example of the above command this + represent that permissions are provided in case of removal of permissions - is used, similarly 
@@ -840,17 +827,15 @@ can be together at the same time. example chmod go+rwx nuclearcode.txt these per
 chmod g+rwx,o-rwx,u+rwx nuclearcodes.txt 
 
 There if you wanna apply same permissions to all types of account 
-chmod 777 filename.fileformat       to provide read write and execute permissions to all kinds of account 
-chmod 555 filename.fileformat       to provide read and execute permissions to all kinds of account 
-chmod 660 filename.fileformat       to provide read and write access to owner and no access to others 
-chmod 750 filename.fileformat       to provide all permissions to user and read and write permissions to group and no permissions to other 
+chmod 777 FILENAME.FILEFORMAT       to provide read write and execute permissions to all kinds of account 
+chmod 555 FILENAME.FILEFORMAT       to provide read and execute permissions to all kinds of account 
+chmod 660 FILENAME.FILEFORMAT       to provide read and write access to owner and no access to others 
+chmod 750 FILENAME.FILEFORMAT       to provide all permissions to user and read and write permissions to group and no permissions to other 
 
 File ownership ~ 
 
-chown owner:group filename.fileformat
-
 👨🏽‍💻usage:To change the ownership to the user and the group of the file 
-👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  filename.fileformat
+👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  FILENAME.FILEFORMAT
 👨🏽‍💻output:Ownership will be provided to the provided user and group 
 👨🏽‍💻example:chown India:asia nuclearcodes.txt
 
@@ -860,9 +845,9 @@ chown owner:group filename.fileformat
 👨🏽‍💻example:groupdel AT&T
 
 👨🏽‍💻usage:To change ownership of the group 
-👨🏽‍💻type:chgrp group-name filename.fileformat
+👨🏽‍💻type:chgrp group-name FILENAME.FILEFORMAT
 👨🏽‍💻output:Ownership of the group will change and the ownership of the user remain default
-👨🏽‍💻example:chgrp asia filename.fileformat 
+👨🏽‍💻example:chgrp asia FILENAME.FILEFORMAT 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -871,7 +856,7 @@ SSH and SCP ~
 
 SSH ~
 
-SSH is used for login and executing commands on a local server
+SSH is used for login and executing commands on a remote server via local system
 
 👨🏽‍💻usage:To find port used  
 👨🏽‍💻type:netstat -ntlp | grep ssh
