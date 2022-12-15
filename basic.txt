@@ -1076,11 +1076,25 @@ command will automaticially open the service file into the text editor
 
 Storage management ~
 
+A partition table is a table that contains data of partitions on a disk.
 Types of partitions ~
 Primary partitions: These are the most common type of partition and are typically used to hold the operating system.
 Extended partitions: These partitions are used to create logical partitions.
 Logical partitions: These partitions are created within an extended partition and are used to hold data.
 Swap partitions: These partitions are used to increase the amount of memory available to the operating system.
+
+There are two main types of partition table MBR and GPT 
+
+MBR(Master boot record) ~
+The first 512 bytes contains the operating system boot loader and device storage partition table. In the 512 bytes of storage it contains the first stage 
+of bootloader.
+There are maximum of four partitions per drive if there is requirement of more partitions you have to mount extended partition in the place of primary
+partitions that extended partition can have upto 4 locical partitions thus you can have maximum of 16 partitions per disk. including partition size 
+must not ecceed the size of 2 terabytes.
+
+GUID prtition table (GPT) ~
+Globally unique identifiersThis partition scheme is way better than MBR as it can have upto 128 partitions per drive with a maximum storage of 9.4 
+zetabytes 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
