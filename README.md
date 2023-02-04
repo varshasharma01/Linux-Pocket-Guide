@@ -13,6 +13,8 @@ Shell
 <br>
 Kernel
 <br>
+Command Line Help
+<br>
 Linux boot sequence 
 <br>
 Target

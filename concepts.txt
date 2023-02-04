@@ -164,6 +164,27 @@ calls example open or write a file etc, this system call make kernel to provide 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Command line help ~
+
+👨🏽‍💻usage:To know about the flags of the command  
+👨🏽‍💻type:COMMAND --help
+👨🏽‍💻output:All the flags with little description of tags will be printed
+
+👨🏽‍💻usage:To know about the commmand 
+👨🏽‍💻type:man COMMAND
+👨🏽‍💻output:Documentation of the comand will be printed
+👨🏽‍💻More:There are chances that there are more than one type of documentation of a single command in that case provide the section like ~ man 1,2 command 
+These section type can be seen by typing man man command 
+
+👨🏽‍💻usage:To get command from the little description  
+👨🏽‍💻type:apropos SMALL-DESCRIPTION
+👨🏽‍💻output:All the command mannual that contains the small exact description provided will be printed 
+👨🏽‍💻More:This command may print extra stuff like manuall of other utilities that contain the description provided to make this more reliable for 
+this -s flag is used for sections for example the command manualls are found from section 1 to 8 so the more reliable way to find connad is 
+apropos -s 1,8 SMALL-DESCRIPTION
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Linux boot sequence ~
 Although you have have booted your system and are working on it 🌚 lets discusss a steps involved in this task 
 
