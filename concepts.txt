@@ -881,15 +881,29 @@ File ownership ~
 👨🏽‍💻output:Ownership will be provided to the provided user and group 
 👨🏽‍💻example:chown India:asia nuclearcodes.txt
 
-👨🏽‍💻usage:To provide ownership only to user no changes provided to the group
-👨🏽‍💻type:chown india nuclearcodes.txt
+👨🏽‍💻usage:To change the user ownership of the file 
+👨🏽‍💻type:chown new-user FILENAME.FILEFORMAT
 👨🏽‍💻output:User will also get the ownership of the file and the ownership of the group remain default
-👨🏽‍💻example:groupdel AT&T
+👨🏽‍💻example:chown India nukes.txt
 
-👨🏽‍💻usage:To change ownership of the group 
+👨🏽‍💻usage:To change group ownership of the file 
 👨🏽‍💻type:chgrp group-name FILENAME.FILEFORMAT
-👨🏽‍💻output:Ownership of the group will change and the ownership of the user remain default
-👨🏽‍💻example:chgrp asia FILENAME.FILEFORMAT 
+👨🏽‍💻output:Ownership the file will be changed to the group-name provided
+👨🏽‍💻example:chgrp asia India
+👨🏽‍💻Note:We can only change the group ownership of the file of those groups that user(owner) is part of 
+
+SUID SGID and Skicky bit 
+
+In all of these when theya re set whern the file is executed it will be exeuted as the owner or group set not by the person who is executing 
+
+SUID (Sunle user identification bit)
+All of these are set up like normal permissions but there's an extra digit at the front  
+SUID         4      s 
+SGID         2      s
+Sticky bit   1      T
+Sticky bit are usually set on directories that are shared between people 
+Setting sticky bit on the directory only user can manipulate all the stuff of the directory
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
