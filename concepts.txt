@@ -550,6 +550,8 @@ TAR is used to group multiple directories and file into single tar file aka tape
 👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
 👨🏽‍💻note: -c option is used for compressing files and -f for file name -z for compression.
 
+If you want to extract content of the file in other directory use --directory flag succeeded by the location of the desired directory or just a simple -C 
+
 File compression ~
 
 Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands they do not work on directory.
@@ -584,6 +586,13 @@ Apart from archival there are various ways to compress a file based on different
 👨🏽‍💻output:file will be decompressed
 👨🏽‍💻example:unxz compressed.txt.xz
 
+If you want to keep file use --keep flag and to list items details use --list
+
+
+👨🏽‍💻usage:To decompress a zip file 
+👨🏽‍💻type:zip archive FILENAME.FILEFORMAT
+👨🏽To unzip a file use unzip command 
+
 There is no need of everytime decompressing a file to read its content it can be done using command like zcat / bzcat / xzcat with file as an argument
 
 
@@ -602,6 +611,34 @@ can also be used in pace of locate in case you wanna search system files.
 👨🏽‍💻type:find DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH -name FILENAME.FILEFORMAT
 👨🏽‍💻output:All the files that share the same name heir paths will be printed 
 👨🏽‍💻example:find akashagarwal -name 1.1.txt
+
+There are tonnes of flags here are few of them 
+
+👨🏽‍💻usage:To locate a file with specific prefix
+👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -name '*.prefix'
+
+👨🏽‍💻usage:To locate a file with size on or over the given size 
+👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -size +FILE-SIZE
+
+👨🏽‍💻usage:To locate a file which start with the Characters provided 
+👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -name "CHARACTER*"
+👨🏽‍💻 -i flag can be used avoid case sensitiveness
+
+👨🏽‍💻usage:To locate a file which are modified 
+👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -mmin DESIRED-TIME
+👨🏽‍💻to find all the files which are modified between 5 minutes beofre to current use - before time 
+👨🏽‍💻to find all the files which are modified 5 minutes before use +before time 
+
+another flag called mtime can be used for finding files related to modification in days 0 for 24 hrs 1 for 48 hrs and so on 
+
+multiple flags can be grouped together in tems of and use simple ane after aother but in terms of or use -o flag in between flags -not flag for 
+NOT operation
+
+👨🏽‍💻usage:To locate a file on the grounds of their permissions
+👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -perm PERMISSIONS-IN-OCTAL
+👨🏽‍💻note: - can be used with octal permissions for getting the files starting with least permissions / can be used for any of these permissions or 
+g=rw type of synatx can be used 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -645,7 +682,23 @@ There might be a case you wanna se what line lies above the answer or what lines
 👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched 
 👨🏽‍💻type:grep -B(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data FILENAME.FILEFORMAT
 👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print below it. 
-👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt
+👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt 
+
+👨🏽‍💻usage:To get only the result searched 
+👨🏽‍💻type:grep -o "DATA" DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH
+👨🏽‍💻output:All the data will print
+👨🏽‍💻example:gerp -o zerozeroseven codes.txt  
+
+Expressions to analyze text 
+
+There may be chances that you require specifice text anatomy in that case expressions can be useful
+Regs operators ~ | ^ $ . * + ? () {} [] [^] 
+^ This can be used to search lines or word starting with the characters provided 
+$ This can be used to search lines or word ending with the character provided
+. This can be used as a character fill in the blank aka this . character between characters to search dots use \. aka escaping for searching 
+multiple character in between use .*
+* This can be used to check the character pre either omitted nonce to n times to prevent nonce use /+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -724,8 +777,31 @@ To make any changes first going into command mode is necessary
 To save the changes after editing press ~ escape : w
 To save the changes and extit press ~ escape : wq 
 To exit without making changes press ~ escape : q !
+To search text use /STRING type of syntax 
+To search despite case sensitiveness use /STRING\c syntax 
+To reach specific line press esc :LINE-NUMBER
 
 The real sigma males uses vim editor Vim is the dad of vi in terms of qualities it includes spell check, plugins, comparison, merging, gui etc. 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Manipulate data in files 
+
+head and tail commands can be used to view file data aka lines && -n flag can be used to print desired number of lines 
+
+sed command can be used to replece text in files example sed 's/DATA-TO-REPLACE/DATA-TO-REPLACE-WITH/g' FILE
+In the command s denotes search and replace and g for global search
+
+cut command can be used to extract data in files 
+cut -d 'DELIMETER' -f FIELD FILE
+
+uniq command can be used to extract unique items but it will remove only the adjacent duplicates to tackle this situation sort command can be used 
+
+diff command can be used to extract difference between 2 files synatx diff file1 file2 
+during the output ncn type of words can be seen this depecits nth line of file 1 is changed  
+< content exist in first file 
+> content exist in second file  
+- c flag can be used for more information but the best practice for samll files can be sdiff or -y flag 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -769,7 +845,11 @@ As we discussed earlier that every user have a uid gid passwd at the same time m
 👨🏽‍💻note:once logged in user can check itself by typing whoami 
 
 The adding a user to the system is done above is the simplest way there's the correct more advanced way to do it with custom UID and GID and 
-many more 
+many more when the user is not added to any group a new grup is formed and same name as user and the user will be added to that when the user is 
+added a new directory same as his name is added to the home directory. The one facinating thing happens is all the files from /etc/skel will be 
+copied to the new home directory The defaults in the case of normal useradd can be seen in by command useradd --defaults or useradd -D The defaults 
+can be explored in /etc/login.defs file. The newly added user cannot login now until the passwd is set to set passwd type passwd USER-NAME. To login via 
+user type su USER-NAME. id command can be used to extract details about the user 
 
 👨🏽‍💻usage:To add another user to the system 
 👨🏽‍💻type:useradd -u CUSTOM-UID -g CUSTOM-GID -d /CUSTOM-DIRECTORY -s /bin/CUSTOM-SHELL -c "CUSTOM-COMMNETS" DESIRED-USER-NAME 
@@ -777,10 +857,10 @@ many more
 👨🏽‍💻example:useradd myselfakashagarwal 
 👨🏽‍💻note:once logged in user can check itself by typing whoami 
 
--u is used for giving custom UID to user example 69,420,1945,2002 aka user defined 
+-u is used for giving custom UID to user example 69,420,1945,2002 aka user defined (--uid)
 -g is used for giving custom GID to user example 69,420,1945,2002 aka user defined
--d is used for providing the custom home directory example /home/users/myselfakashagarwal
--s is used for providing the default shell example /bin/bash, /bin/sh, /bin/zsh 
+-d is used for providing the custom home directory example /home/users/myselfakashagarwal (--home-dir)
+-s is used for providing the default shell example /bin/bash, /bin/sh, /bin/zsh (--shell)
 -c is used for custom comments 
 others can also be used like 
 -e is used for expiration date 
@@ -793,16 +873,108 @@ If you wanna see the details of the user just grep -i DESIRED-USER-NAME /etc/pas
 👨🏽‍💻type:userdel DESIRED-USER-NAME 
 👨🏽‍💻output:That user will be deleated 
 👨🏽‍💻example:userdel god
+👨🏽‍💻Note: This command will only delete the user not his directory aka his home directory and its contents to do this use -r flag  or --remove tag 
 
-👨🏽‍💻usage:To add a group to the system 
-👨🏽‍💻type:groupadd -g CUSTOM-GID GROUP-NAME  
-👨🏽‍💻output:Group will be created with the given GID and name.
-👨🏽‍💻example:groupadd -g 1983 GNU
+usermod is the command that can be used to change details of the existing user 
 
-👨🏽‍💻usage:To remove group from the system 
-👨🏽‍💻type:groupdel DESIRED-GROUP-NAME 
-👨🏽‍💻output:That group will be deleated 
-👨🏽‍💻example:groupdel AT&T
+👨🏽‍💻usage: to change the home directory of the user 
+👨🏽‍💻type: usermod -d /PATH-TO-NEW-HOME-DIRECTORY -m USERMANE
+👨🏽‍💻Note:instead of -d --home can be used and for -m --move-home can be used 
+
+👨🏽‍💻usage:To change user name 
+👨🏽‍💻type:usermod --login NEW-USER-NAME OLD-USER-NAME
+👨🏽‍💻Note:-l can can be used istead of --login
+
+👨🏽‍💻usage:To change user login shell
+👨🏽‍💻type:usermod --shell /bin/OTHER-SHELL USER-NAME 
+👨🏽‍💻Note:-s can be used insted of --login 
+
+👨🏽‍💻usage:To lock the account without delating it 
+👨🏽‍💻type:usermod -L username 
+👨🏽‍💻Note:Instead of -L --lock can be used 
+
+👨🏽‍💻usage:To unlock the account 
+👨🏽‍💻type: usermod --ulock USER-NAME 
+👨🏽‍💻Note:Instead of --unlock -U can be used 
+
+👨🏽‍💻usage:To setup account expiration date  
+👨🏽‍💻type:usermod --expiredate YEAR-MONTH-DATE USERNAME 
+👨🏽‍💻Note:instead of --expiredate -e can be used to disable expiration date use "" as the date 
+
+👨🏽‍💻usage:To change the primary group of the user 
+👨🏽‍💻type:usermod -g NEW-GROUP-NAME USER-NAME  
+👨🏽‍💻Note: It is recommeded to use --gid insted of -g as G is used for changing secondary groups 
+
+👨🏽‍💻usage:To change the expiration date of the user password 
+👨🏽‍💻type:chage --lastday NUMBER-OF-DAYS USER-NAME 
+👨🏽‍💻Note:Instead of --lastday -d can be used - can be user for never password expiration
+
+👨🏽‍💻usage:To reset user password exery ndays 
+👨🏽‍💻type:chage --maxdays NUMBER-OF-DAYS USER-NAME 
+👨🏽‍💻Note:-M can be used insted of --maxdays
+
+👨🏽‍💻usage:To view the date of the expiry date of the password 
+👨🏽‍💻type:chage --list USER-NAME 
+👨🏽‍💻Note:-l can be used insted of --list 
+
+Each user can belong to one or more groups these group have ownerships of file permissions and other stuff 
+Primary grou of the user is the most used group aka when the user created a files the default group ownership goes to primary group of the user 
+
+👨🏽‍💻usage:To create a group
+👨🏽‍💻type:groupadd groupname 
+👨🏽‍💻Note:-a excedding with a desired number can be used to setup group id 
+
+👨🏽‍💻usage:To delete a group
+👨🏽‍💻type:groupdel groupname 
+
+gpasswd is the system ultility which does group related tasks like adding user to group or removing etc 
+
+👨🏽‍💻usage:To add a user to group
+👨🏽‍💻type:gpasswd --add USER-NAME GROUP-NAME 
+👨🏽‍💻note: -a can be used insted of --add 
+
+👨🏽‍💻usage:To delete a user to group
+👨🏽‍💻type:gpasswd --delete USER-NAME GROUP-NAME 
+👨🏽‍💻note: -d can be used insted of --delete
+
+👨🏽‍💻usage:To rename a group 
+👨🏽‍💻type:groupmod --new-name NEW-NAME OLD-NAME 
+👨🏽‍💻note: -n can be used 
+
+👨🏽‍💻usage:To change the group id  
+👨🏽‍💻type:groupmod --gid NEW-ID OLD-ID 
+
+Environment 
+
+Environment 
+To view environment variables type env
+Global environment variables can be set in /etc/environment  or  
+If there in need of shell scripts that you want to execute when a user login put that shell scripts in  /etc/profile.d/
+
+Limits ~
+We can put limits on users what and how much resources they can use To set such kinda limits we cvan edit limits.config file 
+Usually there are four fields limits can be seen using ulimit -a command printing the various flags the limits can be set from these flags
+for example to set limit on max user processes type ulimit -u NUMBER-OF-DESIRED-PROCESSES
+
+domain - FOR WHOM LIMITS ARE FOR 
+For users just simply type the name 
+For groups use @ before group name 
+For everyone use * this can be used as default limitatiins userlimit can override * limits 
+
+type - WHAT TYPE OF LIMITS ARE IMPOSED these are of three types 
+hard - this limit cannot be overridden by any user 
+soft - User can increase its limits  
+dash - This specifies this is both hard limit and soft limit 
+
+item - ON WHAT ITEM LINITS ARE IMPOSED 
+There are variety of items for example nproc aka maximum number of processes a user can run in current session nproc maxlogins
+fsize aka maximum filesize created per session the value is in kilobytes 
+cpu aka muximum time cpu can be used the value is in minutes 
+
+sudo -iu USER this cammond can be used for a real login 
+
+value - HOW MUCH RESOURCE IS PROVIDED 
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -842,6 +1014,23 @@ NAME~Group name
 PASSWORD~Password of the user indicating x 
 GID~Group id 
 MEMBERS~Members the group is part of 
+
+/etc/sudoers
+A utility named visudo can be used to edit sudoers file as editing sudoers file directy can be dangerous 
+Thre are multiple fields 
+first field ~ To whom this policy is for 
+second is the host ~ These rules will only be applied if our server hostname is a specific value usually not useful so just type All
+Third field is for who can runm this command this is enclosed in normal brackets seperated users by a comma 
+Fourth is the list of command that can be executed with sudo 
+
+We can run sudo command as user 
+example sudo -u USERNAME COMMAND 
+
+There is need of password for every use of sudo command to avoid this we can use NOPASSWD: before the last flag 
+As we have given too much excess to root account we can put limits on it 
+To login as root account we can use sudo --login or sudo -i or sudo - to make user login as sudo with password set password on sudo like 
+normal accounts. sudo account password can be unlocked by command sudo passwd --unlock root , we can lock password based login in root Account
+using command sudo passwd --lock root 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -900,10 +1089,15 @@ SUID (Sunle user identification bit)
 All of these are set up like normal permissions but there's an extra digit at the front  
 SUID         4      s 
 SGID         2      s
-Sticky bit   1      T
+Sticky bit   1      t
 Sticky bit are usually set on directories that are shared between people 
 Setting sticky bit on the directory only user can manipulate all the stuff of the directory
 
+These special permissions can be set using the following synatx 
+
+chmod u+s FILE for SUID
+chmod g+s FILE for SGID
+chmod o+t FILE for Sticky bit  
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
