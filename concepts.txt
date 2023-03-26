@@ -11,3 +11,165 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Users and Group Management 
+
+Every Linux user have an account associated with it may also have a directory same as one's name under home directory. It also have a Unique ID and
+a Group ID these GID and UID are used while creating and manipulating files. Similarly there are Groups in Linux which are just represent multiple 
+users. For example if a new file is created by the user with group x all the member will be able to access that file.
+
+
+Account in linux are mainly of 4 types ~
+
+
+                                                                    Accounts types in linux
+                                                                              |
+                                                                              |
+                                                -----------------------------------------------------------
+                                                |                 |                    |                  |
+                                                |                 |                    |                  |
+                                           Super User      Servive Accounts      System Accounts     User Accounts 
+
+
+
+1.Super Accounts ~ This account have all the powers and the permissions of the system this is mostly known as root it have an UID = 0.
+2.Service Accounts ~ These account are used by services.
+3.System Accounts ~ These accounts are used by the system they have an UID of <100 or 500-1000.
+4.User Accounts ~ These are the accounts used by the user
+
+
+Quick notes ~ 
+
+* All the details of the user are stored in /etc/passwd file.
+* When the user is added to the system all the files form /etc/skel are copied to new user home directory.
+* The defaults of can be explored under /etc/login.defs or by typing command useradd --defaults
+* All the global environment variable are found under /etc/environment can be used by the new user as well
+* Scripts presented in the /etc/profile.d will be executed every time user logins 
+* User's limits to the system resources can be set by manipulating the file /etc/limits.config 
+* When the user is added to the system a new group is also created and added to the system(same name as of user's) aka primary Group
+* When a user is added his home directory is also created under home/
+* To login new user must have a passwd this can set by typing passwd USER-NAME
+* User can login by typing su USER-NAME and later entering the set passwd 
+* usermod is the command line utility to modify user account settings 
+* chage is the command line utility to manage user password 
+* userdel is used to delete user-accounts 
+* useradd is used to add user-accounts   
+
+Commands
+
+👨🏽‍💻usage:To get to know about account which is logged into the system 
+👨🏽‍💻type:whoami
+
+👨🏽‍💻usage:To get to know about account which is logged last into the system 
+👨🏽‍💻type:last
+
+👨🏽‍💻usage:To add another user to the system normalally with default settings 
+👨🏽‍💻type:useradd DESIRED-USER-NAME
+
+👨🏽‍💻usage:To add another user to the system with custom settings 
+👨🏽‍💻type:useradd -u CUSTOM-UID -g CUSTOM-GID -d /CUSTOM-DIRECTORY -s /bin/CUSTOM-SHELL -c "CUSTOM-COMMNETS" DESIRED-USER-NAME 
+
+-u is used for giving custom UID to user example 69,420,1945,2002 aka user defined (--uid)
+-g is used for giving custom GID to user example 69,420,1945,2002 aka user defined
+-d is used for providing the custom home directory example /home/users/myselfakashagarwal (--home-dir)
+-s is used for providing the default shell example /bin/bash, /bin/sh, /bin/zsh (--shell)
+-c is used for custom comments 
+-e is used for expiration date with format YEAR-MONTH-DAY
+-G is used for creating a user with multiple secondary groups 
+--system is used for adding system account 
+
+👨🏽‍💻usage:To get user information
+👨🏽‍💻type:id
+
+👨🏽‍💻usage:To remove user from the system excluding its home directory 
+👨🏽‍💻type:userdel DESIRED-USER-NAME 
+
+👨🏽‍💻usage:To remove user from the system including its home directory 
+👨🏽‍💻type:userdel --remove DESIRED-USER-NAME 
+
+👨🏽‍💻usage: to change the home directory of the user 
+👨🏽‍💻type: usermod -d /PATH-TO-NEW-HOME-DIRECTORY -m USERMANE
+👨🏽‍💻Note:instead of -d --home can be used and for -m --move-home can be used 
+
+👨🏽‍💻usage:To change user name 
+👨🏽‍💻type:usermod --login NEW-USER-NAME OLD-USER-NAME
+👨🏽‍💻Note:-l can can be used istead of --login
+
+👨🏽‍💻usage:To change user login shell
+👨🏽‍💻type:usermod --shell /bin/OTHER-SHELL USER-NAME 
+👨🏽‍💻Note:-s can be used insted of --login 
+
+👨🏽‍💻usage:To lock the account without delating it 
+👨🏽‍💻type:usermod -L username 
+👨🏽‍💻Note:Instead of -L --lock can be used 
+
+👨🏽‍💻usage:To unlock the account 
+👨🏽‍💻type: usermod --ulock USER-NAME 
+👨🏽‍💻Note:Instead of --unlock -U can be used 
+
+👨🏽‍💻usage:To setup account expiration date  
+👨🏽‍💻type:usermod --expiredate YEAR-MONTH-DATE USERNAME 
+👨🏽‍💻Note:instead of --expiredate -e can be used to disable expiration date use "" as the date 
+
+👨🏽‍💻usage:To change the primary group of the user 
+👨🏽‍💻type:usermod -g NEW-GROUP-NAME USER-NAME  
+👨🏽‍💻Note: It is recommeded to use --gid insted of -g as G is used for changing secondary groups 
+
+👨🏽‍💻usage:To change the expiration date of the user password 
+👨🏽‍💻type:chage --lastday NUMBER-OF-DAYS USER-NAME 
+👨🏽‍💻Note:Instead of --lastday -d can be used - can be user for never password expiration
+
+👨🏽‍💻usage:To reset user password exery ndays 
+👨🏽‍💻type:chage --maxdays NUMBER-OF-DAYS USER-NAME 
+👨🏽‍💻Note:-M can be used insted of --maxdays
+
+👨🏽‍💻usage:To view the date of the expiry date of the password 
+👨🏽‍💻type:chage --list USER-NAME 
+👨🏽‍💻Note:-l can be used insted of --list 
+
+👨🏽‍💻usage:To create a group
+👨🏽‍💻type:groupadd groupname 
+
+👨🏽‍💻usage:To delete a group
+👨🏽‍💻type:groupdel groupname 
+
+👨🏽‍💻usage:To add a user to group
+👨🏽‍💻type:gpasswd --add USER-NAME GROUP-NAME 
+👨🏽‍💻note: -a can be used insted of --add 
+
+👨🏽‍💻usage:To delete a user to group
+👨🏽‍💻type:gpasswd --delete USER-NAME GROUP-NAME 
+👨🏽‍💻note: -d can be used insted of --delete
+
+👨🏽‍💻usage:To rename a group 
+👨🏽‍💻type:groupmod --new-name NEW-NAME OLD-NAME 
+👨🏽‍💻note: -n can be used 
+
+👨🏽‍💻usage:To change the group id  
+👨🏽‍💻type:groupmod --gid NEW-ID OLD-ID 
+
+👨🏽‍💻usage:To get the limits information about the user 
+👨🏽‍💻type:ulimit -a 
+
+Limits ~
+We can put limits on users what and how much resources they can use To set such kinda limits we cvan edit limits.config file 
+Usually there are four fields limits can be seen using ulimit -a command printing the various flags the limits can be set from these flags
+for example to set limit on max user processes type ulimit -u NUMBER-OF-DESIRED-PROCESSES
+
+domain - FOR WHOM LIMITS ARE FOR 
+For users just simply type the name 
+For groups use @ before group name 
+For everyone use * this can be used as default limitatiins userlimit can override * limits 
+
+type - WHAT TYPE OF LIMITS ARE IMPOSED these are of three types 
+hard - this limit cannot be overridden by any user 
+soft - User can increase its limits  
+dash - This specifies this is both hard limit and soft limit 
+
+item - ON WHAT ITEM LINITS ARE IMPOSED 
+There are variety of items for example nproc aka maximum number of processes a user can run in current session nproc maxlogins
+fsize aka maximum filesize created per session the value is in kilobytes 
+cpu aka muximum time cpu can be used the value is in minutes 
+
+value - HOW MUCH RESOURCE IS PROVIDED 
+
+
