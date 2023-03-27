@@ -172,4 +172,63 @@ cpu aka muximum time cpu can be used the value is in minutes
 
 value - HOW MUCH RESOURCE IS PROVIDED 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+File 
+
+Types ~
+
+There's a commom phrase in linux that everything is a file so it is necessary to get really handy on em' 
+
+
+                                                                         Files 
+                                                                           |
+                                                                           |
+                                  ------------------------------------------------------------------------------------ 
+                                  |                                        |                                         |
+                                  |                                        |                                         |
+                              Regular                                   special                                   Directory
+                                                                           |
+                                                                           |
+                                 ---------------------------------------------------------------------------------------
+                                 |                    |                     |                     |                    |                      
+                                 |                    |                     |                     |                    |
+                             Character              Block                 Links                Socket                Pipe
+                                                                            |
+                                                                            |
+                                                            --------------------------------
+                                                            |                              |
+                                                            |                              |
+                                                          Hard                            Soft    
+
+File in linux are divided into 3 types 
+1.Regular
+2.Directory
+3.Special
+
+1.Regular files are the most basic files in linux they are data files or media files or scripts 
+2.Directories are the files that store other files or directories 
+3.Special files are further divided into 5 types 
+3.1 Character files - these files represent devices under /dev that allows OS to communicate with IO devices   example - mouse
+3.2 Block files - These files represent block devices under /dev a block device read from and write in block/chunk of data  example - hard disk, ram 
+3.3 Links - these files are the way to associate two or more file name with same set of file data there are two types of links 
+3.3.1 Hard Link - two or more files name that share the same block of data on a physical disk although they behave as a independent files deleting one 
+link will delete the data 
+3.3.2 Soft link - They act as pointers to another files deleting a soft link will not delete the actual file 
+3.4 Socket - These file enable communication between two processes 
+3.5 named pipes - These files are allows one process as the input to another Data flow in pipe is unidirectional 
+
+File types and their identifiers 
+
+  |------------------------------------|
+  |  File               | identifiers  |
+  |  Directory          |    d         |
+  |  Regular            |    -         |
+  |  Link               |    l         |
+  |  Socket             |    s         |
+  |  Pipe               |    p         |
+  |  Character device   |    c         |
+  |------------------------------------|
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
