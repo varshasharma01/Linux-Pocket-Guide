@@ -191,7 +191,7 @@ There's a commom phrase in linux that everything is a file so it is necessary to
                                                                            |
                                                                            |
                                  ---------------------------------------------------------------------------------------
-                                 |                    |                     |                     |                    |                      
+                                 |                    |                     |                     |                    | 
                                  |                    |                     |                     |                    |
                              Character              Block                 Links                Socket                Pipe
                                                                             |
@@ -207,15 +207,37 @@ File in linux are divided into 3 types
 3.Special
 
 1.Regular files are the most basic files in linux they are data files or media files or scripts 
+
 2.Directories are the files that store other files or directories 
+
 3.Special files are further divided into 5 types 
+
 3.1 Character files - these files represent devices under /dev that allows OS to communicate with IO devices   example - mouse
+
 3.2 Block files - These files represent block devices under /dev a block device read from and write in block/chunk of data  example - hard disk, ram 
+
 3.3 Links - these files are the way to associate two or more file name with same set of file data there are two types of links 
+
 3.3.1 Hard Link - two or more files name that share the same block of data on a physical disk although they behave as a independent files deleting one 
 link will delete the data 
+
 3.3.2 Soft link - They act as pointers to another files deleting a soft link will not delete the actual file 
+Soft link and hardlink 
+
+File points to the inode and innode points to the group of data. There might be chances that one or more that one person wanna access same data 
+but might lie in different directories in that case the one usual way is to copy all the data form orignal to source that will result in storage
+blunder in that case links are highly useful one or more user can have access to same data without blundering the storage 
+
+👨🏽‍💻usage:To create a hard link
+👨🏽‍💻type:ln PATH_TO_OLD_DATA PATH_TO_NEW_LINK
+👨🏽‍💻output:Link will be created but its hard manipulation of data on one side will not result in changes on both sides, talking about how it workds
+both the names points to same inode, hardlink limitations are ~ Hard links can only be formed for files not directories, file system dependincy
+
+Soft link points to the path to the file all the stuff for making soft link is almost same but with a difference of -s flag
+to view the true path of the link created readlink command is used permissions of softlink are kinda useless 
+
 3.4 Socket - These file enable communication between two processes 
+
 3.5 named pipes - These files are allows one process as the input to another Data flow in pipe is unidirectional 
 
 File types and their identifiers 
@@ -230,5 +252,75 @@ File types and their identifiers
   |  Character device   |    c         |
   |------------------------------------|
 
+Hierchy of Directories
+
+                                                                          /(root)
+                                                                             |
+                                                                             |                                       
+      ------------------------------------------------------------------------------------------------------------------------------------------ 
+     |           |           |           |           |           |           |           |           |           |         |          |       |
+     |           |           |           |           |           |           |           |           |           |         |          |       |
+   /bin        /boot       /dev        /etc        /home(~)     /lib       /media       /mnt        /opt        /tmp      /usr       /var   /sbin
+
+
+/bin ~ This file contains the basic executeable linux shell commands like ps chmod etc 
+/boot ~ This directory contains the files related to system like boot loader, kernel and boot image etc.
+/dev ~ This directory this directory contains the dvice files 
+/etc ~ This directory contains the most important access control files like passwd sudoers profile.d environment limits.config etc 
+/home ~ This directory contains the user home directory 
+/lib ~ This directory contains the system libraries like java perl frameworks
+/media ~ All the removable media that is being plugged shows in this directory media is mpunted automaticially
+/mnt ~ mnt is used by system administrators to mount the files 
+/opt ~ This directory is used to store third party softwares 
+/tmp ~ This directory contains the temporary files 
+/usr ~ This directory contains the user programs 
+/var ~ This directory contains the variable files 
+/sbin ~ This directory contains the system binaries 
+
+There are two types of path one is relative path second is absolute path. Relative path is just path of file inside the currect working directory 
+while absolute path include all the ancestors of the current working directory.
+
+👨🏽‍💻usage:To check the file type 
+👨🏽‍💻type:file FILENAME-INCLUDING-FILE-FORMAT-IF-PRESENT
+
+👨🏽‍💻usage:To create a file 
+👨🏽‍💻type:touch FILE-NAME.FILE-FORMAT
+
+👨🏽‍💻usage:To go directly to home directory 
+👨🏽‍💻type:     cd      cd ~      cd $HOME   
+
+👨🏽‍💻usage:To check the current directory you are on 
+👨🏽‍💻type:pwd
+
+👨🏽‍💻usage:To list the content of current working directory
+👨🏽‍💻type:ls
+👨🏽‍💻note:Multiple options can be used with this command like l for long list a for mentioning hidden files r for reverse order example ls -la
+
+👨🏽‍💻usage:To switch to another directory present in the current working directory 
+👨🏽‍💻type:cd DIRECTORY-NAME
+
+👨🏽‍💻usage:To switch to parent of the current working directory  to traverse back of the hiearchy
+👨🏽‍💻type:cd ..
+
+👨🏽‍💻usage:To create directory
+👨🏽‍💻type:mkdir DIRECTORY-NAME-AS-PER-AS-YOUR-CHOICE
+
+👨🏽‍💻usage:To delete directory
+👨🏽‍💻type:rm -r DIRECTORY-NAME-YOU-WANNA-DELETE
+
+👨🏽‍💻usage:To copy a file or directory
+👨🏽‍💻type:cp loation of the file which is to be copied location of parent directory where it is to be copied 
+👨🏽‍💻output:The file or dictory will be copied at the same time 
+👨🏽‍💻example:cp a/b/c/d  /a/b/c/
+👨🏽‍💻note: There might be a case when there are so much directory/file under the copying directory/file in that case -r can be used.
+
+👨🏽‍💻usage:To move a file or directory
+👨🏽‍💻type:mv loation of the file which is to be transfered location of parent directory where it is to be transfered
+👨🏽‍💻output:The file or dictory will be moved at the same time 
+👨🏽‍💻example:rmdir mv a/b/c/4  /1/2/3/
+👨🏽‍💻note: If the both location are same but the file name is different in that case the moving file or directory will be renamed as per as second name
+
+👨🏽‍💻usage:To view the meta data of the file 
+👨🏽‍💻type:stat FILENAME.FILEFORMAT
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
