@@ -323,6 +323,47 @@ while absolute path include all the ancestors of the current working directory.
 👨🏽‍💻usage:To view the meta data of the file 
 👨🏽‍💻type:stat FILENAME.FILEFORMAT
 
+File permissions
+
+                                                               File permissions
+                                                                        |
+                                       ------------------------------------------------------------------------
+                                       |                      |                           |                   |
+                                       |                      |                           |                   |
+                                     Read(4)               Write(3)                   Execute(1)          SGID & SUID
+
+* Action on files can be done by user, group and others. Actions include reading, writing and execution if possible.
+* The permissions of the file can be modified by the user who owns it.
+* chmod is the command line utility to manipulate the file permissions 
+
+👨🏽‍💻usage:To modify permissions of the file  
+👨🏽‍💻type:chmod USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS FILENAME.FILEFORMAT
+👨🏽‍💻output:Permissions will be modified 
+👨🏽‍💻example:chmod u+rwx nuclearcodes.txt
+👨🏽‍💻note:Taking example of the above command this + represent that permissions are provided in case of removal of permissions - is used, similarly 
+in the above example u represent the user aka whose permissions are modified this can also be group represented by g or others represented by o or 
+can be together at the same time. example chmod go+rwx nuclearcode.txt these permissions cab be grouped by using a comma example ~
+chmod g+rwx,o-rwx,u+rwx nuclearcodes.txt 
+
+There if you wanna apply same permissions to all types of account at the same ti e use octal example ~
+chmod 777 FILENAME.FILEFORMAT       to provide read write and execute permissions to all kinds of account 
+chmod 555 FILENAME.FILEFORMAT       to provide read and execute permissions to all kinds of account 
+chmod 660 FILENAME.FILEFORMAT       to provide read and write access to owner and no access to others 
+chmod 750 FILENAME.FILEFORMAT       to provide all permissions to user and read and write permissions to group and no permissions to other 
+
+In all of these when there are set where the file is executed, it will be exeuted as the owner or group set not by the person who is executing
+SUID (Single user identification bit)
+All of these are set up like normal permissions but there's an extra digit at the front  
+SUID         4      s 
+SGID         2      s
+Sticky bit   1      t
+Sticky bit are usually set on directories that are shared between people 
+Setting sticky bit on the directory only user can manipulate all the stuff of the directory
+These special permissions can be set using the following synatx 
+chmod u+s FILE for SUID
+chmod g+s FILE for SGID
+chmod o+t FILE for Sticky bit  
+
 Search for files 
 
 * Find is a command line utility to search file with tonnes of parameter options like format size type etc 
