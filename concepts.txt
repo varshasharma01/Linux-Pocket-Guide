@@ -323,4 +323,37 @@ while absolute path include all the ancestors of the current working directory.
 👨🏽‍💻usage:To view the meta data of the file 
 👨🏽‍💻type:stat FILENAME.FILEFORMAT
 
+Search for files 
+
+* Find is a command line utility to search file with tonnes of parameter options like format size type etc 
+* -o flag can be used to make a or expression 
+* -not flag can be used to make a not expression \!
+* locate command succeed by FILENAME.FILEFORMAT can also be used for searching the files 
+
+👨🏽‍💻usage:To search for a file 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -name FILENAME.FILEFORMAT
+👨🏽‍💻note: -i flag can be use to ignore case 
+
+👨🏽‍💻usage:To search for a file starting with a desired letter 
+👨🏽‍💻type:find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -iname "LETTER*"
+
+👨🏽‍💻usage:To search for a file on the basics of time 
+👨🏽‍💻type:find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -mmin 1
+👨🏽‍💻note: - sign is used to check files that are modified under last n minutes 
+👨🏽‍💻note: + sign can be used to check files that are modified before n minutes 
+👨🏽‍💻note: mtime can be used for searching file on the basics of days 1 represent 24 hours 
+👨🏽‍💻note: cmin can be used to search for file on the nasics of the metadata 
+
+👨🏽‍💻usage:To search for a file on the basics of their size 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -size DESIRED-SIZE
+👨🏽‍💻note: c for bytes k for kilobytes M for megabytes and G for gigabytes 
+👨🏽‍💻note: + sign can be used to search for files greated then the size provided 
+👨🏽‍💻note: - sign can be used to search for files smaller then the size provided 
+
+👨🏽‍💻usage:To search for a file on the basics of permissions 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -perm PERMISSIONS-IN-OCTAL
+👨🏽‍💻note: instaed of octal u=rw,g=w,o=rwx format can also be used 
+👨🏽‍💻note: - sign can be used for least permissions 
+👨🏽‍💻note: / sign can be used for any of the permissions provided
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
