@@ -364,6 +364,42 @@ chmod u+s FILE for SUID
 chmod g+s FILE for SGID
 chmod o+t FILE for Sticky bit  
 
+File ownership ~ 
+
+👨🏽‍💻usage:To change the ownership to the user and the group of the file 
+👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  FILENAME.FILEFORMAT
+👨🏽‍💻output:Ownership will be provided to the provided user and group 
+👨🏽‍💻example:chown India:asia nuclearcodes.txt
+
+👨🏽‍💻usage:To change the user ownership of the file 
+👨🏽‍💻type:chown new-user FILENAME.FILEFORMAT
+👨🏽‍💻output:User will also get the ownership of the file and the ownership of the group remain default
+👨🏽‍💻example:chown India nukes.txt
+
+👨🏽‍💻usage:To change group ownership of the file 
+👨🏽‍💻type:chgrp group-name FILENAME.FILEFORMAT
+👨🏽‍💻output:Ownership the file will be changed to the group-name provided
+👨🏽‍💻example:chgrp asia India
+👨🏽‍💻Note:We can only change the group ownership of the file of those groups that user(owner) is part of 
+
+Search data in files 
+
+* grep is a comma line utility to search for data in files 
+
+👨🏽‍💻usage:To search data in file 
+👨🏽‍💻type: grep 'DATA' /DIRECTORY/FILENAME.FILEFORMAT
+👨🏽‍💻note: -i flag can be use to ignore case 
+👨🏽‍💻note: -r flag can be used for searching in sub directories recursively 
+👨🏽‍💻note: -v flag can be used for verbose(invert) results 
+👨🏽‍💻note: -w flag can be used for searching only for words 
+👨🏽‍💻note: -o flag can be used for only for resultant
+ 
+👨🏽‍💻usage:To print the n number of lines above the desired index being completely independent of the pattern searched including the searched data
+👨🏽‍💻type:grep -a(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched including the searched data
+👨🏽‍💻type:grep -b(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data FILENAME.FILEFORMAT
+
 Search for files 
 
 * Find is a command line utility to search file with tonnes of parameter options like format size type etc 
@@ -396,5 +432,15 @@ Search for files
 👨🏽‍💻note: instaed of octal u=rw,g=w,o=rwx format can also be used 
 👨🏽‍💻note: - sign can be used for least permissions 
 👨🏽‍💻note: / sign can be used for any of the permissions provided
+
+Expressions to analyze text 
+
+There may be chances that you require specifice text anatomy in that case expressions can be useful
+Regs operators ~ | ^ $ . * + ? () {} [] [^] 
+^ This can be used to search lines or word starting with the characters provided 
+$ This can be used to search lines or word ending with the character provided
+. This can be used as a character fill in the blank aka this . character between characters to search dots use \. aka escaping for searching 
+multiple character in between use .*
+* This can be used to check the character pre either omitted nonce to n times to prevent nonce use /+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
