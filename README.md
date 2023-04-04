@@ -35,9 +35,9 @@ Locate file
 <br>
 Search data in files 
 <br>
-IO directions 
+IO directions /////////
 <br>
-Console based text editors 
+Console based text editors ////////
 <br>
 Secuerity and file permission 
 <br>
@@ -45,13 +45,13 @@ Account types
 <br>
 Account management 
 <br>
-Access control files
+Access control files //////
 <br>
 Managing file permissions
 <br>
 SSH 
 <br>
-SCP
+SCP 
 <br>
 IP TABLES 
 <br>
