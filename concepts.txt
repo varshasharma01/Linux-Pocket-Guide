@@ -419,7 +419,7 @@ Search for files
 👨🏽‍💻note: - sign is used to check files that are modified under last n minutes 
 👨🏽‍💻note: + sign can be used to check files that are modified before n minutes 
 👨🏽‍💻note: mtime can be used for searching file on the basics of days 1 represent 24 hours 
-👨🏽‍💻note: cmin can be used to search for file on the nasics of the metadata 
+👨🏽‍💻note: cmin can be used to search for file on the basics of the metadata 
 
 👨🏽‍💻usage:To search for a file on the basics of their size 
 👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -size DESIRED-SIZE
@@ -442,5 +442,57 @@ $ This can be used to search lines or word ending with the character provided
 . This can be used as a character fill in the blank aka this . character between characters to search dots use \. aka escaping for searching 
 multiple character in between use .*
 * This can be used to check the character pre either omitted nonce to n times to prevent nonce use /+
+
+File compression and archival 
+
+File compression 
+
+* Directories cannot be compressed thus we have to archive them to compress them 
+* At least bzip gzip and xz file compressing utilities are found in every linux system 
+* The file compressed using bzip2 will have .bz2 extention 
+* The file compressed using gzip will have .gz extention 
+* The file compressed using xz will have the .xz extention
+* To decompress the file just used --decompress flag succeed with the compressed file or use selective utilities  
+* While using these utilities orignial files are compressed to make them unaffected/make compressed file different use --keep flag 
+
+👨🏽‍💻usage:To compress a file using bzip
+👨🏽‍💻type:bzip2 FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a bzip2 file 
+👨🏽‍💻type:bunzip2 FILENAME.FILEFORMAT.bz2
+
+👨🏽‍💻usage:To compress a file using gzip
+👨🏽‍💻type:gzip FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a file using gzip
+👨🏽‍💻type:gunzip FILENAME.FILEFORMAT.gz
+
+👨🏽‍💻usage:To compress a file using xz
+👨🏽‍💻type:xz FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a xz file 
+👨🏽‍💻type:unxz FILENAME.FILEFORMAT.xz
+
+File archival 
+
+* tar is a command line utility to archive the data 
+* The new archived file is called tarball 
+* While using compression with archival the new name of the new tar file must succeed with the compression format used 
+* It is adviced to used to use compression flag before the file flag
+
+👨🏽‍💻usage:To archive data 
+👨🏽‍💻type:tar -cf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
+👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
+👨🏽‍💻note: -c option is used for compressing files and -f is used for specifying the name of compressed file  
+👨🏽‍💻note: to view the content of the tarball use -tf flag combination succeed by the tarfile 
+👨🏽‍💻note: -rf flad is same as -cf 
+👨🏽‍💻note: -xf flag is used to extract the files 
+👨🏽‍💻note: --directory succeed by the path to the desired directory  can be used to extract the content in the desired directory 
+👨🏽‍💻note: use sudo to make sure the file permissions are preversed or -p flag can be used (--preserve-permissions)
+👨🏽‍💻note: -a flag can be used for auto compress (--auto-compress)
+👨🏽‍💻note: -z flag can be used for gzip compression with archival (--gzip)
+👨🏽‍💻note: -j flag can be used for bzip2 compression with archival (--bzip2)
+👨🏽‍💻note: -J flag can be used for xz compression with archival  (--xz)
+👨🏽‍💻note: -Z flag can be used for compression with archival (--compress)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
