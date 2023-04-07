@@ -435,6 +435,141 @@ while absolute path include all the ancestors of the current working directory.
 👨🏽‍💻usage:To view the meta data of the file 
 👨🏽‍💻type:stat FILENAME.FILEFORMAT
 
+Console base text editors and viewers 
+
+* Pagers are used to view multiple text pages at a time 
+* less and more are some of the pagers that are easily found in every linux distro  
+
+👨🏽‍💻usage:To open document with the less pager 
+👨🏽‍💻type:less FILENAME.FILEFORMAT
+👨🏽‍💻note: Use arrow key to traverse up and down 
+👨🏽‍💻note: Use /SERACH-DATA to search the data in that file to remove the case sensitivity press i 
+👨🏽‍💻note: press q to quit 
+
+👨🏽‍💻usage:To open document with the more pager 
+👨🏽‍💻type:more FILENAME.FILEFORMAT
+👨🏽‍💻note: Use spacebar to traverse up and down 
+👨🏽‍💻note: press q to quit 
+
+👨🏽‍💻usage:To see the contents of a file in vi editor 
+👨🏽‍💻type:vi FILENAME.FILEFORMAT
+👨🏽‍💻note: To search the text use /SEARCH-DATA to search the data in editor to remove its case sensitivity use /SEARCH-DATA\c
+
+The legendary vi editor have three modes 
+Command - the default mode in vi editor is command move we can type command such as cp mv etc 
+Insert  - this mode allows us to edit data aka add test delete text 
+Last line - After getting our work done press esc key and : to switch to last line ~~ the escape key makes user go into command mode and :
+takes user to last line. after reaching the last line we have options either to save/discard and exit vi editor 
+
+Command mode : 
+Press escape key for entering into command mode 
+Lets gets handy with the comand mode ~
+arrow up/k     for cursor up 
+arrow down/j   for cursor down
+arrow left/h   for cursor left 
+arrow right/l  for cursor right
+To copy and paste a line just press y two times on the first alphabet of the desired line and press p on desired place where you want to paste it.
+To delete a letter just press x on the highlighted cursor
+To delete the desired line just press d two times on the first alphabet of that line 
+To delete the number of lines including the current type d n d   (n is the number of lines)
+To redo the task press ctrl+r 
+To undo the task press u 
+To move cursor to the searched or desired part press /sequence-of-Character to search pattern above type ?sequence-of-Character
+To find the above pattern above he current line press N and for the below press n
+
+Insert mode :
+Press i to enter into insert mode or o or a 
+To make any changes first going into command mode is necessary 
+To save the changes after editing press ~ escape : w
+To save the changes and extit press ~ escape : wq 
+To exit without making changes press ~ escape : q !
+To search text use /STRING type of syntax 
+To search despite case sensitiveness use /STRING\c syntax 
+To reach specific line press esc :LINE-NUMBER
+
+
+Standard Data streams and data manipulation @i/o 
+
+* A Linux stream is data traveling in a Linux shell from one process to another through a pipe, or from one file to another as a redirect.
+* Streams can travel through several Linux stream-pipe connections of incremental commands to accomplish administrative tasks.
+* Standard streams are interconnected input output communication channels 
+* Standard input -> All the data that are given via shell aka input 
+* Standard output -> All the output generated and displayed onto the console 
+* Standard error -> All the error generated 
+* The data in these streams can be redirected it means the destination of the data flowing in these streams can be changed 
+* Input output can be redirected with the help of 1> opreator [> for overwrite and >> for append]
+* Error data stream can be redirected with the help of 2> 
+* Input during the run time of the program can be redirected with the help of < example INPUT-NEEDING-COMMAND < FILENAME.FILEFORMAT
+* To redirect the errors and the output use > as regular but in the end of the file use 2>&1
+* We can use pipes to manipulate the data to be output example cat file.txt | sort 
+* are are tonnes of sort kinda utilities example column -t , uniq (remove adjacent duplicates)
+* sed is the steram editor it can be used to replace the data 
+* cut can be used to extract data from the file 
+* diff is the command line utility to compare the files 
+
+
+                                                            Standard data Streams
+                                                                     |
+                                                                     |
+                                              ----------------------------------------------
+                                              |                      |                     |
+                                              |                      |                     |
+                                        Standard Input        Standard output         Standard Error
+
+
+👨🏽‍💻usage:Example of input output redirection 
+👨🏽‍💻:Suppose there are two files file1.txt and file2.txt, to simply redirect the input to the file1.txt ~ cat "HELLO" > file1.txt 
+now the file1.txt have HELLO as its data we can output this data to the console ~ cat file1.txt , now we want to redirect the output 
+of the data of file1.txt to file2.txt ~ cat file1.txt >> file2.txt, suppose we made a typo during the cat file1.txt as cat file.txt 
+the error will be generated ~ cat: file.txt: No such file or directory , we can redirect this error by using 2 before the diamond operator 
+~ cat file.txt 2>>  file2.txt , now if we output the conent of the file 2 it would be 
+HELLO
+cat: file.txt: No such file or directory
+
+👨🏽‍💻usage:To check the status of te command last input
+👨🏽‍💻type:echo $?
+
+Here are some of the value related to the errors that can be generated by the error stream 
+0: success
+1: generic or unspecified error
+2: missing command or file
+126: permission problem or command is not executable
+127: command not found
+128: invalid argument to exit command
+130: command terminated by signal
+137: command terminated by a signal with a value of 9 (usually means the command was killed)
+139: segmentation fault or invalid memory reference
+141: pipe broken
+
+👨🏽‍💻usage:To output the data of the file top to bottom 
+👨🏽‍💻type:cat FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To output the data of the file bottom to top
+👨🏽‍💻type:tac FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the first n lines of the file 
+👨🏽‍💻type:head -n NUMBER-OF-LINES FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the last n lines of the file 
+👨🏽‍💻type:tail -n NUMBER-OF-LINES FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To replace data with newdata
+👨🏽‍💻type:sed 's/DATA/NEWDATA/g' FILENAME.FILEFORMAT 
+👨🏽‍💻:Use -i (--in-place) to edit the file at the same time 
+
+👨🏽‍💻usage:To extract data from the file 
+👨🏽‍💻type:cut -d 'DELIMETER' -f NUMBER-OF-FIELD FILENAME.FILEFORMAT 
+
+👨🏽‍💻usage:To find the difference between files 
+👨🏽‍💻type:diff file1 file2 
+👨🏽‍💻:Identical lines are not shown here 
+👨🏽‍💻: To get the good view use -c flag using this the same lines are shown normally while other with ! prefix
+👨🏽‍💻: -y flag can be used for side by side comparison 
+👨🏽‍💻:using sdiff the changed lines are marked with pipe
+👨🏽‍💻:1c1 kinda words will appear these tells us that line 1 on file 1 has been changed on line 1 file 2 
+👨🏽‍💻: < This tells us that the content appear only in first file whle > telle us only exist only in another file
+
+
 File permissions
 
                                                                File permissions
