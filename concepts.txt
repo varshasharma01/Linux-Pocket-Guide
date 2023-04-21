@@ -27,10 +27,8 @@ in software world.
 
 As it gave freedom to developers tonnes of developers made their contributions and created thousand of linux distro. A distro is a complete operating
 system based on linux kernel which comes with linux kernel packages package-manager Graphic-user-interface. The family tree of linux is huge 
-but have one thing in common the seed of linux with tools, utilities and freedom provided by GNU. 
+but have one thing in common - the seed of linux with tools, utilities and freedom provided by GNU. 
 
-We will be understanding the basics of linux topics like core-concepts package-manager file-system networking storage secuerity-filepermissions
-and many more so keep it till end. 😀
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70,7 +68,6 @@ lets understand linux architecture ~
                 |                                                                                                        |
                 |--------------------------------------------------------------------------------------------------------| 
 
-yeah ! I made the above digram myself 😎
 
 We use shell to communicate with kernel, which communicates with hardware so, we indirectly communicate with the hardware using shell
 The user cannot communicate with shell using magical spells 😂 hence the user interact with UI(user Interface) to communicate and interact.
@@ -95,12 +92,11 @@ Syntax: command option argument
 
 Type:
 Commands can be divided into two main type
-1.Builtin 
-2.External
+1.Builtin - alreaady defiled in your system 
+2.External - not defined by the system but defined by the user 
 
 👨🏽‍💻usage:To know type of command 
 👨🏽‍💻type:type command 
-👨🏽‍💻output:It will output the type of command 
 👨🏽‍💻example:type echo
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,12 +137,10 @@ Lets check about kernel info
 
 👨🏽‍💻usage:To know the kernel info
 👨🏽‍💻type:echo uname
-👨🏽‍💻output:Name of the kernel will be printed 
 
 👨🏽‍💻usage:To know the kernel info including the major version and minor version and patch release 
 👨🏽‍💻type:echo uname -a 
-👨🏽‍💻output:Info of the kernel will be printed
-👨🏽‍💻example: 4.15.0-72-generic 
+👨🏽‍💻example of a output: 4.15.0-72-generic 
 The first number tells about the current version
 The second number tells about the major version
 The third number tells about patch release 
@@ -168,17 +162,14 @@ Command line help ~
 
 👨🏽‍💻usage:To know about the flags of the command  
 👨🏽‍💻type:COMMAND --help
-👨🏽‍💻output:All the flags with little description of tags will be printed
 
 👨🏽‍💻usage:To know about the commmand 
 👨🏽‍💻type:man COMMAND
-👨🏽‍💻output:Documentation of the comand will be printed
 👨🏽‍💻More:There are chances that there are more than one type of documentation of a single command in that case provide the section like ~ man 1,2 command 
 These section type can be seen by typing man man command 
 
 👨🏽‍💻usage:To get command from the little description  
 👨🏽‍💻type:apropos SMALL-DESCRIPTION
-👨🏽‍💻output:All the command mannual that contains the small exact description provided will be printed 
 👨🏽‍💻More:This command may print extra stuff like manuall of other utilities that contain the description provided to make this more reliable for 
 this -s flag is used for sections for example the command manualls are found from section 1 to 8 so the more reliable way to find connad is 
 apropos -s 1,8 SMALL-DESCRIPTION
@@ -217,217 +208,6 @@ which are not necessary thus decreasing the startup time
 
 👨🏽‍💻usage:To know the the INIT process used 
 👨🏽‍💻type:ls -l /sbin/init
-👨🏽‍💻output:Name of the init process used will be printed
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Runlevel ~
-Run level in a nutshell can be defined as user target implemented on the system i.e interface your system boots into , during boot process it checks
-the run level and insures that all services that are required for the runlevel are working fine.
-
-There are various kind of run level implemented on the system list of them are ~
-runlevel 0 -> poweroff.target
-
-runlevel 1 -> rescue.target
-
-runlevel 2 -> multi-user.target
-
-runlevel 3 -> multi-user.target
-
-runlevel 4 -> multi-user.target
-
-runlevel 5 -> graphical.target
-
-runlevel 6 -> reboot.target
-
-👨🏽‍💻usage:To know the the current runlevel
-👨🏽‍💻type:systemctl get-default
-👨🏽‍💻output:The target of the system will be printed 
-
-👨🏽‍💻usage:To know the the current runlevel
-👨🏽‍💻type:systemctl set-default DESIRED-TARGET-NAME.target
-👨🏽‍💻output:The target of the system will changed according to the target provided. 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Working with hardware ~
-
-👨🏽‍💻usage:To get messages generated by the kernel 
-👨🏽‍💻type:dmesg
-👨🏽‍💻output:When an operatin g system boots ucp there are tonnes of messages generated by the kernel that appear on the screen these messages contains 
-logs and other informational stuff this command will make print all those messages.
-
-👨🏽‍💻usage:Prints about the messages of uevents generated by the kernel 
-👨🏽‍💻type:udevadm monitor 
-👨🏽‍💻output:This listens to the kernel uevents and upon decting an event it prints the details onto the screen. 
-
-👨🏽‍💻usage:List all pci devices that are configured to the system along with their information
-👨🏽‍💻type:lspci
-👨🏽‍💻output:This command will print information of the all pci(Peripheral Component Interconnects primary purpose is to facilitate communication of 
-hardware devices of all types such as audio, video, network or graphics with the microprocessor) devices that are configured in the system.
-
-👨🏽‍💻usage:List all the block devices along with their information  
-👨🏽‍💻type:lsblk
-👨🏽‍💻output: List all the block devicecs along with their information.
-
-👨🏽‍💻usage:To get information about cpu architecture 
-👨🏽‍💻type:lscpu
-👨🏽‍💻output:information including no of core,threads,sockets and generation etc will be printed on the screen. 
-
-👨🏽‍💻usage:List the information about memory
-👨🏽‍💻type:lsmem --summary
-👨🏽‍💻output:Print the summary of the memory i.e how much ram is occuied and how much ram is free there and another command that do the same thing ~
-free -m 
-👨🏽‍💻note:In the above command -m is used to get information in megabytes -g can be used to get information in gigabytes and -k is used to get information 
-in kili bytes can be used along with size options to get small summary. 
-
-👨🏽‍💻usage:To get information about hardware
-👨🏽‍💻type:lshw
-👨🏽‍💻output:This command will print all the  information about hardware configure on to the system.
-
-👨🏽‍💻usage:To get the root user privilages  
-👨🏽‍💻type:sudo COMMAND 
-👨🏽‍💻output: There are so many command that require root user privilages to run gosh there a easy methos use sudo before command to get root privilages
-every time you use sudo password is required  
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-File ~
-
-There's a commom phrase in linux that everything is a file so it is necessary to get really handy on em' 
-
-File in linux are divided into 3 types 
-1.Regular
-2.Directory
-3.Special
-
-1.Regular files are the most basic files in linux they are data files or media files or scripts 
-2.Directories are the files that store other files or directories 
-3.Special files are further divided into 5 types 
-3.1 Character files - these files represent devices under /dev that allows OS to communicate with IO devices   example - mouse
-3.2 Block files - These files represent block devices under /dev a block device read from and write in block/chunk of data  example - hard disk, ram 
-3.3 Links - these files are the way to associate two or more file name with same set of file data there are two types of links 
-3.3.1 Hard Link - two or more files name that share the same block of data on a physical disk although they behave as a independent files deleting one 
-link will delete the data 
-3.3.2 Soft link - They act as pointers to another files deleting a soft link will not delete the actual file 
-3.4 Socket - These file enable communication between two processes 
-3.5 named pipes - These files are allows one process as the input to another Data flow in pipe is unidirectional 
-
-File types and their identifiers 
-
-  |------------------------------------|
-  |  File               | identifiers  |
-  |  Directory          |    d         |
-  |  Regular            |    -         |
-  |  Link               |    l         |
-  |  Socket             |    s         |
-  |  Pipe               |    p         |
-  |  Character device   |    c         |
-  |------------------------------------|
-
-
-👨🏽‍💻usage:To check the file type 
-👨🏽‍💻type:file FILENAME-INCLUDING-FILE-FORMAT-IF-PRESENT
-👨🏽‍💻output:the file type 
-👨🏽‍💻example:file ~
-
-Lets talk about file hiearchy in directories 
-
-
-                                                             /(root)
-                                                                |
-                                                                |                                       
-       ----------------------------------------------------------------------------------------------------------------------------------    
-       |           |           |           |           |           |           |           |           |           |         |          |
-       |           |           |           |           |           |           |           |           |           |         |          |
-     /bin        /boot       /dev        /etc        /home       /lib       /media       /mnt        /opt        /tmp      /usr       /var
-
-As we discussed above everything is a file in linux in linux there's a hiearchy of files in linux aka hiearchy of directories 
-every directory has a parent directory except root directory from which all directories are being born off. When you open terminal you are found
-to be in your home directory. this '/' represent parent the of a directory have a syntax like /parent1/parent1.1/parent1.1.1/........
-
-👨🏽‍💻usage:To check the home directory 
-👨🏽‍💻type:echo $HOME
-👨🏽‍💻output:outputs the home directory
-👨🏽‍💻example:echo $HOME
-👨🏽‍💻note:home directory can be redirected simply by typing- cd or by typing- cd ~ or by typing- cd $HOME For single person there's only a only directory
-under /home directory but for multi user there can be many directories under /home directory 
-
-👨🏽‍💻usage:To check the current directory you are on 
-👨🏽‍💻type:pwd
-👨🏽‍💻output:outputs the current working directory
-👨🏽‍💻example:pwd
-
-👨🏽‍💻usage:To list the content of directories
-👨🏽‍💻type:ls
-👨🏽‍💻output:outputs the content of working directory
-👨🏽‍💻example:ls
-👨🏽‍💻note:Multiple options can be used with this command like l for long list a for mentioning hidden files r for reverse order example ls -la
-
-👨🏽‍💻usage:To switch directory 
-👨🏽‍💻type:cd DIRECTORY-NAME
-👨🏽‍💻output:switches to the directory you have typed 
-👨🏽‍💻example:cd Desktop
-👨🏽‍💻note:You cannot switch to any directory anywhere you wanted the directory you are switching to and the directory you are currently on must belong 
-to the same parent, or you may provide absolute path of the intended directory 
-
-👨🏽‍💻usage:To switch to parent of the current working directory  to traverse back of the hiearchy
-👨🏽‍💻type:cd ..
-👨🏽‍💻output:switches to the parent directory
-👨🏽‍💻example:cd ..
-👨🏽‍💻note:You can move back to parent directory till it reaches the root directory because root directory is the Adam of all directories 😂 you can 
-also switch back by typing cd with the exact location of the parent directory 
-
-👨🏽‍💻usage:To create directory
-👨🏽‍💻type:mkdir DIRECTORY-NAME-AS-PER-AS-YOUR-CHOICE
-👨🏽‍💻output:directory of the provided name will be created under its parent directory
-👨🏽‍💻example:mkdir mydirectory
-👨🏽‍💻note:it is adviced to not to use space inbetween the name of the directory.
-
-👨🏽‍💻usage:To create files except directory
-👨🏽‍💻type:touch DESIIRED-FILENAME.DESIRED-FILE-FORMAT
-👨🏽‍💻output:The file with given name and format will be created under the current working directory
-👨🏽‍💻example:touch myfile.txt
-
-👨🏽‍💻usage:To delete directory
-👨🏽‍💻type:rm -r DIRECTORY-NAME-YOU-WANNA-DELETE
-👨🏽‍💻output:All content inside the directory and the directory itself will be deleated 
-👨🏽‍💻example:rmdir mydirectory
-👨🏽‍💻note:to delete files except directory there's no neeed of -r this -r is ment for recursive purpose 
-
-👨🏽‍💻usage:To move a file or directory
-👨🏽‍💻type:mv loation of the file which is to be transfered location of parent directory where it is to be transfered
-👨🏽‍💻output:The file or dictory will be moved at the same time 
-👨🏽‍💻example:rmdir mv a/b/c/4  /1/2/3/
-👨🏽‍💻note: If the both location are same but the file name is different in that case the moving file or directory will be renamed as per as second name
-
-👨🏽‍💻usage:To copy a file or directory
-👨🏽‍💻type:cp loation of the file which is to be copied location of parent directory where it is to be copied 
-👨🏽‍💻output:The file or dictory will be copied at the same time 
-👨🏽‍💻example:cp a/b/c/d  /a/b/c/
-👨🏽‍💻note: There might be a case when there are so much directory/file under the copying directory/file in that case -r can be used.
-
-👨🏽‍💻usage:To view the meta data of the file 
-👨🏽‍💻type:stat FILENAME.FILEFORMAT
-👨🏽‍💻output:All the data related to the file will be printed 
-
-Soft link and hardlink 
-File points to the inode and innode points to the group of data. There might be chances that one or more that one person wanna access same data 
-but might lie in different directories in that case the one usual way is to copy all the data form orignal to source that will result in storage
-blunder in that case links are highly useful one or more user can have access to same data without blundering the storage 
-
-👨🏽‍💻usage:To create a hard link
-👨🏽‍💻type:ln PATH_TO_OLD_DATA PATH_TO_NEW_LINK
-👨🏽‍💻output:Link will be created but its hard manipulation of data on one size will not result in changes on both sides, talking about how it workds
-both the names points to same inode, hardlink limitations are ~ Hard links can only be formed for files not directories, file system dependincy
-
-Soft link points to the path to the file all the stuff for making soft link is almost same but with a difference of -s flag
-to view the true path of the link created readlink command is used permissions of softlink are kinda useless 
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -464,13 +244,9 @@ install unofficial updates of any modifications.
 
 👨🏽‍💻usage:To list all the installed repos
 👨🏽‍💻type:yum repolist
-👨🏽‍💻output:All the repos added to the system will be displayed 
-👨🏽‍💻example:yum repolist
 
 👨🏽‍💻usage:To find what dependencies is provided to a application 
 👨🏽‍💻type:yum provides DESIRED-SERVICE-OR-UTILITY 
-👨🏽‍💻output:All the dependencies or packages provided to the application will be displayed.
-👨🏽‍💻example:yum provides scp 
 
                                    ----------------------------------------------
                                    |  install   |   yum install packagename     |
@@ -507,247 +283,177 @@ packages can be find at /etc/sources.list/
                                    |  search         |   apt search packagename      |
                                    |  upgrade 2.0    |   apt edit-sources            |
                                    ---------------------------------------------------
-
-APT vs APT-GET ~
-
-APT is more user friendly than apt-get as apt-ge3t prints more details that are not necessary and are useless.  
                                   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-File compression and archive ~
+File 
 
-Checking disk usage ~
+Types ~
 
-👨🏽‍💻usage:To check the size of file 
-👨🏽‍💻type:du -sh FILENAME-FILEFORMAT
-👨🏽‍💻output:outputs the the size of the file in human readable format
-👨🏽‍💻example:98M shit.txt
-👨🏽‍💻note: Multiple options can be used like -g for getting file size in gigabytes -m getting file size in megabytes -k getting file size in kilobytes 
-
-File archival ~
-
-TAR is used to group multiple directories and file into single tar file aka taped archive. 
-
-👨🏽‍💻usage:To archive data 
-👨🏽‍💻type:tar -cf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
-👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
-👨🏽‍💻example:tar -cf  secrets.tar nukes.txt hitlernumber.txt 
-👨🏽‍💻note: -c option is used for compressing files and -f is used for specifying the name of compressed file  
-
-👨🏽‍💻usage:To display the contents of the archive file 
-👨🏽‍💻type:tar -tf FILENAME.tar
-👨🏽‍💻output:Files and folders that tar file composed of will be printed 
-👨🏽‍💻example:tar -tf secrets.tar 
-
-👨🏽‍💻usage:To extract the tar file 
-👨🏽‍💻type:tar -xf FILENAME.tar
-👨🏽‍💻output:Files and folders that tar file composed will be extracted
-👨🏽‍💻example:tar -xf  secrets.tar
-
-👨🏽‍💻usage:To archive data with reduction in size of tar file 
-👨🏽‍💻type:tar -zcf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
-👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
-👨🏽‍💻example:tar -zcf  secrets.tar nukes.txt hitlernumber.txt 
-👨🏽‍💻note: -c option is used for compressing files and -f for file name -z for compression.
-
-If you want to extract content of the file in other directory use --directory flag succeeded by the location of the desired directory or just a simple -C 
-
-File compression ~
-
-Apart from archival there are various ways to compress a file based on different algorithms there are multiple commands they do not work on directory.
-
-👨🏽‍💻usage:To compress a file using bzip
-👨🏽‍💻type:bzip2 FILENAME.FILEFORMAT
-👨🏽‍💻output:compressed file will be saved and with a extra extension of bz2
-👨🏽‍💻example:bzip2 compressed.txt
-
-👨🏽‍💻usage:To decompress a bzip2 file 
-👨🏽‍💻type:bunzip2 FILENAME.FILEFORMAT.bz2
-👨🏽‍💻output:file will be decompressed  
-👨🏽‍💻example:bunzip2 compressed.txt.bz2
-
-👨🏽‍💻usage:To compress a file using gzip
-👨🏽‍💻type:gzip FILENAME.FILEFORMAT
-👨🏽‍💻output:compressed file will be saved and with a extra extension of gz
-👨🏽‍💻example:gzip compressed.txt
-
-👨🏽‍💻usage:To decompress a file using gzip
-👨🏽‍💻type:gunzip FILENAME.FILEFORMAT.gz
-👨🏽‍💻output:file will be decompressed 
-👨🏽‍💻example:gunzip compressed.txt.gz
-
-👨🏽‍💻usage:To compress a file using xz
-👨🏽‍💻type:xz FILENAME.FILEFORMAT
-👨🏽‍💻output:compressed file will be saved and with a extra extension of xz
-👨🏽‍💻example:xz compressed.txt
-
-👨🏽‍💻usage:To decompress a xz file 
-👨🏽‍💻type:unxz FILENAME.FILEFORMAT.xz
-👨🏽‍💻output:file will be decompressed
-👨🏽‍💻example:unxz compressed.txt.xz
-
-If you want to keep file use --keep flag and to list items details use --list
+There's a commom phrase in linux that everything is a file so it is necessary to get really handy on em' 
 
 
-👨🏽‍💻usage:To decompress a zip file 
-👨🏽‍💻type:zip archive FILENAME.FILEFORMAT
-👨🏽To unzip a file use unzip command 
+                                                                         Files 
+                                                                           |
+                                                                           |
+                                  ------------------------------------------------------------------------------------ 
+                                  |                                        |                                         |
+                                  |                                        |                                         |
+                              Regular                                   special                                   Directory
+                                                                           |
+                                                                           |
+                                 ---------------------------------------------------------------------------------------
+                                 |                    |                     |                     |                    | 
+                                 |                    |                     |                     |                    |
+                             Character              Block                 Links                Socket                Pipe
+                                                                            |
+                                                                            |
+                                                            --------------------------------
+                                                            |                              |
+                                                            |                              |
+                                                          Hard                            Soft    
 
-There is no need of everytime decompressing a file to read its content it can be done using command like zcat / bzcat / xzcat with file as an argument
+File in linux are divided into 3 types 
+1.Regular
+2.Directory
+3.Special
 
+1.Regular files are the most basic files in linux they are data files or media files or scripts 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+2.Directories are the files that store other files or directories 
 
-locate file ~
+3.Special files are further divided into 5 types 
 
-👨🏽‍💻usage:To locate a file  
-👨🏽‍💻type:locate FILENAME.FILEFORMAT
-👨🏽‍💻output:All the files that share the same name heir paths will be printed 
-👨🏽‍💻example:locate 1.1.txt
-👨🏽‍💻note:It may not work on systems files because it is base on database to update the data base of the locations type updatedb command which command 
-can also be used in pace of locate in case you wanna search system files.
+3.1 Character files - these files represent devices under /dev that allows OS to communicate with IO devices   example - mouse
 
-👨🏽‍💻usage:To locate a file  
-👨🏽‍💻type:find DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH -name FILENAME.FILEFORMAT
-👨🏽‍💻output:All the files that share the same name heir paths will be printed 
-👨🏽‍💻example:find akashagarwal -name 1.1.txt
+3.2 Block files - These files represent block devices under /dev a block device read from and write in block/chunk of data  example - hard disk, ram 
 
-There are tonnes of flags here are few of them 
+3.3 Links - these files are the way to associate two or more file name with same set of file data there are two types of links 
 
-👨🏽‍💻usage:To locate a file with specific prefix
-👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -name '*.prefix'
+3.3.1 Hard Link - two or more files name that share the same block of data on a physical disk although they behave as a independent files deleting one 
+link will delete the data 
 
-👨🏽‍💻usage:To locate a file with size on or over the given size 
-👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -size +FILE-SIZE
+3.3.2 Soft link - They act as pointers to another files deleting a soft link will not delete the actual file 
+Soft link and hardlink 
 
-👨🏽‍💻usage:To locate a file which start with the Characters provided 
-👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -name "CHARACTER*"
-👨🏽‍💻 -i flag can be used avoid case sensitiveness
+File points to the inode and innode points to the group of data. There might be chances that one or more that one person wanna access same data 
+but might lie in different directories in that case the one usual way is to copy all the data form orignal to source that will result in storage
+blunder in that case links are highly useful one or more user can have access to same data without blundering the storage 
 
-👨🏽‍💻usage:To locate a file which are modified 
-👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -mmin DESIRED-TIME
-👨🏽‍💻to find all the files which are modified between 5 minutes beofre to current use - before time 
-👨🏽‍💻to find all the files which are modified 5 minutes before use +before time 
+👨🏽‍💻usage:To create a hard link
+👨🏽‍💻type:ln PATH_TO_OLD_DATA PATH_TO_NEW_LINK
+👨🏽‍💻output:Link will be created but its hard manipulation of data on one side will not result in changes on both sides, talking about how it workds
+both the names points to same inode, hardlink limitations are ~ Hard links can only be formed for files not directories, file system dependincy
 
-another flag called mtime can be used for finding files related to modification in days 0 for 24 hrs 1 for 48 hrs and so on 
+Soft link points to the path to the file all the stuff for making soft link is almost same but with a difference of -s flag
+to view the true path of the link created readlink command is used permissions of softlink are kinda useless 
 
-multiple flags can be grouped together in tems of and use simple ane after aother but in terms of or use -o flag in between flags -not flag for 
-NOT operation
+3.4 Socket - These file enable communication between two processes 
 
-👨🏽‍💻usage:To locate a file on the grounds of their permissions
-👨🏽‍💻type:find LOCATION-IN-WHICH-YOU-WANNA-SEARCH/ -perm PERMISSIONS-IN-OCTAL
-👨🏽‍💻note: - can be used with octal permissions for getting the files starting with least permissions / can be used for any of these permissions or 
-g=rw type of synatx can be used 
+3.5 named pipes - These files are allows one process as the input to another Data flow in pipe is unidirectional 
 
+File types and their identifiers 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  |------------------------------------|
+  |  File               | identifiers  |
+  |  Directory          |    d         |
+  |  Regular            |    -         |
+  |  Link               |    l         |
+  |  Socket             |    s         |
+  |  Pipe               |    p         |
+  |  Character device   |    c         |
+  |------------------------------------|
 
-Search data in files ~
+Hierchy of Directories
 
-👨🏽‍💻usage:To search data in a file  
-👨🏽‍💻type:grep data FILENAME.FILEFORMAT
-👨🏽‍💻output:All the lines that contains the provided data will print. 
-👨🏽‍💻example:gerp second 1.1.txt
-
-👨🏽‍💻usage:To search data in a file  regardless its case sesnitivity
-👨🏽‍💻type:grep -i DATA FILENAME.FILEFORMAT
-👨🏽‍💻output:All the lines that contains the provided data will print. 
-👨🏽‍💻example:gerp -i second 1.1.txt
-
-👨🏽‍💻usage:To search files that contains the data recursively in all the files in the parent directory. 
-👨🏽‍💻type:grep -r "DATA" DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH
-👨🏽‍💻output:All the files that contains the provided data will print. 
-👨🏽‍💻example:gerp -r "second" /nuclearcodes/asia
-
-👨🏽‍💻usage:To search lines that do not contains the data provided  
-👨🏽‍💻type:grep -v "DATA" FILENAME.FILEFORMAT
-👨🏽‍💻output:All the lines that do not contains the provided data will print. 
-👨🏽‍💻example:gerp -v "sixtynine" codes.txt
-
-All these above data searching command have one thing in common that they print the lines/files that conatins even a part of data provided 
-to make things more specific -w option is used 
-
-👨🏽‍💻usage:To search line that contains the exact provided data.
-👨🏽‍💻type:grep -w DATA FILENAME.FILEFORMAT
-👨🏽‍💻output:All the line contains the exact provided data will print. 
-👨🏽‍💻example:gerp -w zerozeroseven codes.txt
-
-There might be a case you wanna se what line lies above the answer or what lines below the answer to fulfil this wish -A and -B options was born 
-
-👨🏽‍💻usage:To print the n number of lines above the desired index being completely independent of the pattern searched 
-👨🏽‍💻type:grep -A(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data FILENAME.FILEFORMAT
-👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print above it. 
-👨🏽‍💻example:gerp -A1 zerozeroseven codes.txt
-
-👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched 
-👨🏽‍💻type:grep -B(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data FILENAME.FILEFORMAT
-👨🏽‍💻output:All the line contains the provided data will print along with the numbers of lines provided will print below it. 
-👨🏽‍💻example:gerp -B1 zerozeroseven codes.txt 
-
-👨🏽‍💻usage:To get only the result searched 
-👨🏽‍💻type:grep -o "DATA" DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH
-👨🏽‍💻output:All the data will print
-👨🏽‍💻example:gerp -o zerozeroseven codes.txt  
-
-Expressions to analyze text 
-
-There may be chances that you require specifice text anatomy in that case expressions can be useful
-Regs operators ~ | ^ $ . * + ? () {} [] [^] 
-^ This can be used to search lines or word starting with the characters provided 
-$ This can be used to search lines or word ending with the character provided
-. This can be used as a character fill in the blank aka this . character between characters to search dots use \. aka escaping for searching 
-multiple character in between use .*
-* This can be used to check the character pre either omitted nonce to n times to prevent nonce use /+
+                                                                          /(root)
+                                                                             |
+                                                                             |                                       
+      ------------------------------------------------------------------------------------------------------------------------------------------ 
+     |           |           |           |           |           |           |           |           |           |         |          |       |
+     |           |           |           |           |           |           |           |           |           |         |          |       |
+   /bin        /boot       /dev        /etc        /home(~)     /lib       /media       /mnt        /opt        /tmp      /usr       /var   /sbin
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/bin ~ This file contains the basic executeable linux shell commands like ps chmod etc 
+/boot ~ This directory contains the files related to system like boot loader, kernel and boot image etc.
+/dev ~ This directory this directory contains the dvice files 
+/etc ~ This directory contains the most important access control files like passwd sudoers profile.d environment limits.config etc 
+/home ~ This directory contains the user home directory 
+/lib ~ This directory contains the system libraries like java perl frameworks
+/media ~ All the removable media that is being plugged shows in this directory media is mpunted automaticially
+/mnt ~ mnt is used by system administrators to mount the files 
+/opt ~ This directory is used to store third party softwares 
+/tmp ~ This directory contains the temporary files 
+/usr ~ This directory contains the user programs 
+/var ~ This directory contains the variable files 
+/sbin ~ This directory contains the system binaries 
 
-IO direction ~
+There are two types of path one is relative path second is absolute path. Relative path is just path of file inside the currect working directory 
+while absolute path include all the ancestors of the current working directory.
 
-There are three data streams created when a command is launched 
+👨🏽‍💻usage:To check the file type 
+👨🏽‍💻type:file FILENAME-INCLUDING-FILE-FORMAT-IF-PRESENT
 
-Standard input - This stream accepts text as its input 
-Standard output - The output generated is delived by this stream 
-Standard error - This stream delivers in case the given command is incorrect 
+👨🏽‍💻usage:To create a file 
+👨🏽‍💻type:touch FILE-NAME.FILE-FORMAT
 
-👨🏽‍💻usage:To redirect the output and store in it a file 
-👨🏽‍💻type:echo "data" > FILENAME.FILEFORMAT 
-👨🏽‍💻output:The data in the doubble quotes will overwrite the previous data and get store in the given file  
-👨🏽‍💻example:echo "420690071945" > nuclearcode.txt
-👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
-created 
+👨🏽‍💻usage:To go directly to home directory 
+👨🏽‍💻type:     cd      cd ~      cd $HOME   
 
-👨🏽‍💻usage:To redirect the input to store in a file  
-👨🏽‍💻type:cat > FILENAME.FILEFORMAT 
-👨🏽‍💻output:After this command given there will free typing to exit that free typing type control+c all the contents will be saved 
-👨🏽‍💻example:cat > nuclearcode.txt
-👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
-created 
+👨🏽‍💻usage:To check the current directory you are on 
+👨🏽‍💻type:pwd
 
-👨🏽‍💻usage:To redirect the output of the wrong command in a file
-👨🏽‍💻type:cat ERROR-CAUSING-COMMAND 2> FILENAME.FILEFORMAT
-👨🏽‍💻output:The error generated by the given command will be saved to the file 
-👨🏽‍💻example:cat launch 2> nuclearcode.txt
-👨🏽‍💻note:This > will overwrite the data with the given data to make previous data immmutable >> can be used if the file does not exist a new one will be 
-created 
+👨🏽‍💻usage:To list the content of current working directory
+👨🏽‍💻type:ls
+👨🏽‍💻note:Multiple options can be used with this command like l for long list a for mentioning hidden files r for reverse order example ls -la
 
-We can make output of one command to the input for the second in a nutshell piplining
+👨🏽‍💻usage:To switch to another directory present in the current working directory 
+👨🏽‍💻type:cd DIRECTORY-NAME
 
-👨🏽‍💻usage:To execute merege two command  
-👨🏽‍💻type:command1 | command2
-👨🏽‍💻output:If the output of the first command is suitable for the second both will execute
-👨🏽‍💻example: grep -i no 1.1.txt | less
+👨🏽‍💻usage:To switch to parent of the current working directory  to traverse back of the hiearchy
+👨🏽‍💻type:cd ..
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+👨🏽‍💻usage:To create directory
+👨🏽‍💻type:mkdir DIRECTORY-NAME-AS-PER-AS-YOUR-CHOICE
 
-Console based text editors ~
+👨🏽‍💻usage:To delete directory
+👨🏽‍💻type:rm -r DIRECTORY-NAME-YOU-WANNA-DELETE
 
-The real chads uses the console base text editors like vi editor 
+👨🏽‍💻usage:To copy a file or directory
+👨🏽‍💻type:cp loation of the file which is to be copied location of parent directory where it is to be copied 
+👨🏽‍💻output:The file or dictory will be copied at the same time 
+👨🏽‍💻example:cp a/b/c/d  /a/b/c/
+👨🏽‍💻note: There might be a case when there are so much directory/file under the copying directory/file in that case -r can be used.
+
+👨🏽‍💻usage:To move a file or directory
+👨🏽‍💻type:mv loation of the file which is to be transfered location of parent directory where it is to be transfered
+👨🏽‍💻output:The file or dictory will be moved at the same time 
+👨🏽‍💻example:rmdir mv a/b/c/4  /1/2/3/
+👨🏽‍💻note: If the both location are same but the file name is different in that case the moving file or directory will be renamed as per as second name
+
+👨🏽‍💻usage:To view the meta data of the file 
+👨🏽‍💻type:stat FILENAME.FILEFORMAT
+
+Console base text editors and viewers 
+
+* Pagers are used to view multiple text pages at a time 
+* less and more are some of the pagers that are easily found in every linux distro  
+
+👨🏽‍💻usage:To open document with the less pager 
+👨🏽‍💻type:less FILENAME.FILEFORMAT
+👨🏽‍💻note: Use arrow key to traverse up and down 
+👨🏽‍💻note: Use /SERACH-DATA to search the data in that file to remove the case sensitivity press i 
+👨🏽‍💻note: press q to quit 
+
+👨🏽‍💻usage:To open document with the more pager 
+👨🏽‍💻type:more FILENAME.FILEFORMAT
+👨🏽‍💻note: Use spacebar to traverse up and down 
+👨🏽‍💻note: press q to quit 
 
 👨🏽‍💻usage:To see the contents of a file in vi editor 
 👨🏽‍💻type:vi FILENAME.FILEFORMAT
-👨🏽‍💻output:All the data of the file will print in the vi editor 
-👨🏽‍💻example:vi nuclearcodes.txt
+👨🏽‍💻note: To search the text use /SEARCH-DATA to search the data in editor to remove its case sensitivity use /SEARCH-DATA\c
 
 The legendary vi editor have three modes 
 Command - the default mode in vi editor is command move we can type command such as cp mv etc 
@@ -781,101 +487,337 @@ To search text use /STRING type of syntax
 To search despite case sensitiveness use /STRING\c syntax 
 To reach specific line press esc :LINE-NUMBER
 
-The real sigma males uses vim editor Vim is the dad of vi in terms of qualities it includes spell check, plugins, comparison, merging, gui etc. 
+
+Standard Data streams and data manipulation @i/o 
+
+* A Linux stream is data traveling in a Linux shell from one process to another through a pipe, or from one file to another as a redirect.
+* Streams can travel through several Linux stream-pipe connections of incremental commands to accomplish administrative tasks.
+* Standard streams are interconnected input output communication channels 
+* Standard input -> All the data that are given via shell aka input 
+* Standard output -> All the output generated and displayed onto the console 
+* Standard error -> All the error generated 
+* The data in these streams can be redirected it means the destination of the data flowing in these streams can be changed 
+* Input output can be redirected with the help of 1> opreator [> for overwrite and >> for append]
+* Error data stream can be redirected with the help of 2> 
+* Input during the run time of the program can be redirected with the help of < example INPUT-NEEDING-COMMAND < FILENAME.FILEFORMAT
+* To redirect the errors and the output use > as regular but in the end of the file use 2>&1
+* We can use pipes to manipulate the data to be output example cat file.txt | sort 
+* are are tonnes of sort kinda utilities example column -t , uniq (remove adjacent duplicates)
+* sed is the steram editor it can be used to replace the data 
+* cut can be used to extract data from the file 
+* diff is the command line utility to compare the files 
+
+
+                                                            Standard data Streams
+                                                                     |
+                                                                     |
+                                              ----------------------------------------------
+                                              |                      |                     |
+                                              |                      |                     |
+                                        Standard Input        Standard output         Standard Error
+
+
+👨🏽‍💻usage:Example of input output redirection 
+👨🏽‍💻:Suppose there are two files file1.txt and file2.txt, to simply redirect the input to the file1.txt ~ cat "HELLO" > file1.txt 
+now the file1.txt have HELLO as its data we can output this data to the console ~ cat file1.txt , now we want to redirect the output 
+of the data of file1.txt to file2.txt ~ cat file1.txt >> file2.txt, suppose we made a typo during the cat file1.txt as cat file.txt 
+the error will be generated ~ cat: file.txt: No such file or directory , we can redirect this error by using 2 before the diamond operator 
+~ cat file.txt 2>>  file2.txt , now if we output the conent of the file 2 it would be 
+HELLO
+cat: file.txt: No such file or directory
+
+👨🏽‍💻usage:To check the status of te command last input
+👨🏽‍💻type:echo $?
+
+Here are some of the value related to the errors that can be generated by the error stream 
+0: success
+1: generic or unspecified error
+2: missing command or file
+126: permission problem or command is not executable
+127: command not found
+128: invalid argument to exit command
+130: command terminated by signal
+137: command terminated by a signal with a value of 9 (usually means the command was killed)
+139: segmentation fault or invalid memory reference
+141: pipe broken
+
+👨🏽‍💻usage:To output the data of the file top to bottom 
+👨🏽‍💻type:cat FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To output the data of the file bottom to top
+👨🏽‍💻type:tac FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the first n lines of the file 
+👨🏽‍💻type:head -n NUMBER-OF-LINES FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the last n lines of the file 
+👨🏽‍💻type:tail -n NUMBER-OF-LINES FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To replace data with newdata
+👨🏽‍💻type:sed 's/DATA/NEWDATA/g' FILENAME.FILEFORMAT 
+👨🏽‍💻:Use -i (--in-place) to edit the file at the same time 
+
+👨🏽‍💻usage:To extract data from the file 
+👨🏽‍💻type:cut -d 'DELIMETER' -f NUMBER-OF-FIELD FILENAME.FILEFORMAT 
+
+👨🏽‍💻usage:To find the difference between files 
+👨🏽‍💻type:diff file1 file2 
+👨🏽‍💻:Identical lines are not shown here 
+👨🏽‍💻: To get the good view use -c flag using this the same lines are shown normally while other with ! prefix
+👨🏽‍💻: -y flag can be used for side by side comparison 
+👨🏽‍💻:using sdiff the changed lines are marked with pipe
+👨🏽‍💻:1c1 kinda words will appear these tells us that line 1 on file 1 has been changed on line 1 file 2 
+👨🏽‍💻: < This tells us that the content appear only in first file whle > telle us only exist only in another file
+
+
+File permissions
+
+                                                               File permissions
+                                                                        |
+                                       ------------------------------------------------------------------------
+                                       |                      |                           |                   |
+                                       |                      |                           |                   |
+                                     Read(4)               Write(3)                   Execute(1)          SGID & SUID
+
+* Action on files can be done by user, group and others. Actions include reading, writing and execution if possible.
+* The permissions of the file can be modified by the user who owns it.
+* chmod is the command line utility to manipulate the file permissions 
+
+👨🏽‍💻usage:To modify permissions of the file  
+👨🏽‍💻type:chmod USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS FILENAME.FILEFORMAT
+👨🏽‍💻output:Permissions will be modified 
+👨🏽‍💻example:chmod u+rwx nuclearcodes.txt
+👨🏽‍💻note:Taking example of the above command this + represent that permissions are provided in case of removal of permissions - is used, similarly 
+in the above example u represent the user aka whose permissions are modified this can also be group represented by g or others represented by o or 
+can be together at the same time. example chmod go+rwx nuclearcode.txt these permissions cab be grouped by using a comma example ~
+chmod g+rwx,o-rwx,u+rwx nuclearcodes.txt 
+
+There if you wanna apply same permissions to all types of account at the same ti e use octal example ~
+chmod 777 FILENAME.FILEFORMAT       to provide read write and execute permissions to all kinds of account 
+chmod 555 FILENAME.FILEFORMAT       to provide read and execute permissions to all kinds of account 
+chmod 660 FILENAME.FILEFORMAT       to provide read and write access to owner and no access to others 
+chmod 750 FILENAME.FILEFORMAT       to provide all permissions to user and read and write permissions to group and no permissions to other 
+
+In all of these when there are set where the file is executed, it will be exeuted as the owner or group set not by the person who is executing
+SUID (Single user identification bit)
+All of these are set up like normal permissions but there's an extra digit at the front  
+SUID         4      s 
+SGID         2      s
+Sticky bit   1      t
+Sticky bit are usually set on directories that are shared between people 
+Setting sticky bit on the directory only user can manipulate all the stuff of the directory
+These special permissions can be set using the following synatx 
+chmod u+s FILE for SUID
+chmod g+s FILE for SGID
+chmod o+t FILE for Sticky bit  
+
+File ownership ~ 
+
+👨🏽‍💻usage:To change the ownership to the user and the group of the file 
+👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  FILENAME.FILEFORMAT
+👨🏽‍💻output:Ownership will be provided to the provided user and group 
+👨🏽‍💻example:chown India:asia nuclearcodes.txt
+
+👨🏽‍💻usage:To change the user ownership of the file 
+👨🏽‍💻type:chown new-user FILENAME.FILEFORMAT
+👨🏽‍💻output:User will also get the ownership of the file and the ownership of the group remain default
+👨🏽‍💻example:chown India nukes.txt
+
+👨🏽‍💻usage:To change group ownership of the file 
+👨🏽‍💻type:chgrp group-name FILENAME.FILEFORMAT
+👨🏽‍💻output:Ownership the file will be changed to the group-name provided
+👨🏽‍💻example:chgrp asia India
+👨🏽‍💻Note:We can only change the group ownership of the file of those groups that user(owner) is part of 
+
+Search data in files 
+
+* grep is a comma line utility to search for data in files 
+
+👨🏽‍💻usage:To search data in file 
+👨🏽‍💻type: grep 'DATA' /DIRECTORY/FILENAME.FILEFORMAT
+👨🏽‍💻note: -i flag can be use to ignore case 
+👨🏽‍💻note: -r flag can be used for searching in sub directories recursively 
+👨🏽‍💻note: -v flag can be used for verbose(invert) results 
+👨🏽‍💻note: -w flag can be used for searching only for words 
+👨🏽‍💻note: -o flag can be used for only for resultant
+ 
+👨🏽‍💻usage:To print the n number of lines above the desired index being completely independent of the pattern searched including the searched data
+👨🏽‍💻type:grep -a(NUMBER-OF-LINES-YOU-WANNA-PRINT-ABOVE) data FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To print the n number of lines below the desired index being completely independent of the pattern searched including the searched data
+👨🏽‍💻type:grep -b(NUMBER-OF-LINES-YOU-WANNA-PRINT-BELOW) data FILENAME.FILEFORMAT
+
+Search for files 
+
+* Find is a command line utility to search file with tonnes of parameter options like format size type etc 
+* -o flag can be used to make a or expression 
+* -not flag can be used to make a not expression \!
+* locate command succeed by FILENAME.FILEFORMAT can also be used for searching the files 
+
+👨🏽‍💻usage:To search for a file 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -name FILENAME.FILEFORMAT
+👨🏽‍💻note: -i flag can be use to ignore case 
+
+👨🏽‍💻usage:To search for a file starting with a desired letter 
+👨🏽‍💻type:find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -iname "LETTER*"
+
+👨🏽‍💻usage:To search for a file on the basics of time 
+👨🏽‍💻type:find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -mmin 1
+👨🏽‍💻note: - sign is used to check files that are modified under last n minutes 
+👨🏽‍💻note: + sign can be used to check files that are modified before n minutes 
+👨🏽‍💻note: mtime can be used for searching file on the basics of days 1 represent 24 hours 
+👨🏽‍💻note: cmin can be used to search for file on the basics of the metadata 
+
+👨🏽‍💻usage:To search for a file on the basics of their size 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -size DESIRED-SIZE
+👨🏽‍💻note: c for bytes k for kilobytes M for megabytes and G for gigabytes 
+👨🏽‍💻note: + sign can be used to search for files greated then the size provided 
+👨🏽‍💻note: - sign can be used to search for files smaller then the size provided 
+
+👨🏽‍💻usage:To search for a file on the basics of permissions 
+👨🏽‍💻type: find /DIRECTORY-IN-WHICH-YOU-WANNA-SEARCH/ -perm PERMISSIONS-IN-OCTAL
+👨🏽‍💻note: instaed of octal u=rw,g=w,o=rwx format can also be used 
+👨🏽‍💻note: - sign can be used for least permissions 
+👨🏽‍💻note: / sign can be used for any of the permissions provided
+
+Expressions to analyze text 
+
+There may be chances that you require specifice text anatomy in that case expressions can be useful
+Regs operators ~ | ^ $ . * + ? () {} [] [^] 
+^ This can be used to search lines or word starting with the characters provided 
+$ This can be used to search lines or word ending with the character provided
+. This can be used as a character fill in the blank aka this . character between characters to search dots use \. aka escaping for searching 
+multiple character in between use .*
+* This can be used to check the character pre either omitted nonce to n times to prevent nonce use /+
+
+File compression and archival 
+
+File compression 
+
+* Directories cannot be compressed thus we have to archive them to compress them 
+* At least bzip gzip and xz file compressing utilities are found in every linux system 
+* The file compressed using bzip2 will have .bz2 extention 
+* The file compressed using gzip will have .gz extention 
+* The file compressed using xz will have the .xz extention
+* To decompress the file just used --decompress flag succeed with the compressed file or use selective utilities  
+* While using these utilities orignial files are compressed to make them unaffected/make compressed file different use --keep flag 
+
+👨🏽‍💻usage:To compress a file using bzip
+👨🏽‍💻type:bzip2 FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a bzip2 file 
+👨🏽‍💻type:bunzip2 FILENAME.FILEFORMAT.bz2
+
+👨🏽‍💻usage:To compress a file using gzip
+👨🏽‍💻type:gzip FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a file using gzip
+👨🏽‍💻type:gunzip FILENAME.FILEFORMAT.gz
+
+👨🏽‍💻usage:To compress a file using xz
+👨🏽‍💻type:xz FILENAME.FILEFORMAT
+
+👨🏽‍💻usage:To decompress a xz file 
+👨🏽‍💻type:unxz FILENAME.FILEFORMAT.xz
+
+File archival 
+
+* tar is a command line utility to archive the data 
+* The new archived file is called tarball 
+* While using compression with archival the new name of the new tar file must succeed with the compression format used 
+* It is adviced to used to use compression flag before the file flag
+
+👨🏽‍💻usage:To archive data 
+👨🏽‍💻type:tar -cf DESIRED-COMPRESSED-FINAL-FILE-NAME.tar file1 file2 file3 
+👨🏽‍💻output:All data will be archived and made into a new file named given by you with an extension of .tar 
+👨🏽‍💻note: -c option is used for compressing files and -f is used for specifying the name of compressed file  
+👨🏽‍💻note: to view the content of the tarball use -tf flag combination succeed by the tarfile 
+👨🏽‍💻note: -rf flad is same as -cf 
+👨🏽‍💻note: -xf flag is used to extract the files 
+👨🏽‍💻note: --directory succeed by the path to the desired directory  can be used to extract the content in the desired directory 
+👨🏽‍💻note: use sudo to make sure the file permissions are preversed or -p flag can be used (--preserve-permissions)
+👨🏽‍💻note: -a flag can be used for auto compress (--auto-compress)
+👨🏽‍💻note: -z flag can be used for gzip compression with archival (--gzip)
+👨🏽‍💻note: -j flag can be used for bzip2 compression with archival (--bzip2)
+👨🏽‍💻note: -J flag can be used for xz compression with archival  (--xz)
+👨🏽‍💻note: -Z flag can be used for compression with archival (--compress)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Manipulate data in files 
+Users and Group Management 
 
-head and tail commands can be used to view file data aka lines && -n flag can be used to print desired number of lines 
-
-sed command can be used to replece text in files example sed 's/DATA-TO-REPLACE/DATA-TO-REPLACE-WITH/g' FILE
-In the command s denotes search and replace and g for global search
-
-cut command can be used to extract data in files 
-cut -d 'DELIMETER' -f FIELD FILE
-
-uniq command can be used to extract unique items but it will remove only the adjacent duplicates to tackle this situation sort command can be used 
-
-diff command can be used to extract difference between 2 files synatx diff file1 file2 
-during the output ncn type of words can be seen this depecits nth line of file 1 is changed  
-< content exist in first file 
-> content exist in second file  
-- c flag can be used for more information but the best practice for samll files can be sdiff or -y flag 
+Every Linux user have an account associated with it may also have a directory same as one's name under home directory. It also have a Unique ID and
+a Group ID these GID and UID are used while creating and manipulating files. Similarly there are Groups in Linux which are just represent multiple 
+users. For example if a new file is created by the user with group x all the member will be able to access that file.
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Account in linux are mainly of 4 types ~
 
-Secuerity and file permissions ~
 
-Every user in linux has an account associated with linux aka have an user name and a password apart from both of these user also have a uid 
-you can find these informaton in /etc/passwd , A group of users that share the same system can be grouped together this group is found in /etc/group
-The users in the group have a unique GID If the user is not a part if any group the user is added to a group with same GID as UID.
-Sudo is used to get super user privilages the powers provided can be edited as the description of it lies in the /etc/sudoers 
+                                                                    Accounts types in linux
+                                                                              |
+                                                                              |
+                                                -----------------------------------------------------------
+                                                |                 |                    |                  |
+                                                |                 |                    |                  |
+                                           Super User      Servive Accounts      System Accounts     User Accounts 
 
-👨🏽‍💻usage:To get information about user 
-👨🏽‍💻type:id
-👨🏽‍💻output:The name ID GID and groups in which user a part of will be printed 
-👨🏽‍💻example:id
 
-Account types ~
-User account: used by user 
-Super user account: root UID=0
-System accounts: created and used by the system and not find under home directory UID<100 or 500-1000
-service accounts: accounts used by services 
+
+1.Super Accounts ~ This account have all the powers and the permissions of the system this is mostly known as root it have an UID = 0.
+2.Service Accounts ~ These account are used by services.
+3.System Accounts ~ These accounts are used by the system they have an UID of <100 or 500-1000.
+4.User Accounts ~ These are the accounts used by the user
+
+
+Quick notes ~ 
+
+* All the details of the user are stored in /etc/passwd file.
+* When the user is added to the system all the files form /etc/skel are copied to new user home directory.
+* The defaults of can be explored under /etc/login.defs or by typing command useradd --defaults
+* All the global environment variable are found under /etc/environment can be used by the new user as well
+* Scripts presented in the /etc/profile.d will be executed every time user logins 
+* User's limits to the system resources can be set by manipulating the file /etc/limits.config 
+* When the user is added to the system a new group is also created and added to the system(same name as of user's) aka primary Group
+* When a user is added his home directory is also created under home/
+* To login new user must have a passwd this can set by typing passwd USER-NAME
+* User can login by typing su USER-NAME and later entering the set passwd 
+* usermod is the command line utility to modify user account settings 
+* chage is the command line utility to manage user password 
+* userdel is used to delete user-accounts 
+* useradd is used to add user-accounts   
+
+Commands
 
 👨🏽‍💻usage:To get to know about account which is logged into the system 
 👨🏽‍💻type:whoami
-👨🏽‍💻output:The accounts loggged into the computer will print
-👨🏽‍💻example:whoami
 
-👨🏽‍💻usage:To get record of the all logged in users 
+👨🏽‍💻usage:To get to know about account which is logged last into the system 
 👨🏽‍💻type:last
-👨🏽‍💻output:The accounts that previously loggged into the computer will print
-👨🏽‍💻example:last
 
-Account management ~
-
-As we discussed earlier that every user have a uid gid passwd at the same time may or maybe part of other groups there are commands to manage users 
-
-👨🏽‍💻usage:To add another user to the system 
+👨🏽‍💻usage:To add another user to the system normalally with default settings 
 👨🏽‍💻type:useradd DESIRED-USER-NAME
-👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
-👨🏽‍💻example:useradd myselfakashagarwal 
-👨🏽‍💻note:once logged in user can check itself by typing whoami 
 
-The adding a user to the system is done above is the simplest way there's the correct more advanced way to do it with custom UID and GID and 
-many more when the user is not added to any group a new grup is formed and same name as user and the user will be added to that when the user is 
-added a new directory same as his name is added to the home directory. The one facinating thing happens is all the files from /etc/skel will be 
-copied to the new home directory The defaults in the case of normal useradd can be seen in by command useradd --defaults or useradd -D The defaults 
-can be explored in /etc/login.defs file. The newly added user cannot login now until the passwd is set to set passwd type passwd USER-NAME. To login via 
-user type su USER-NAME. id command can be used to extract details about the user 
-
-👨🏽‍💻usage:To add another user to the system 
+👨🏽‍💻usage:To add another user to the system with custom settings 
 👨🏽‍💻type:useradd -u CUSTOM-UID -g CUSTOM-GID -d /CUSTOM-DIRECTORY -s /bin/CUSTOM-SHELL -c "CUSTOM-COMMNETS" DESIRED-USER-NAME 
-👨🏽‍💻output:The user will be added to the system it can be seen uder /etc/passwd at default that account will be provided with GID and UID 
-👨🏽‍💻example:useradd myselfakashagarwal 
-👨🏽‍💻note:once logged in user can check itself by typing whoami 
 
 -u is used for giving custom UID to user example 69,420,1945,2002 aka user defined (--uid)
 -g is used for giving custom GID to user example 69,420,1945,2002 aka user defined
 -d is used for providing the custom home directory example /home/users/myselfakashagarwal (--home-dir)
 -s is used for providing the default shell example /bin/bash, /bin/sh, /bin/zsh (--shell)
 -c is used for custom comments 
-others can also be used like 
--e is used for expiration date 
+-e is used for expiration date with format YEAR-MONTH-DAY
 -G is used for creating a user with multiple secondary groups 
-at last there's name of the user  
+--system is used for adding system account 
 
-If you wanna see the details of the user just grep -i DESIRED-USER-NAME /etc/passwd
+👨🏽‍💻usage:To get user information
+👨🏽‍💻type:id
 
-👨🏽‍💻usage:To remove user from the system 
+👨🏽‍💻usage:To remove user from the system excluding its home directory 
 👨🏽‍💻type:userdel DESIRED-USER-NAME 
-👨🏽‍💻output:That user will be deleated 
-👨🏽‍💻example:userdel god
-👨🏽‍💻Note: This command will only delete the user not his directory aka his home directory and its contents to do this use -r flag  or --remove tag 
 
-usermod is the command that can be used to change details of the existing user 
+👨🏽‍💻usage:To remove user from the system including its home directory 
+👨🏽‍💻type:userdel --remove DESIRED-USER-NAME 
 
 👨🏽‍💻usage: to change the home directory of the user 
 👨🏽‍💻type: usermod -d /PATH-TO-NEW-HOME-DIRECTORY -m USERMANE
@@ -917,17 +859,11 @@ usermod is the command that can be used to change details of the existing user
 👨🏽‍💻type:chage --list USER-NAME 
 👨🏽‍💻Note:-l can be used insted of --list 
 
-Each user can belong to one or more groups these group have ownerships of file permissions and other stuff 
-Primary grou of the user is the most used group aka when the user created a files the default group ownership goes to primary group of the user 
-
 👨🏽‍💻usage:To create a group
 👨🏽‍💻type:groupadd groupname 
-👨🏽‍💻Note:-a excedding with a desired number can be used to setup group id 
 
 👨🏽‍💻usage:To delete a group
 👨🏽‍💻type:groupdel groupname 
-
-gpasswd is the system ultility which does group related tasks like adding user to group or removing etc 
 
 👨🏽‍💻usage:To add a user to group
 👨🏽‍💻type:gpasswd --add USER-NAME GROUP-NAME 
@@ -944,12 +880,8 @@ gpasswd is the system ultility which does group related tasks like adding user t
 👨🏽‍💻usage:To change the group id  
 👨🏽‍💻type:groupmod --gid NEW-ID OLD-ID 
 
-Environment 
-
-Environment 
-To view environment variables type env
-Global environment variables can be set in /etc/environment  or  
-If there in need of shell scripts that you want to execute when a user login put that shell scripts in  /etc/profile.d/
+👨🏽‍💻usage:To get the limits information about the user 
+👨🏽‍💻type:ulimit -a 
 
 Limits ~
 We can put limits on users what and how much resources they can use To set such kinda limits we cvan edit limits.config file 
@@ -971,365 +903,6 @@ There are variety of items for example nproc aka maximum number of processes a u
 fsize aka maximum filesize created per session the value is in kilobytes 
 cpu aka muximum time cpu can be used the value is in minutes 
 
-sudo -iu USER this cammond can be used for a real login 
-
 value - HOW MUCH RESOURCE IS PROVIDED 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Access control files ~
-
-Majority of access control files aree stored in /etc directory read:everyone write:root 
-
-/etc/passwd 
-This file contains the information about the user and the system including UID GID HOME SHELL GROUPS but this file does not contain passwords there 
-are multiple feilds seperated by ' : ' 
-
-USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
-USERNAME~Name of the user using the system 
-PASSWORD~x aka this field resemble x as the password is stored in /etc/shadow 
-UID~User id of the user 
-GID~Group id of the user 
-GECOS~This is exceptional this may store user details like phone number etc 
-HOMEDIR~This field represent location of home directory of the user 
-SHELL~This field represent the default shell used by the user  
-
-/etc/shadow 
-Passwords are stored in this file they are not readable aka contents of this file are hashed feilds in /etc/shadow the fields are seperated by ' : '
-
-USERNAME:PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
-USERNAME~User name of the user 
-PASSWORD~Password of the user but in hashed format @empty field means the passwd was never set for the user 
-LASTCHANGE~The date since the user last changed its password (the date format is in epic )
-MINAGE~The minimum number of days user have to wait to reset the password 
-MAXAGE~The maximum number of days the current pasword will last 
-WARN:The number of days remaining till this password will last 
-INACTIVE~The number of days even after the expiray of the passwd that password will be accepted 
-EXPDATE~Date at which the user account will be expired 
-
-/etc/group 
-This file stores all the information of the groups like GID MEMBERS fields of this file are ~
-NAME~Group name 
-PASSWORD~Password of the user indicating x 
-GID~Group id 
-MEMBERS~Members the group is part of 
-
-/etc/sudoers
-A utility named visudo can be used to edit sudoers file as editing sudoers file directy can be dangerous 
-Thre are multiple fields 
-first field ~ To whom this policy is for 
-second is the host ~ These rules will only be applied if our server hostname is a specific value usually not useful so just type All
-Third field is for who can runm this command this is enclosed in normal brackets seperated users by a comma 
-Fourth is the list of command that can be executed with sudo 
-
-We can run sudo command as user 
-example sudo -u USERNAME COMMAND 
-
-There is need of password for every use of sudo command to avoid this we can use NOPASSWD: before the last flag 
-As we have given too much excess to root account we can put limits on it 
-To login as root account we can use sudo --login or sudo -i or sudo - to make user login as sudo with password set password on sudo like 
-normal accounts. sudo account password can be unlocked by command sudo passwd --unlock root , we can lock password based login in root Account
-using command sudo passwd --lock root 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-File permissions and ownership ~
-
-File permissions ~
-
-You probbably have seen this drwxr-xr-x kinda things after you list a file aka ls -l this drwxr-xr-x have describes many things including file type 
-first letter of this line describes the type of file in this case it is a directory 
-The next three letters represent read(r) write(w) execute(e) permissions provided to the user 
-The next three letters after user's permissions represent read(r) write(w) execute(e) permissions provided to the Group
-The last letters determine permissions to the other sources 
-
-If there is - instead of r/w/x it means that that particular account does not have that particular r/w/x access the octal value of these permissions 
-are read =4 write =2 execute =1 none(-)=0 .  If the user is not the owner of the file the group permissions are allowed The permission are represented
-by the sum of the octal values 
-
-👨🏽‍💻usage:To modify permissions of the file  
-👨🏽‍💻type:chmod USER--WHOSE-PERMISSIONS-ARE-MODIFIED+/-PERMISSIONS FILENAME.FILEFORMAT
-👨🏽‍💻output:Permissions will be modified 
-👨🏽‍💻example:chmod u+rwx nuclearcodes.txt
-👨🏽‍💻note:Taking example of the above command this + represent that permissions are provided in case of removal of permissions - is used, similarly 
-in the above example u represent the user aka whose permissions are modified this can also be group represented by g or others represented by o or 
-can be together at the same time. example chmod go+rwx nuclearcode.txt these permissions cab be grouped by using a comma example ~
-chmod g+rwx,o-rwx,u+rwx nuclearcodes.txt 
-
-There if you wanna apply same permissions to all types of account 
-chmod 777 FILENAME.FILEFORMAT       to provide read write and execute permissions to all kinds of account 
-chmod 555 FILENAME.FILEFORMAT       to provide read and execute permissions to all kinds of account 
-chmod 660 FILENAME.FILEFORMAT       to provide read and write access to owner and no access to others 
-chmod 750 FILENAME.FILEFORMAT       to provide all permissions to user and read and write permissions to group and no permissions to other 
-
-File ownership ~ 
-
-👨🏽‍💻usage:To change the ownership to the user and the group of the file 
-👨🏽‍💻type:chown user-to-transer-ownership:group-to-transfer-ownership  FILENAME.FILEFORMAT
-👨🏽‍💻output:Ownership will be provided to the provided user and group 
-👨🏽‍💻example:chown India:asia nuclearcodes.txt
-
-👨🏽‍💻usage:To change the user ownership of the file 
-👨🏽‍💻type:chown new-user FILENAME.FILEFORMAT
-👨🏽‍💻output:User will also get the ownership of the file and the ownership of the group remain default
-👨🏽‍💻example:chown India nukes.txt
-
-👨🏽‍💻usage:To change group ownership of the file 
-👨🏽‍💻type:chgrp group-name FILENAME.FILEFORMAT
-👨🏽‍💻output:Ownership the file will be changed to the group-name provided
-👨🏽‍💻example:chgrp asia India
-👨🏽‍💻Note:We can only change the group ownership of the file of those groups that user(owner) is part of 
-
-SUID SGID and Skicky bit 
-
-In all of these when theya re set whern the file is executed it will be exeuted as the owner or group set not by the person who is executing 
-
-SUID (Sunle user identification bit)
-All of these are set up like normal permissions but there's an extra digit at the front  
-SUID         4      s 
-SGID         2      s
-Sticky bit   1      t
-Sticky bit are usually set on directories that are shared between people 
-Setting sticky bit on the directory only user can manipulate all the stuff of the directory
-
-These special permissions can be set using the following synatx 
-
-chmod u+s FILE for SUID
-chmod g+s FILE for SGID
-chmod o+t FILE for Sticky bit  
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-SSH and SCP ~
-
-SSH ~
-
-SSH is used for login and executing commands on a remote server via local system
-
-👨🏽‍💻usage:To find port used  
-👨🏽‍💻type:netstat -ntlp | grep ssh
-
-👨🏽‍💻usage:To connect to remote server via ssh 
-👨🏽‍💻type:ssh SERVER-IP
-👨🏽‍💻note:incase no user is specified the connection is obtained by the logged-in user 
-
-👨🏽‍💻usage:To connect to remote server via ssh 
-👨🏽‍💻type:ssh USER-ACCOUNT-ON-REMOTE-SERVER@HOST-NAME-OR-IP-ADDRESS-OF-SERVER
-
-👨🏽‍💻usage:To connect to remote server via ssh 
-👨🏽‍💻type:ssh -l USER HOST-NAME-OR-IP-ADDRESS
-
-The thing is these remote logins require id and password there is another way to login via no password aka password less ssh for this user generates
-key aka key pair consist of private key and public key when the public key is installled in the remote server it can connect it with a client 
-which has the private key 
-
-👨🏽‍💻usage:To generate private key and public key and store in the home directory 
-👨🏽‍💻type:ssh-keygen -t rsa -b 4096 -C "your mail including doubble quotes"
-👨🏽‍💻note:This above key generation is quite handy as it require mail you can also use this ssh-keygen -t rsa in order to generate both keys id_rsa is 
-the private key and must not be shared to anyone in any case the other id_rsa.pub can be shared as it the public id. 
-
-Once the public key is generated it must be copied to the remote server 
-👨🏽‍💻usage:To copy public key to remote server
-👨🏽‍💻type:ssh-copy-id -i LOCATION-OF-PUBLIC-KEY USER@SERVER 
-
-👨🏽‍💻usage:To login into remote server
-👨🏽‍💻type:ssh SERVER
-👨🏽‍💻note:incase no user is specified the connection is obtained by the logged-in user  
-
-SCP ~
-
-Scp allows data to copy and transfer over ssh  
-
-👨🏽‍💻usage:To copy file from remote server 
-👨🏽‍💻type:scp LOCATION-OF-FILE-YOU-WANNA-COPY SERVER:DESTINATION-OF-FILE
-👨🏽‍💻note:in case you wanna copy directory -pr option is used 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Iptables ~
-
-In a nutshell If the devices are on same network they can be connect to each other to prevent this ip tables are used. 
-
-👨🏽‍💻usage:To list the default rules of iptables 
-👨🏽‍💻type:sudo iptables -L
-👨🏽‍💻note:The default policy is set to accept traffic
-
-Input chain - network traffic comming into the system 
-Output chain - Response given by the server to other system 
-Foreward chain - The request further forewarded to other devices 
-
-This is called chain becuase it contails series of terms other things it can filter traffic on the basics of it. Example protocol, port, user etc.
-
-👨🏽‍💻usage:To add rule in iptable  
-👨🏽‍💻type:iptables -A INPUT -p PROTOCOL -s SOURCE-IP --dport PORT -j ACTION 
-👨🏽‍💻note:The following options are ~
-
--A = add rule 
--p = protocol
--s = source ip like 420.69.19.45
---dport = destination port
--j = action to take 
--I = used to insert a rule at the top of the ip table 
-
-👨🏽‍💻usage:To add rule in iptable to disable default input chain 
-👨🏽‍💻type:iptables -A INPUT -p tcp --dport 22 -j DROP
-👨🏽‍💻note:The sequence in which rules are applied are very important if the first one gets executed othe others are ignored 
-
-👨🏽‍💻usage:To delete rule 
-👨🏽‍💻type:iptables -D OUTPUT INDEX-OF-THE-RULE
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-cronjob ~
-
-In a nutshell this command is used to automate task for example if wanna pull your git repo every day this task can be automted using cronjob 
-
-👨🏽‍💻usage:To view current automated task on the system by the user 
-👨🏽‍💻type:cronjob -e 
-👨🏽‍💻note:After this command is executed the cronjob file will be opened in the vi editor here user can delete or modify tasks.
-
-The format of the shedule of the task ~
-minute hour day month command-to-be-executed 
-
-for example if want to execute above task this would be like this 
-00 21 * * git pull
-
-In the above field * represent that the task is executed every time as per as above example every day every month if you want the task to be automate
-every n time /interval-time-in-that-format can be added with * . In case you wanna automate the task relate to specific weekday one more field can 
-be added to do so, 1 for monday 2 for tue .. and so on.
-The time used here is 24 hour format 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-networking skills required for basic linux 
-
-DNS 
-
-Suppose there are multiple system sharing a common network but a different ip, in that case remembering and entering ip of each system can be a 
-nightmare to encouter this dns(domain name system) is used.
-For example www.github.com 
-www = sub domain
-gitbhub = domain
-com = top level domain 
-
-After typing the name in the browser the browser will create a query , first it will check in the local cachae if not found it will check on the 
-recursive server which will check other servers for example server containing registered name with top level domains after the ip if found it is 
-stored in cachae for future use. The local domains can be found under /etc/hosts you can write the ip and the domain name. Run hostname command 
-to find the hostname of the device. Setting a DNS server is very beneficial in case there are large number of user and one they usually made changes 
-in their domain name. Every system is connected to dns server it can be seen at /etc/resolv.conf  
-
-👨🏽‍💻usage:To add custom domain name limited to local 
-👨🏽‍💻type:cat >> /etc/hosts 
-👨🏽‍💻note:After this command gets run type your ip and then yor domain name of your choice 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Service management with systemd ~
-
-To make our own service we have to create a service file aka file ending with a extension of .service this service file has to be created under 
-/etc/systemd/system/YOUR-SERVICE-FILE 
-
-There are sections in a systemd service file ~
-[Unit] - description of service and the service needed to start before this service  
-[Service] - Commands and the command options you can also define environmental variabeles it may also conatain a service to shutdown a service 
-[Install] - Which target requires this service 
-Other example includes [Socket]
-
-
-Unit section ~
-Description - name of the service
-After - The service will only start if the services mentioned in this are currently running 
-ConditionPathExists = The service will only start if the item provided in this field does not exists another example of fields are Documentation 
-
-example  ~
-[Unit]
-Description=Launch nukes
-After=network.target 
-ConditionPathExists=!~/usr/bin/antiBallesticMissile
-After creating the service user have to start this service using systemctl : systemctl start NAME-OF-SERVICE-FILE.SERVICE
-
-
-Service section ~
-ExecStart ExecStartPre ExecStartPost ExecStop ExecStopPre ExecStopPost ExecReload ExecReloadPre ExecReloadPost - these all manage service worktime 
-and contain the paths for example ExecStart=/SERVICE-LOCATION 
-Type - service are of multiple types simple,forking,oneshot,dbus,notify  the type field defines the type of service  
-User - this field specifies the user whow want to run this service 
-Restart- this filed will amke the service to restart according to user circumstances usually its value is ~ on-failure
-RestartSec - this field will make the service to restart after a given interval of time its in second 
-There are multiple feilds but for now we are limited to the intro only 
-
-example ~
-[Service]
-ExecStart=~/usr/bin/nuclearmissiles.service
-User=serviceProvideFormyselfakashagarwal
-Restart=on-failure
-
-Install section ~ 
-Wantedby - The service is reques by which target mainly graphical.target or multiuser.target
-
-example ~
-[Install]
-Wantedby multiuser.target
-
-
-Systemd tools to manage service ~
-
-Systemctl was explored earlier to change target of the system this systemctl has multiple usecases including ~
-Manage system state 
-Start stop restart reload 
-Enable disable units 
-List and update targets 
-
-👨🏽‍💻usage:To manage service using systemctl
-👨🏽‍💻type:systemctl TASK SERVICE-NAME
-👨🏽‍💻example:systemctl start launchmissile
-👨🏽‍💻note:There are variety of tasks that can be done using systemctl example stop start enable disable reload restart status 
-
-👨🏽‍💻usage:To apply changes to system after making changes in the service file 
-👨🏽‍💻type:systemctl deamon-reload
-
-👨🏽‍💻usage:To apply and edit changes at the same time 
-👨🏽‍💻type:systemctl edit SERVICE-FILE-NAME.service --full
-👨🏽‍💻example:systemctl edit launchmissile.service --full
-👨🏽‍💻note:This command will update and apply changes at the same time earlier if we edit the service file we have to use deamon-reload using this 
-command will automaticially open the service file into the text editor 
-
-👨🏽‍💻usage:To seee the current status of all the running system services  
-👨🏽‍💻type:system list-units --all
-👨🏽‍💻note:This command will list all the current runnning units with status description active etc 
-
-👨🏽‍💻usage:To the logs of the services  
-👨🏽‍💻type:journalctl -u SERVICE-NAME.service 
-👨🏽‍💻note:-b command can be used to view all logs 
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Storage management ~
-
-A partition table is a table that contains data of partitions on a disk.
-Types of partitions ~
-Primary partitions: These are the most common type of partition and are typically used to hold the operating system.
-Extended partitions: These partitions are used to create logical partitions.
-Logical partitions: These partitions are created within an extended partition and are used to hold data.
-Swap partitions: These partitions are used to increase the amount of memory available to the operating system.
-
-There are two main types of partition table MBR and GPT 
-
-MBR(Master boot record) ~
-The first 512 bytes contains the operating system boot loader and device storage partition table. In the 512 bytes of storage it contains the first stage 
-of bootloader.
-There are maximum of four partitions per drive if there is requirement of more partitions you have to mount extended partition in the place of primary
-partitions that extended partition can have upto 4 locical partitions thus you can have maximum of 16 partitions per disk. including partition size 
-must not ecceed the size of 2 terabytes.
-
-GUID prtition table (GPT) ~
-Globally unique identifiersThis partition scheme is way better than MBR as it can have upto 128 partitions per drive with a maximum storage of 9.4 
-zetabytes 
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
