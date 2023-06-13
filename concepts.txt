@@ -906,3 +906,191 @@ cpu aka muximum time cpu can be used the value is in minutes
 value - HOW MUCH RESOURCE IS PROVIDED 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Operations on operatring system 
+
+Target 
+
+* Systemd is the system and service manager for linux OS its not necessary that every system have systemd. Systemctl is the command line tool 
+  used to manage systemd services. Location /usr/lib/
+* Target in nutshell can be defined as the user interface implemented on the system or the interface OS boots into there are total 7 target 0 - 7t
+  Runlevel 0  poweroff.target
+  Runlevel 1  rescue.target
+  Runlevel 2  runlevel2.target
+  Runlevel 3  multi-user.target
+  Runlevel 4  undefined
+  Runlevel 5  graphical.target
+  Runlevel 6  reboot.target
+* To get the current target type: systemctl get-defaul  while to set target use systemctl set-default use isolate to change target at the same time
+
+👨🏽‍💻usage:To manipulate the target from the command line 
+👨🏽‍💻type:systemctl TARGET 
+👨🏽‍💻note: poweroff and reboot can be use in place of the target in upper command and there might be need of --force flag, can also be used twice 
+👨🏽‍💻note: To set the default target use set-default option succeed by target example systemctl set-default multiuser.target
+👨🏽‍💻note: To shedule the shutdown and reboot type: shutdown TIME-IN-24-HOUR-FORMAT         timing limit 00:00 to 23:59
+👨🏽‍💻note: To shutdown after n time type: shutdown +TIME-IN-MINUTES 
+👨🏽‍💻note: To do reboot like shutdown just use -r option 
+👨🏽‍💻note: To pass the message to user before the system boot off just type 'MESSAGE IN SINGLE QUOTES ' ex: shutdown 01:00 'System will at 1 o clock'
+
+Unit - services 
+
+* The instructions given to the init system are called units these can be of multiple types like service, socket timer etc 
+* daemons are the services that run in the background and provide need to other processes and services ex sshd 
+
+👨🏽‍💻usage:To view the service configuration file 
+👨🏽‍💻type: systemctl cat SERVICE-NAME.service
+
+👨🏽‍💻usage:To edit the service configuration file 
+👨🏽‍💻type: systemctl edit --full SERVICE-NAME.service
+
+👨🏽‍💻usage:To reset the service default settings 
+👨🏽‍💻type: systemctl revert SERVICE-NAME.service
+
+👨🏽‍💻usage:To manually start the service 
+👨🏽‍💻type: systemctl start SERVICE-NAME.service
+
+👨🏽‍💻usage:To check the status of the service 
+👨🏽‍💻type: systemctl status SERVICE-NAME.service
+
+👨🏽‍💻usage:To stop the service 
+👨🏽‍💻type: systemctl stop SERVICE-NAME.service
+
+👨🏽‍💻usage:To restart the service 
+👨🏽‍💻type: systemctl restart SERVICE-NAME.service
+
+👨🏽‍💻usage:To reload the service 
+👨🏽‍💻type: systemctl reload SERVICE-NAME.service
+
+👨🏽‍💻usage:To reload first if not the restart the service 
+👨🏽‍💻type: systemctl reload-or-restart SERVICE-NAME.service
+
+👨🏽‍💻usage:To disable the service 
+👨🏽‍💻type:systemctl disable SERVICE-NAME.service
+👨🏽‍💻type: To disable and stop the service use --now option after disable 
+
+👨🏽‍💻usage:To enable the service 
+👨🏽‍💻type:systemctl enable SERVICE-NAME.service
+👨🏽‍💻type: To enable and start the service use --now option after enable 
+
+👨🏽‍💻usage:To check if the service is enabled  
+👨🏽‍💻type:  systemctl is-enabled SERVICE-NAME.service
+
+👨🏽‍💻usage:To prevent service auto starting the other services 
+👨🏽‍💻type:systemctl mask SERVICE-NAME.service
+👨🏽‍💻type: To unmask it just use unmask instead of mask 
+
+👨🏽‍💻usage:To list all the services 
+👨🏽‍💻type: systemctl list-units --type service --all 
+
+👨🏽‍💻usage:To list dependencies installed  
+👨🏽‍💻type: systemctl list-dependencies
+
+Processes 
+
+* Process is the exam in execution aka program in the memory that can be running or waiting it may accquire resources like cpu, io etc 
+* Every process have its process id and parent process id init is the first process with pid 1
+* kernel processes are wrapped in squarebrackets they run in the privilage area 
+* Process niceness is the value how nice the process is to the other processes range -20 to 19
+* Various signals can be given to processes to manipulate their state the signals will be applicable to process that are user related 
+* There are various signals that are sent to processes 
+
+👨🏽‍💻usage:To list all the processes with the most memory used  
+👨🏽‍💻type:top 
+
+👨🏽‍💻usage:To list all the processes running in current bash session 
+👨🏽‍💻type: ps
+👨🏽‍💻note: To check the specific process just type the pid after the ps 
+👨🏽‍💻note: To check the process with the resources allocated use u before the pid 
+👨🏽‍💻note: To list all the process started by the user use ps -U UERR-NAME after the u 
+👨🏽‍💻note: To list all the process with their nice value type: ps l
+👨🏽‍💻note: To list all the process that are parent processes type: ps fax
+👨🏽‍💻note: To list the hiearchy of the processes type: pstree
+
+👨🏽‍💻usage:To check the process with specific name 
+👨🏽‍💻type: pgrep -a PROCESS-NAME 
+
+👨🏽‍💻usage:To list all the processes at the command time stamp 
+👨🏽‍💻type: ps aux
+
+👨🏽‍💻usage:To assign the nice value to the process
+👨🏽‍💻type: nice -n VALUE PROCESS 
+
+👨🏽‍💻usage:To assign the nice value to the existing process
+👨🏽‍💻type: renice  VALUE PROCESS-ID 
+
+👨🏽‍💻usage:To know all the signals 
+👨🏽‍💻type:Kill -l 
+
+Logs 
+
+* Logs are the messeges thata re stored in form of text files which tells about many thing including status error messeges and other.
+* rsyslog is one of the system applications that collect and organise system logs 
+* rsyslog stores th logs in /var/logs directory 
+* secure directory stores logs related to the security authentication 
+* journalctl deamon can be used to perfectly counter system logs 
+
+👨🏽‍💻usage:To know the logs
+👨🏽‍💻type:journalctl
+👨🏽‍💻note:use -f flag to view the logs in real time
+👨🏽‍💻note:use -e flag to jump to last log  
+👨🏽‍💻note:To use the functionalities of grep -g flag is used example ~ journalctl -p info -g "^N"
+👨🏽‍💻note:To serach on the basics of the time -S flag is used example - journalctl -S 02:00   This flag also supports dates 'year-month-day hour:minute:second'
+
+
+👨🏽‍💻usage:To find the logs generated by the particular command 
+👨🏽‍💻type: journalctl COMMAND-PATH 
+
+👨🏽‍💻usage:To find the logs generated by the particular service 
+👨🏽‍💻type: journalctl -u SERVICE-NAME.service
+
+👨🏽‍💻usage:To find the logs on the basics of priority
+👨🏽‍💻type: journalctl -p PRIORITY-NAME 
+👨🏽‍💻note: err for error logs 
+        infor for info logs 
+        crit for critical task logs
+        warning for warning logs 
+ 
+👨🏽‍💻usage:To find the logs generated in the currebt boot session 
+👨🏽‍💻type: journalctl -b 0
+👨🏽‍💻usage:To find the logs generated by the particular command 
+👨🏽‍💻note:0 is used for current boot -1 is used for previous boot and the number goes on 
+
+Shedule tasks
+
+* crontab is one of the utilities that can be used to do repetative tasks but it is limited by power if the power goes off cron is un functional 
+* in crontab full path is used to know the full path type which COMMAND
+* To organize the task special directories can be used like /etc/cron.daily/  /etc/cron.hourly
+* anacron is utility that can do task even if the power is off but it have a minimum time unit of day 
+* The logs generated by crontab and anacrontab can be seen in /var/log/
+
+👨🏽‍💻usage:To shedule tab using crontab of the user 
+👨🏽‍💻type: crontab -e 
+👨🏽‍💻note: The first five value represent time  6 represent user 7 command 
+        first  - minute (0-59)
+        second  - hour(0-23)
+        third - day of month (1-31) mon tue wed thu fri sat sun (three letter short form can also be used)
+        fourth  - month (1-12) jan feb mar apr (three letter short forms can also be used)
+        fifth  - day of the week (0-6) where 0 is sunday 
+        the * represent every value 
+        the , can be used to add multipple time 6,9 
+        the - can be used to specify range 6-9 the job will run on 6 7 8 9 the basic step is one unit /NUMBER can be used to add custom steps ex 6-9/2 
+To list the current entries of the crontab -l flag can be used 
+To edit the crontab of the another user use: crontab -e -u USERNAME 
+To remove the crontab of the another user use: crontab -r -u USERNAME 
+
+👨🏽‍💻usage:To shedule tab using anacrontab of the user 
+👨🏽‍💻type:vi /etc/anacrontab
+       first - Period (@daily @weekly @monthly)
+       delay - in minutes how much time the job will wait to execute after boot 
+       identifier - any name given to task which would be used for logs 
+       command  - full path of command 
+To check the wrong entries anacrontab -T can be used 
+
+👨🏽‍💻usage:To list all the kernel runtime parameters
+👨🏽‍💻type:sudo sysctl -a
+👨🏽‍💻note: To write a value to parameter type: sysctl -w PARAMETER-NAME=VALUE , The value passed will be reset to default on reboot 
+        To make changes presistent create a file /etc/sysctl.d/FILE-NAME-WITH-DOT-CONFIG-EXTENSION.config , now the file has been created just 
+        type the PARAMETER-NAME=DESIRED-VALUE
+        To read the file parameter instantly type: sysctl -p PATH-TO-PARAMETER-CONFIG-FILE  
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
