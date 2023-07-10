@@ -15,14 +15,14 @@ Introduction ~
 
 Before moving on to the LINUX lets have a small talk ☕️
 An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
-Lets take a look at 1969 its time when ken Thompson and Dennnis Ritchie created unix operating system its was all good but it had one problem the 
+Lets take a look at 1969 its time when ken Thompson and Dennnis Ritchie created unix operating system it was all good but it had one problem the 
 source code was owned by AT and T company when some other created their own software distribution based on unix AT and T sues them this led to the 
-limitatiins to the development. 
+limitations to the development. 
 
 To encounter this problen in year 1983 Richard Stallman created GNU( it literally means not unix 😂) project intended to make free and open source 
 replacement to unix in 1992 it included linux under GNU project under general public license, linux was created in 1991 by linus Torwalds a 
 kernel which act as a mediater between hardware and applications, user interact with kernel with the help of shell through command line. in GNU's 
-upcomming years it created may tols and applications like tar, bash just the name of few which can be used by linux kernel that let to revolution 
+upcomming years it created many tools and applications like tar, bash just the name of few which can be used by linux kernel that let to revolution 
 in software world.
 
 As it gave freedom to developers tonnes of developers made their contributions and created thousand of linux distro. A distro is a complete operating
@@ -84,7 +84,7 @@ To communicate and use the services we have to communicate with shell, as shell 
 Commands: syntax and type 
 
 Syntax:
-You may notice that the instructions have a multiple parts these pare can be divided into three parts 
+You may notice that the instructions have a multiple parts these parts can be divided into three parts 
 1.command
 2.options 
 3.arguments
@@ -105,9 +105,7 @@ Shell
 
 As we discussed earlier we need to interact to with shell via commands so, lets start the shell topic 😉
 
-There are different types of shell available exmaple bash shell corn shell z shell bourne shell (ment for unix) and many more these shells are 
-different and may serve special purpose in specific fields, but all of them have one thing in common that they all act as a medium to interact with 
-kernel. 
+There are different types of shell available exmaple bash(Bourne Again Shell) shell, corn shell, z shell, bourne shell (ment for unix) and many more these shells are different and may serve special purpose in specific fields, but all of them have one thing in common that they all act as a medium to interact with kernel. 
 
 👨🏽‍💻usage:To know which shell we are working with 
 👨🏽‍💻type:echo $SHELL
@@ -128,7 +126,7 @@ Kernel carries out four major tasks
 1.Memory management 
 2.Process management 
 3.Device drivers 
-4.System calls and secuerity
+4.System calls and security
 
 The linux kernel is monolithic it means it carries out multiple tasks all by itself.
 The linux kernel is modular it means it can extend its capiblities using dynamicially loaded kernel modules.
