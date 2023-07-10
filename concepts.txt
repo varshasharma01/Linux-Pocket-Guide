@@ -186,13 +186,13 @@ Linux boot sequence can be divided into four major groups ~
 4. INTIT process (systemd)
 
 BIOS POST ~
-POST(Power On Self Test) in this stage BIOS runs a post test to insure that all the hardware components attached to the device are working correctly
-if POST fails compuetr may not be operatble and computer will not move to second step of boot process. 
+POST(Power On Self Test) in this stage BIOS runs a post test to ensure that all the hardware components attached to the device are working correctly
+if POST fails compuetr may not be operatable and computer will not move to second step of boot process. 
 
 Boot loader ~
 After the POST sequence BIOS load and executes the boot code from the hard disk of the boot device, located in the first sector of the hard disk  
-In linux this code os located in the /boot file system The boot loader provide user with the boot screen often  with multiple os to boot into.
-Once the choice is provided the boot loader loades the kernel into the memory. Supplying with parameters and handling the control to the kernel 
+In linux this code is located in the /boot file system The boot loader provide user with the boot screen often  with multiple os to boot into.
+Once the choice is provided the boot loader loads the kernel into the memory. Supplying with parameters and handling the control to the kernel 
 Example of the boot loader is GRUB 2(Grand Unified Boot Loader version 2) it is primary boot loader for most of the linux distributions.
 
 Kernel Initilization ~
