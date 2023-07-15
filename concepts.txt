@@ -219,7 +219,7 @@ dependencies along with tasks like ~ Checking authenticity and integrity, Simply
 
 Every distributions may have a seperate package manager because distributions may differ in basic structure thus every different structure require 
 different package manager Just like we talked earlier there are around a thousand of linux distributions but the big daddy of these distributions are 
-DPKG/APT and RPM/YUM. DPKG is used by linux os like ubantu, debian, arch linux linux mint etc. RPM is used bu RHEL,fedora,cent os etc. The most usual package 
+DPKG/APT and RPM/YUM. DPKG is used by linux OS like ubuntu, debian, arch linux, linux mint etc. RPM is used by RHEL,fedora,cent os etc. The most usual package 
 manager used by mac os is home brew. 
 
 RPM(red hat package manager) ~
@@ -239,7 +239,7 @@ package manager works on RPM based distros It is a high level package manager bu
 dependencies management. 
 
 To install dependencies it works with dependencies packages they may stored on local or are available on remote server accessed via server protocalls.
-In your loacal system you can find those dependicies file on etc/yum.repos.d/dependencies-files you can adde any dependicies file here in case you wanna 
+In your local system you can find those dependencies file on etc/yum.repos.d/dependencies-files you can add any dependenicies file here in case you wanna 
 install unofficial updates of any modifications.
 
 👨🏽‍💻usage:To list all the installed repos
@@ -255,7 +255,7 @@ install unofficial updates of any modifications.
                                    ----------------------------------------------
 
 Steps involved in installing a package ~
-yum first checks the transaction check it check repositories of that package it also check if any of the dependincy package installed in system 
+yum first checks the transaction check it check repositories of that package it also check if any of the dependency package installed in system 
 or it needs to be upgraded. After all that it displays transaction summary and asks the choice to further go on. After that choice yum downloads 
 the packages.
 
